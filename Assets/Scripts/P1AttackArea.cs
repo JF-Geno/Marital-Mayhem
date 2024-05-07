@@ -10,7 +10,7 @@ public class P1AttackArea : MonoBehaviour
     {
         if (collider.GetComponent<P2Health>() != null)
         {
-            Debug.Log("YES");
+           // Debug.Log("YES");
             P2Health health = collider.GetComponent<P2Health>();
             health.Damage(damage);
         }
