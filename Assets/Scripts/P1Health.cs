@@ -11,6 +11,9 @@ public class P1Health : MonoBehaviour
 
     public Image healthBar;
 
+    public Image defenseBar;
+
+    public Image ultimateBar;
 
     private void Start()
 
@@ -132,6 +135,8 @@ public class P1Health : MonoBehaviour
     {
 
         healthBar.fillAmount = _health / (float)MAX_HEALTH;
+        // defenseBar.fillAmount =...;
 
+        // ultimateBar.fillAmount =...;
     }
 }
