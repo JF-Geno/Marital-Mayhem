@@ -15,126 +15,91 @@ public class P2Health : MonoBehaviour
 
     public Image ultimateBar;
 
+    public GameOverScreen gameOverScreen;
 
     private void Start()
 
     {
-
         _health = MAX_HEALTH;
 
         UpdateUI();
-
     }
-
 
     private void Update()
 
     {
-
         if (Input.GetKeyDown(KeyCode.H))
 
         {
-
             Heal(10);
-
         }
-
     }
-
 
     public void Damage(int amount)
 
     {
-
         if (amount <= 0)
 
         {
-
             Debug.LogWarning("Cannot have negative damage amount");
 
             return;
-
         }
-
 
         _health -= amount;
 
         Debug.Log($"Health: {_health / (float)MAX_HEALTH:P0}");
 
-
         if (_health <= 0)
 
         {
-
             Die();
-
         }
-
         else
 
         {
-
             UpdateUI();
-
         }
-
     }
-
 
     public void Heal(int amount)
 
     {
-
         if (amount <= 0)
 
         {
-
             Debug.LogWarning("Cannot have negative healing amount");
 
             return;
-
         }
-
 
         bool wouldBeOverMaxHealth = _health + amount > MAX_HEALTH;
 
         if (wouldBeOverMaxHealth)
 
         {
-
             _health = MAX_HEALTH;
-
         }
-
         else
 
         {
-
             _health += amount;
-
         }
 
-
         UpdateUI();
-
     }
-
 
     public void Die()
 
     {
-
         Debug.Log("I am Dead!");
-
+        gameOverScreen.Setup("Player 1");
         Destroy(gameObject);
-
     }
-
 
     private void UpdateUI()
 
     {
-
         healthBar.fillAmount = _health / (float)MAX_HEALTH;
 
         // Update defense and ultimate bars if needed
@@ -142,6 +107,5 @@ public class P2Health : MonoBehaviour
         // defenseBar.fillAmount =...;
 
         // ultimateBar.fillAmount =...;
-
     }
 }
