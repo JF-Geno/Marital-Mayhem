@@ -10,7 +10,9 @@ public class P1PlayerAttack : MonoBehaviour
     public GameObject projectilePrefab;
 
     private bool attacking = false;
+    private bool shooting = false;
 
+    public float targetTime = 0.0f;
     private float timeToAttack = 0.25f;
     private float timer = 0f;
 
@@ -47,6 +49,14 @@ public class P1PlayerAttack : MonoBehaviour
                 attackArea.SetActive(attacking);
             }
         }
+        if (shooting)
+        {
+            targetTime -= Time.deltaTime;
+            if(targetTime <= 0.0f)
+            {
+                shooting = false;
+            }
+        }
     }
 
     private void Attack()
@@ -56,6 +66,11 @@ public class P1PlayerAttack : MonoBehaviour
     }
     private void Shoot()
     {
-        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        if(!shooting)
+        {
+            targetTime = 1;
+            shooting = true;
+            Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        }
     }
 }

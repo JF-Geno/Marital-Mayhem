@@ -6,6 +6,9 @@ public class P2PlayerAttack : MonoBehaviour
 {
     private GameObject attackArea = default;
 
+    public Transform firePoint;
+    public GameObject projectilePrefab;
+
     private bool attacking = false;
 
     private float timeToAttack = 0.25f;
@@ -26,7 +29,7 @@ public class P2PlayerAttack : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Period))
         {
-            //range
+            Shoot();
         }
         if (Input.GetKeyDown(KeyCode.Comma))
         {
@@ -50,5 +53,10 @@ public class P2PlayerAttack : MonoBehaviour
     {
         attacking = true;
         attackArea.SetActive(attacking);
+    }
+
+    private void Shoot()
+    {
+        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
     }
 }
