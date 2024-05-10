@@ -3726,6 +3726,10 @@ PrefabInstance:
       propertyPath: m_SleepingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1516512074486040046, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 253477688}
     - target: {fileID: 2351466645025239154, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.2325974
@@ -3770,6 +3774,34 @@ PrefabInstance:
       propertyPath: m_WhatIsGround.m_Bits
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 3356750753606134741, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356750753606134741, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356750753606134741, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 253477683}
+    - target: {fileID: 3356750753606134741, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356750753606134741, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnLanding
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356750753606134741, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovementP2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356750753606134741, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4107268949583826450, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
       propertyPath: m_Name
       value: Woman
@@ -3790,6 +3822,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4107268949583826450, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
       insertIndex: -1
       addedObject: {fileID: 253477682}
+    - targetCorrespondingSourceObject: {fileID: 4107268949583826450, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 253477688}
   m_SourcePrefab: {fileID: 100100000, guid: 222820a3c99f9544b977eb7d6c1aea98, type: 3}
 --- !u!1001 &3747897579760597957
 PrefabInstance:
