@@ -9,6 +9,7 @@ public class P2Health : MonoBehaviour
 
     private int _health;
 
+    private int _defense;
     public Image healthBar;
 
     public Image defenseBar;
@@ -22,7 +23,36 @@ public class P2Health : MonoBehaviour
     {
         _health = MAX_HEALTH;
 
+        _defense = 10;
+
         UpdateUI();
+    }
+    public void healthController(int amount)
+    {
+
+        if (amount <= 3)
+        {
+            _health -= amount;
+            Debug.Log($"H: {amount} ");
+        }else if(amount > 3 && _defense > 0)
+        {
+            _defense-=2;
+
+            int damageTaken = 10 -_defense;
+            int dT = amount + damageTaken;
+            Debug.Log($"H: {dT} {damageTaken}");
+            _health -= dT;
+        }
+        else
+        {
+            int damageTaken = 10 -_defense;
+            int dT = amount + damageTaken;
+            Debug.Log($"H: {dT} {damageTaken}");
+            _health -= dT;
+        }
+        
+        Debug.Log($"Health: {_health/ (float)MAX_HEALTH:P0}");
+        Debug.Log($"Defense: {_defense/(float)10:P0}");
     }
 
     private void Update()
@@ -101,10 +131,7 @@ public class P2Health : MonoBehaviour
 
     {
         healthBar.fillAmount = _health / (float)MAX_HEALTH;
-
-        // Update defense and ultimate bars if needed
-
-        // defenseBar.fillAmount =...;
+        defenseBar.fillAmount = _defense/(float)10;
 
         // ultimateBar.fillAmount =...;
     }
