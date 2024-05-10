@@ -7,11 +7,21 @@ using TMPro;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public TextMeshProUGUI pointsText;
+    public TextMeshProUGUI winText;
+    public TextMeshProUGUI winStatsText;
     public void Setup(string playerName)
     {
         gameObject.SetActive(true);
-        pointsText.text = playerName + " WINS";
+        winText.text = playerName + " WINS";
+        if (playerName == GameValues.player1Name)
+        {
+            GameValues.player1Wins++;
+        }
+        else
+        {
+            GameValues.player2Wins++;
+        }
+        winStatsText.text = $"{GameValues.player1Name}: {GameValues.player1Wins}\t{GameValues.player2Name}: {GameValues.player2Wins}";
     }
 
     public void MainMenuButton()

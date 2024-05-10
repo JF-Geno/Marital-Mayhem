@@ -93,7 +93,7 @@ public class P2Health : MonoBehaviour
 
     {
         Debug.Log("I am Dead!");
-        gameOverScreen.Setup("Player 1");
+        gameOverScreen.Setup(GameValues.player1Name);
         Destroy(gameObject);
     }
 
