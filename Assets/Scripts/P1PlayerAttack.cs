@@ -55,6 +55,7 @@ public class P1PlayerAttack : MonoBehaviour
             if(targetTime <= 0.0f)
             {
                 shooting = false;
+                targetTime = 0.0f;
             }
         }
     }
