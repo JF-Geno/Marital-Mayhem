@@ -11,6 +11,9 @@ public class P1Health : MonoBehaviour
 
     private int _defense;
 
+    private float defenseTimer = 0.0f;
+    private const float defenseRegenInterval = 3.0f;
+
     public Image healthBar;
 
     public Image defenseBar;
@@ -71,6 +74,21 @@ public void healthController(int amount)
 
         }
 
+       if (_defense < 10)
+    {
+        defenseTimer += Time.deltaTime; 
+        if (defenseTimer >= defenseRegenInterval)
+        {
+            defenseTimer = 0.0f; 
+            _defense += 2; 
+            if (_defense > 10)
+            {
+                _defense = 10; 
+            }
+            UpdateHealthUI(); 
+        }
+    }
+
     }
 
     public void Damage(int amount)
@@ -88,11 +106,6 @@ public void healthController(int amount)
         }
 
         healthController(amount);
-
-
-        
-
-        //Debug.Log($"Health: {_health / (float)MAX_HEALTH:P0}");
 
         if (_health <= 0)
 

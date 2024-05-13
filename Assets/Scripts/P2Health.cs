@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class P2Health : MonoBehaviour
 {
-    private const int MAX_HEALTH = 100;
+    private const int MAX_HEALTH = 111;
 
     private int _health;
 
     private int _defense;
+
+    private float defenseTimer = 0.0f;
+    private const float defenseRegenInterval = 3.0f;
     public Image healthBar;
 
     public Image defenseBar;
@@ -63,6 +66,23 @@ public class P2Health : MonoBehaviour
         {
             Heal(10);
         }
+
+           if (_defense < 10)
+    {
+        defenseTimer += Time.deltaTime; 
+        if (defenseTimer >= defenseRegenInterval)
+        {
+            defenseTimer = 0.0f; 
+            _defense += 2; 
+            if (_defense > 10)
+            {
+                _defense = 10; 
+            }
+            UpdateUI(); 
+        }
+    }
+
+
     }
 
     public void Damage(int amount)
@@ -76,9 +96,7 @@ public class P2Health : MonoBehaviour
             return;
         }
 
-        _health -= amount;
-
-        Debug.Log($"Health: {_health / (float)MAX_HEALTH:P0}");
+        healthController(amount);
 
         if (_health <= 0)
 
