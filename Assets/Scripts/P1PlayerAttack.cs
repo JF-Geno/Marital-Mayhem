@@ -16,6 +16,8 @@ public class P1PlayerAttack : MonoBehaviour
     private float timeToAttack = 0.25f;
     private float timer = 0f;
 
+    public GameObject throwNoise;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +74,8 @@ public class P1PlayerAttack : MonoBehaviour
             targetTime = 1;
             shooting = true;
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            throwNoise.SetActive(false);
+            throwNoise.SetActive(true);
         }
     }
 }

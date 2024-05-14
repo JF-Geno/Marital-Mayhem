@@ -21,6 +21,9 @@ public class P2Health : MonoBehaviour
 
     public GameOverScreen gameOverScreen;
 
+    public GameObject punchNoise;
+    public GameObject projectileNoise;
+
     private void Start()
 
     {
@@ -32,14 +35,19 @@ public class P2Health : MonoBehaviour
     }
     public void healthController(int amount)
     {
+        
 
         if (amount <= 3)
         {
+            punchNoise.SetActive(false);
+            punchNoise.SetActive(true);
             _health -= amount;
             Debug.Log($"H: {amount} ");
         }else if(amount > 3 && _defense > 0)
         {
-            _defense-=2;
+            projectileNoise.SetActive(false);
+            projectileNoise.SetActive(true);
+            _defense -=2;
 
             int damageTaken = 10 -_defense;
             int dT = amount + damageTaken;
@@ -48,6 +56,8 @@ public class P2Health : MonoBehaviour
         }
         else
         {
+            projectileNoise.SetActive(false);
+            projectileNoise.SetActive(true);
             int damageTaken = 10 -_defense;
             int dT = amount + damageTaken;
             Debug.Log($"H: {dT} {damageTaken}");
