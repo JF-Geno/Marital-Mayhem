@@ -29,16 +29,16 @@ public class P1PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) && !P1Health.isInputDisabled)
         {
             animator.SetBool("Attack", true);
             Attack();
         }
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && !P1Health.isInputDisabled)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && !P1Health.isInputDisabled)
         {
             //ult
         }

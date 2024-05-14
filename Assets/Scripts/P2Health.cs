@@ -13,6 +13,15 @@ public class P2Health : MonoBehaviour
 
     private float defenseTimer = 0.0f;
     private const float defenseRegenInterval = 3.0f;
+
+    
+
+    public static bool isInputDisabled = false;
+
+    
+    public float lowStun = 1f;
+    public float highStun = 2f;
+
     public Image healthBar;
 
     public Image defenseBar;
@@ -63,7 +72,7 @@ public class P2Health : MonoBehaviour
             Debug.Log($"H: {dT} {damageTaken}");
             _health -= dT;
         }
-        
+      
         Debug.Log($"Health: {_health/ (float)MAX_HEALTH:P0}");
         Debug.Log($"Defense: {_defense/(float)10:P0}");
     }
@@ -162,5 +171,18 @@ public class P2Health : MonoBehaviour
         defenseBar.fillAmount = _defense/(float)10;
 
         // ultimateBar.fillAmount =...;
+    }
+
+     public void Stun(float stunTime)
+    {
+ 
+       isInputDisabled = true;
+        StartCoroutine(EnableInputAfterSeconds(stunTime));
+ 
+    } 
+    IEnumerator EnableInputAfterSeconds(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        isInputDisabled = false;
     }
 }

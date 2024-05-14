@@ -10,7 +10,7 @@ public class P2PlayerAttack : MonoBehaviour
 
     public Transform firePoint;
     public GameObject projectilePrefab;
-
+    
     private bool attacking = false;
     private bool shooting = false;
 
@@ -29,16 +29,16 @@ public class P2PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Slash))
+        if (Input.GetKeyDown(KeyCode.Slash) && !P2Health.isInputDisabled)
         {
             animator.SetBool("Attack", true);
             Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Period))
+        if (Input.GetKeyDown(KeyCode.Period)  && !P2Health.isInputDisabled)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.Comma))
+        if (Input.GetKeyDown(KeyCode.Comma)  && !P2Health.isInputDisabled)
         {
             //ult
         }
@@ -74,6 +74,7 @@ public class P2PlayerAttack : MonoBehaviour
 
     private void Shoot()
     {
+       
         if (!shooting)
         {
             targetTime = 1;
