@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class P1PlayerAttack : MonoBehaviour
 {
+    public Animator animator;
+
     private GameObject attackArea = default;
 
     public Transform firePoint;
@@ -29,6 +31,7 @@ public class P1PlayerAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
+            animator.SetBool("Attack", true);
             Attack();
         }
         if (Input.GetKeyDown(KeyCode.X))
@@ -49,6 +52,7 @@ public class P1PlayerAttack : MonoBehaviour
                 timer = 0;
                 attacking = false;
                 attackArea.SetActive(attacking);
+                animator.SetBool("Attack", false);
             }
         }
         if (shooting)
