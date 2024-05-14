@@ -9,6 +9,8 @@ public class GameOverScreen : MonoBehaviour
 {
     public TextMeshProUGUI winText;
     public TextMeshProUGUI winStatsText;
+    public GameObject music;
+    public GameObject youSuck;
     public void Setup(string playerName)
     {
         gameObject.SetActive(true);
@@ -22,6 +24,9 @@ public class GameOverScreen : MonoBehaviour
             GameValues.player2Wins++;
         }
         winStatsText.text = $"{GameValues.player1Name}: {GameValues.player1Wins}\t{GameValues.player2Name}: {GameValues.player2Wins}";
+
+        music.SetActive(false);
+        youSuck.SetActive(true);
     }
 
     public void MainMenuButton()
