@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Queue<string> sentences = new Queue<string>();
+    public Queue<DialogueLine> sentences = new Queue<DialogueLine>();
+    public TextMeshProUGUI player1Text;
+    public TextMeshProUGUI player2Text;
 
     // Start is called before the first frame update
     void Start()
@@ -13,10 +17,10 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log($"Starting converstaion with {dialogue.name}");
+        Debug.Log($"Starting converstaion");
         sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (DialogueLine sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
@@ -30,8 +34,8 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
+        DialogueLine sentence = sentences.Dequeue();
+        Debug.Log(sentence.name + ": " + sentence.text);
         Invoke("DisplayNextSentence", 3);
     }
     public void EndDialogue()
