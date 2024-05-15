@@ -3,7 +3,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     public Transform playerTransform; // Reference to the player's Transform
-    public float verticalOffset = 3.0f; // Vertical offset to maintain distance between player and text
+    public float verticalOffset = 3.5f; // Vertical offset to maintain distance between player and text
 
     void Update()
     {
