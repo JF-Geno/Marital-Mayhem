@@ -23,11 +23,11 @@ void FixedUpdate()
     {
         if (KnockFromRight == true)
         {
-            m_Rigidbody2D.velocity = new Vector3(-KBForce, KBForce);
+            m_Rigidbody2D.velocity = new Vector3(-KBForce, KBForce/3);
         }
         else
         {
-            m_Rigidbody2D.velocity = new Vector3(KBForce, KBForce);
+            m_Rigidbody2D.velocity = new Vector3(KBForce, KBForce/3);
         }
 
         KBCounter -= Time.deltaTime;

@@ -11,13 +11,13 @@ public class P1AttackArea : MonoBehaviour
     {
         if (collider.GetComponent<P2Health>() != null)
         {
-           // Debug.Log("YES");
+            Debug.Log("man got ");
              KB1(collider);
             P2Health health = collider.GetComponent<P2Health>();
             health.Damage(damage);
         }
     }
-     private void KB1(Collider2D collider) 
+     public void KB1(Collider2D collider) 
     {
         knockBack.KBCounter = knockBack.KBTotalTime;
         if (collider.transform.position.x <= transform.position.x)

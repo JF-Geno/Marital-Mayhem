@@ -18,29 +18,27 @@ public class PlayerMovementP2 : MonoBehaviour
     void Update()
     {
 
-        horizontalMove = Input.GetAxisRaw("Horizontal P2") * runSpeed;
-
-        animator.SetFloat("Speed",  Mathf.Abs(horizontalMove));
-
-        if (Input.GetButtonDown("Jump P2"))
+        
+        if (!P1Health.isInputDisabled)
         {
-            jump = true;
-            animator.SetBool("IsJumping",  true);
-        }
 
-                    if (Input.GetButtonDown("Jump P2"))
-                    {
-                        jump = true;
-                    }
+            horizontalMove = Input.GetAxisRaw("Horizontal P2") * runSpeed;
 
-                    if (Input.GetButtonDown("Crouch P2"))
-                    {
-                        crouch = true;
-                    }
-                    else if (Input.GetButtonUp("Crouch P2"))
-                    {
-                        crouch = false;
-                    }
+            animator.SetFloat("Speed",  Mathf.Abs(horizontalMove));
+
+            if (Input.GetButtonDown("Jump P2"))
+            {
+                jump = true;
+                animator.SetBool("IsJumping",  true);
+            }
+            if (Input.GetButtonDown("Crouch P2"))
+            {
+                crouch = true;
+            }
+            else if (Input.GetButtonUp("Crouch P2"))
+            {
+                crouch = false;
+            }
         }
        
 

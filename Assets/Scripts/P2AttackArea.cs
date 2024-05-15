@@ -6,13 +6,13 @@ public class P2AttackArea : MonoBehaviour
 {
     private int damage = 3;
 
-     public KnockBack knockBack;
+    public KnockBack knockBack;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.GetComponent<P1Health>() != null)
         {
-           // Debug.Log("YES");
+            Debug.Log(" woman got");
             KB2(collider);
             P1Health health = collider.GetComponent<P1Health>();
             health.Damage(damage);
