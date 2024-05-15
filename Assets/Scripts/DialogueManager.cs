@@ -7,10 +7,17 @@ using TMPro;
 [System.Serializable]
 public class DialogueManager : MonoBehaviour
 {
-    public Queue<DialogueLine> sentences = new Queue<DialogueLine>();
     public TextMeshPro player1Text;
     public TextMeshPro player2Text;
+
+    public GameObject player1Follow;
+    public GameObject player2Follow;
+
+    public Queue<DialogueLine> sentences = new Queue<DialogueLine>();
     bool IsRunningDialog = false;
+
+    public Dialogue? LastDialogue = null;
+
     List<Dialogue> dialogues = new List<Dialogue>
         {
             // Bill & Sarah
@@ -18,9 +25,9 @@ public class DialogueManager : MonoBehaviour
             {
                 sentences = new List<DialogueLine>
                 {
-                    new DialogueLine { name = "Player 1", text = "You need to stop buying sunglasses! Its unhealthy, Sarah!" },
+                    new DialogueLine { name = "Player 1", text = "You need to stop buying sunglasses! It's unhealthy, Sarah" },
                     new DialogueLine { name = "Player 2", text = "You're just jealous." },
-                    new DialogueLine { name = "Player 1", text = "I would not consider having over 1000 pairs of sunglasses as reason for jealously. They take up multiple rooms in our house!!!!"}
+                    new DialogueLine { name = "Player 1", text = "I'm not jealous! They just shouldn't take up multiple rooms in our house!!!!"}
                 }
             },
             // Bill & Sarah
@@ -60,12 +67,18 @@ public class DialogueManager : MonoBehaviour
     {
         if (IsRunningDialog == false || dialogues.Count == 0)
         {
-            if (Random.Range(0, 10) == 0)
+            if (Random.Range(0, 15) == 0)
             {
-                StartDialogue(dialogues[Random.Range(0, dialogues.Count - 1)]);
+                int dialogueChosen = Random.Range(0, dialogues.Count - 1);
+
+                if (dialogues[dialogueChosen] != LastDialogue)
+                {
+                    LastDialogue = dialogues[dialogueChosen];
+                    StartDialogue(dialogues[dialogueChosen]);
+                }
             }
         }
-        Invoke("RandomDialogeStarter", 1);
+        Invoke("RandomDialogueStarter", 1);
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -93,10 +106,12 @@ public class DialogueManager : MonoBehaviour
 
         if (sentence.name == GameValues.player1Name)
         {
+            player1Follow.SetActive(true);
             player1Text.text = sentence.text;
         }
         else
         {
+            player2Follow.SetActive(true);
             player2Text.text = sentence.text;
         }
         Invoke("DisplayNextSentence", 3);
@@ -106,6 +121,8 @@ public class DialogueManager : MonoBehaviour
     {
         player1Text.text = "";
         player2Text.text = "";
+        player2Follow.SetActive(false);
+        player1Follow.SetActive(false);
     }
     public void EndDialogue()
     {
