@@ -36,6 +36,7 @@ public class P2PlayerAttack : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Period)  && !P2Health.isInputDisabled)
         {
+            animator.SetBool("IsRangedAttack", true);
             Shoot();
         }
         if (Input.GetKeyDown(KeyCode.Comma)  && !P2Health.isInputDisabled)
@@ -62,6 +63,7 @@ public class P2PlayerAttack : MonoBehaviour
             {
                 shooting = false;
                 targetTime = 0.0f;
+                animator.SetBool("IsRangedAttack", false);
             }
         }
     }

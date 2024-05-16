@@ -29,9 +29,10 @@ public class P1PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("IsRangedAttack", false);
+
         if (Input.GetKeyDown(KeyCode.C) && !P1Health.isInputDisabled)
         {
-            animator.SetBool("Attack", true);
             Attack();
         }
         if (Input.GetKeyDown(KeyCode.X) && !P1Health.isInputDisabled)
@@ -68,6 +69,7 @@ public class P1PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
+        animator.SetBool("Attack", true);
         attacking = true;
         attackArea.SetActive(attacking);
     }
@@ -75,6 +77,7 @@ public class P1PlayerAttack : MonoBehaviour
     {
         if(!shooting)
         {
+            animator.SetBool("IsRangedAttack", true);
             targetTime = 1;
             shooting = true;
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
