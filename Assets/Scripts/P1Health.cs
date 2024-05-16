@@ -23,7 +23,7 @@ public class P1Health : MonoBehaviour
 
     public Image defenseBar;
 
-    public Image ultimateBar;
+    
 
     public GameOverScreen gameOverScreen;
 

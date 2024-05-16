@@ -11,6 +11,7 @@ public class P1PlayerAttack : MonoBehaviour
     public Transform firePoint;
     public GameObject projectilePrefab;
 
+  
     private bool attacking = false;
     private bool shooting = false;
 
@@ -41,7 +42,7 @@ public class P1PlayerAttack : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z) && !P1Health.isInputDisabled)
         {
-            //ult
+           
         }
 
         if (attacking)
@@ -65,6 +66,7 @@ public class P1PlayerAttack : MonoBehaviour
                 targetTime = 0.0f;
             }
         }
+        
     }
 
     private void Attack()
@@ -85,4 +87,6 @@ public class P1PlayerAttack : MonoBehaviour
             throwNoise.SetActive(true);
         }
     }
+
+    
 }
