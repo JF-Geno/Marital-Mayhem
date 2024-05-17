@@ -2916,7 +2916,7 @@ MonoBehaviour:
   winText: {fileID: 1075229003}
   winStatsText: {fileID: 1615989292}
   music: {fileID: 1593481781}
-  youSuck: {fileID: 0}
+  youSuck: {fileID: 514493215}
   timeLeft: 3
 --- !u!1 &1222431351
 GameObject:
