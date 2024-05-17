@@ -23,7 +23,7 @@ public class P1PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        attackArea = transform.GetChild(2).gameObject;
+        attackArea = transform.GetChild(1).gameObject;
     }
 
     // Update is called once per frame
