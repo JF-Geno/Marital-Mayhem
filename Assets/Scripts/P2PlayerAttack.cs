@@ -29,14 +29,14 @@ public class P2PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetBool("IsRangedAttack", false);
+
         if (Input.GetKeyDown(KeyCode.Slash) && !P2Health.isInputDisabled)
         {
-            animator.SetBool("Attack", true);
             Attack();
         }
         if (Input.GetKeyDown(KeyCode.Period)  && !P2Health.isInputDisabled)
         {
-            animator.SetBool("IsRangedAttack", true);
             Shoot();
         }
         if (Input.GetKeyDown(KeyCode.Comma)  && !P2Health.isInputDisabled)
@@ -63,7 +63,6 @@ public class P2PlayerAttack : MonoBehaviour
             {
                 shooting = false;
                 targetTime = 0.0f;
-                animator.SetBool("IsRangedAttack", false);
             }
         }
     }
@@ -72,6 +71,7 @@ public class P2PlayerAttack : MonoBehaviour
     {
         attacking = true;
         attackArea.SetActive(attacking);
+        animator.SetBool("Attack", true);
     }
 
     private void Shoot()
@@ -84,6 +84,7 @@ public class P2PlayerAttack : MonoBehaviour
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
             throwNoise.SetActive(false);
             throwNoise.SetActive(true);
+            animator.SetBool("IsRangedAttack", true);
         }
     }
 }

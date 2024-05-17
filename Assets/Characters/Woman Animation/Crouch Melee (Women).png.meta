@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 16758addfa90b594a983b87caa7a8769
+guid: f1d78ac034bb9f143bfca44ffa0bfe47
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,112 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ranged (Women)_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 200
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1aee4ebbdb4e8d46b1be82379f204fa
-      internalID: 1147917902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_1
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 200
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a32d1e774b1857b48858fbd179783426
-      internalID: -1153058855
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_2
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 200
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6cec84f3ab15f3141b45b26e0e9a79f1
-      internalID: 330731505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_3
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 200
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 340ba3f92520eef449bc614374152bdd
-      internalID: 1654759974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_4
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 200
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f25c6eb25aef2644c969ed46a0959bb7
-      internalID: -711323168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_5
+      name: Crouch Melee (Women)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -229,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68a64426d16aca749bc794223ae0442f
-      internalID: 1445174421
+      spriteID: cd16e20d8dfb3f849ad001e841149919
+      internalID: -150912259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_6
+      name: Crouch Melee (Women)_1
       rect:
         serializedVersion: 2
         x: 100
@@ -250,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 536bac40cd5bbd443b73a127b9af6485
-      internalID: -1267765655
+      spriteID: 99a5e5e9381f3544183aebe13fe27550
+      internalID: -1129762512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_7
+      name: Crouch Melee (Women)_2
       rect:
         serializedVersion: 2
         x: 200
@@ -271,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 716cd967310cd534f90229aee5827b32
-      internalID: -1568223547
+      spriteID: b3770a9885e5d5544941200fbec67aae
+      internalID: -522936760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_8
+      name: Crouch Melee (Women)_3
       rect:
         serializedVersion: 2
         x: 300
@@ -292,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f1ad7261236ce440bb05cf0013b94f4
-      internalID: 85075393
+      spriteID: 7c4b0556652418a478e417ee4bc5eb1e
+      internalID: 772844322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_9
+      name: Crouch Melee (Women)_4
       rect:
         serializedVersion: 2
         x: 400
@@ -313,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f86368b54152c5c4289453d7f2a3d347
-      internalID: -398139014
+      spriteID: 19bc17de71c2aff4ead95ec914027d53
+      internalID: 627566269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_10
+      name: Crouch Melee (Women)_5
       rect:
         serializedVersion: 2
         x: 0
@@ -334,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afbe33ea65448c84f9df3948ddaa112e
-      internalID: 1639817682
+      spriteID: dabee898bbc201f41ac1eb6eb8e098e4
+      internalID: 33086692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_11
+      name: Crouch Melee (Women)_6
       rect:
         serializedVersion: 2
         x: 100
@@ -355,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15b260572710c364b9a54f5755c7b26e
-      internalID: 1115799437
+      spriteID: 2526fbe2ab5980a4fb4ae6ed46a39de2
+      internalID: 1696358343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_12
+      name: Crouch Melee (Women)_7
       rect:
         serializedVersion: 2
         x: 200
@@ -376,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8df0b3b28c791314188e537f3355bd1f
-      internalID: -1814925170
+      spriteID: e1656326efab50347999dc4138c8155b
+      internalID: -502184384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_13
+      name: Crouch Melee (Women)_8
       rect:
         serializedVersion: 2
         x: 300
@@ -397,29 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27520a077beb3b7418f609a5b6134f97
-      internalID: 512878099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_14
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 0
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5d86d40bfdc2eb4f9bded93d65e7d26
-      internalID: -1242669175
+      spriteID: 8cf6f00f89d90824aa70227b83d2c956
+      internalID: 1139810218
       vertices: []
       indices: 
       edges: []
@@ -435,21 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ranged (Women)_0: 1147917902
-      Ranged (Women)_1: -1153058855
-      Ranged (Women)_10: 1639817682
-      Ranged (Women)_11: 1115799437
-      Ranged (Women)_12: -1814925170
-      Ranged (Women)_13: 512878099
-      Ranged (Women)_14: -1242669175
-      Ranged (Women)_2: 330731505
-      Ranged (Women)_3: 1654759974
-      Ranged (Women)_4: -711323168
-      Ranged (Women)_5: 1445174421
-      Ranged (Women)_6: -1267765655
-      Ranged (Women)_7: -1568223547
-      Ranged (Women)_8: 85075393
-      Ranged (Women)_9: -398139014
+      Crouch Melee (Women)_0: -150912259
+      Crouch Melee (Women)_1: -1129762512
+      Crouch Melee (Women)_2: -522936760
+      Crouch Melee (Women)_3: 772844322
+      Crouch Melee (Women)_4: 627566269
+      Crouch Melee (Women)_5: 33086692
+      Crouch Melee (Women)_6: 1696358343
+      Crouch Melee (Women)_7: -502184384
+      Crouch Melee (Women)_8: 1139810218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

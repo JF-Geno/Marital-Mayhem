@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 16758addfa90b594a983b87caa7a8769
+guid: d48675e9dc660cf498b74b6735533587
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,112 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ranged (Women)_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 200
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1aee4ebbdb4e8d46b1be82379f204fa
-      internalID: 1147917902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_1
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 200
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a32d1e774b1857b48858fbd179783426
-      internalID: -1153058855
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_2
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 200
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6cec84f3ab15f3141b45b26e0e9a79f1
-      internalID: 330731505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_3
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 200
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 340ba3f92520eef449bc614374152bdd
-      internalID: 1654759974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_4
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 200
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f25c6eb25aef2644c969ed46a0959bb7
-      internalID: -711323168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_5
+      name: Ranged Crouched (Man)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -229,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68a64426d16aca749bc794223ae0442f
-      internalID: 1445174421
+      spriteID: 57b37d72f72329f4aaea6dfef50e5c35
+      internalID: 1126167603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_6
+      name: Ranged Crouched (Man)_1
       rect:
         serializedVersion: 2
         x: 100
@@ -250,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 536bac40cd5bbd443b73a127b9af6485
-      internalID: -1267765655
+      spriteID: a4541e8a80f5c554d95f9c8203643832
+      internalID: -466313245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_7
+      name: Ranged Crouched (Man)_2
       rect:
         serializedVersion: 2
         x: 200
@@ -271,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 716cd967310cd534f90229aee5827b32
-      internalID: -1568223547
+      spriteID: 90963e84607a6e54a8f40b6522ddbc76
+      internalID: 594318107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_8
+      name: Ranged Crouched (Man)_3
       rect:
         serializedVersion: 2
         x: 300
@@ -292,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f1ad7261236ce440bb05cf0013b94f4
-      internalID: 85075393
+      spriteID: e93594726db55fd43bf75d861d3fae0f
+      internalID: -1967311978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_9
+      name: Ranged Crouched (Man)_4
       rect:
         serializedVersion: 2
         x: 400
@@ -313,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f86368b54152c5c4289453d7f2a3d347
-      internalID: -398139014
+      spriteID: cdb4afb502b4df94f977ef62d46f2da2
+      internalID: 529279210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_10
+      name: Ranged Crouched (Man)_5
       rect:
         serializedVersion: 2
         x: 0
@@ -334,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afbe33ea65448c84f9df3948ddaa112e
-      internalID: 1639817682
+      spriteID: 6ff6a282ac78a6b42a5a05e29edbffe7
+      internalID: 1672718119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_11
+      name: Ranged Crouched (Man)_6
       rect:
         serializedVersion: 2
         x: 100
@@ -355,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15b260572710c364b9a54f5755c7b26e
-      internalID: 1115799437
+      spriteID: 440dd7644d307784b9fcfc0772658444
+      internalID: -2081909544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ranged (Women)_12
+      name: Ranged Crouched (Man)_7
       rect:
         serializedVersion: 2
         x: 200
@@ -376,50 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8df0b3b28c791314188e537f3355bd1f
-      internalID: -1814925170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_13
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 0
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27520a077beb3b7418f609a5b6134f97
-      internalID: 512878099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ranged (Women)_14
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 0
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5d86d40bfdc2eb4f9bded93d65e7d26
-      internalID: -1242669175
+      spriteID: 1215932a5b238e74997bd51e9d33bc90
+      internalID: -1390743820
       vertices: []
       indices: 
       edges: []
@@ -435,21 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ranged (Women)_0: 1147917902
-      Ranged (Women)_1: -1153058855
-      Ranged (Women)_10: 1639817682
-      Ranged (Women)_11: 1115799437
-      Ranged (Women)_12: -1814925170
-      Ranged (Women)_13: 512878099
-      Ranged (Women)_14: -1242669175
-      Ranged (Women)_2: 330731505
-      Ranged (Women)_3: 1654759974
-      Ranged (Women)_4: -711323168
-      Ranged (Women)_5: 1445174421
-      Ranged (Women)_6: -1267765655
-      Ranged (Women)_7: -1568223547
-      Ranged (Women)_8: 85075393
-      Ranged (Women)_9: -398139014
+      Ranged Crouched (Man)_0: 1126167603
+      Ranged Crouched (Man)_1: -466313245
+      Ranged Crouched (Man)_2: 594318107
+      Ranged Crouched (Man)_3: -1967311978
+      Ranged Crouched (Man)_4: 529279210
+      Ranged Crouched (Man)_5: 1672718119
+      Ranged Crouched (Man)_6: -2081909544
+      Ranged Crouched (Man)_7: -1390743820
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
