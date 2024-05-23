@@ -23,6 +23,7 @@ public class P1Projectile : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D hitInfo)
     {
+        
         P2Health p2Health = hitInfo.GetComponent<P2Health>();
         if(p2Health != null)
         {

@@ -21,6 +21,8 @@ public class P1PlayerAttack : MonoBehaviour
 
     public GameObject throwNoise;
 
+    public UltimateAbility ultimateAbility;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,9 @@ public class P1PlayerAttack : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z) && !P1Health.isInputDisabled)
         {
+            Debug.Log("StartUltimate");
+
+            ultimateAbility.isUltimateActive = true;
            
         }
 
