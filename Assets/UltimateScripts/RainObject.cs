@@ -9,18 +9,18 @@ public class RainObject : MonoBehaviour
     public void SetDamage(int damageAmount)
     {
         damage = damageAmount;
-        Debug.Log("ggggggggg");
-        Debug.Log(damage);
+        
+        
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+ void OnTriggerEnter2D(Collider2D other)
+{
+    
+    P1Health p1Health = other.gameObject.GetComponent<P1Health>();
+    if (p1Health != null)
     {
-        P1Health p1Health = collision.gameObject.GetComponent<P1Health>();
-        if (p1Health != null)
-        {
-            p1Health.Damage(damage);
-        }
-        Debug.Log(collision.gameObject.name);
-        Destroy(gameObject);
+        p1Health.Damage(damage);
+        
     }
+}    
 }

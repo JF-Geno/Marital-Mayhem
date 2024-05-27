@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class FlamethrowerAbility : UltimateAbility
 {
-   public float flameDuration = 5f;
+   public float flameDuration = 1f;
     private float flameTimer;
 
+    
+    
     private void Update()
     {
         if (isUltimateActive)

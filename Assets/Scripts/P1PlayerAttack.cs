@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class P1PlayerAttack : MonoBehaviour
 {
     public Animator animator;
 
     private GameObject attackArea = default;
+
+    private int _ultimate;
+    public Image ultimateBar;
+    private float ultimateTimer = 0.0f;
+    private const float ultimateRegenInterval = 1.0f;
+    private const int maxUltimate = 10;
+
+    private bool activeUlt = false;
 
     public Transform firePoint;
     public GameObject projectilePrefab;
@@ -22,11 +31,13 @@ public class P1PlayerAttack : MonoBehaviour
     public GameObject throwNoise;
 
     public UltimateAbility ultimateAbility;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         attackArea = transform.GetChild(1).gameObject;
+         _ultimate = 0;
     }
 
     // Update is called once per frame
@@ -44,10 +55,15 @@ public class P1PlayerAttack : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z) && !P1Health.isInputDisabled)
         {
-            Debug.Log("StartUltimate");
-
-            ultimateAbility.isUltimateActive = true;
            
+
+             if (activeUlt == true)
+            {
+                ULT(); 
+            }
+            else{
+                Debug.Log("Not yet");
+            }
         }
 
         if (attacking)
@@ -71,6 +87,8 @@ public class P1PlayerAttack : MonoBehaviour
                 targetTime = 0.0f;
             }
         }
+         ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
+        UltimateTimerLogic();
         
     }
 
@@ -90,6 +108,52 @@ public class P1PlayerAttack : MonoBehaviour
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
             throwNoise.SetActive(false);
             throwNoise.SetActive(true);
+        }
+    }
+
+     public void UltimateLogic()
+    {
+        if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
+        {
+            if (_ultimate < maxUltimate)
+            {
+                _ultimate += 1;
+                Debug.Log("Ultimate charge increased");
+            }
+
+            if (_ultimate == maxUltimate)
+            {
+                activeUlt = true;
+            }
+        }
+    }
+
+    private void UltimateTimerLogic()
+    {
+        if (ultimateAbility != null && ultimateAbility.isUltimateActive)
+        {
+            ultimateTimer += Time.deltaTime;
+
+            if (ultimateTimer >= ultimateRegenInterval)
+            {
+                ultimateTimer = 0.0f;
+                _ultimate -= 2;
+
+                if (_ultimate <= 0)
+                {
+                    _ultimate = 0;
+                    activeUlt = false;
+                    ultimateAbility.isUltimateActive = false;
+                }
+            }
+        }
+    }
+
+    private void ULT()
+    {
+        if (ultimateAbility != null)
+        {
+            ultimateAbility.isUltimateActive = true;
         }
     }
 

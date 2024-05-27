@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3976343217781171998
+--- !u!1 &3558157296455474234
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,29 +8,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 44955111855157697}
+  - component: {fileID: 7154080497291593656}
   m_Layer: 3
-  m_Name: CeilingCheck
+  m_Name: RainFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &44955111855157697
+--- !u!4 &7154080497291593656
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3976343217781171998}
+  m_GameObject: {fileID: 3558157296455474234}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.012, y: 0.39699996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.5272117}
+  m_LocalPosition: {x: -1.35, y: 2.9, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.2779522}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4563316976323706589}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &4801581014994851555
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 5290418580658746644}
   - component: {fileID: 1755231358964372035}
   - component: {fileID: 177691872378191454}
+  - component: {fileID: 3434090982918651067}
   m_Layer: 3
   m_Name: Woman
   m_TagString: Untagged
@@ -101,9 +102,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9189285060593325619}
-  - {fileID: 44955111855157697}
   - {fileID: 6893455208886956592}
   - {fileID: 7114527633077938462}
+  - {fileID: 7154080497291593656}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &7320681466011979852
@@ -197,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b829e6dd1fce72540a754f44861b6e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 400
+  m_JumpForce: 600
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -205,7 +206,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 23
   m_GroundCheck: {fileID: 9189285060593325619}
-  m_CeilingCheck: {fileID: 44955111855157697}
   m_CrouchDisableCollider: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
@@ -288,6 +288,7 @@ MonoBehaviour:
   firePoint: {fileID: 7114527633077938462}
   projectilePrefab: {fileID: 8763727390696608969, guid: 4c9a9047c43617e4db01d3ec9890e6ea, type: 3}
   targetTime: 0
+  ultimateAbility: {fileID: 3434090982918651067}
   throwNoise: {fileID: 0}
 --- !u!95 &5290418580658746644
 Animator:
@@ -319,7 +320,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 6034744497209346447}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2bcc0871093c29942b94f0ce5df336dc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -371,6 +372,27 @@ MonoBehaviour:
   KBCounter: 0
   KBTotalTime: 0.2
   KnockFromRight: 0
+--- !u!114 &3434090982918651067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6034744497209346447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14bda36078bf65b4ea546b524fcc327f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPrefab: {fileID: 8881140345850758866, guid: 3d20beff65706004797dd3e25690af58, type: 3}
+  fireRate: 6
+  damageAmount: 1
+  isUltimateActive: 0
+  firePoint: {fileID: 7154080497291593656}
+  knockBack: {fileID: 0}
+  numberOfObjects: 6
+  spawnArea: {x: 30, y: 10, z: 0}
+  spawnHeight: 3
 --- !u!1 &7017114779202063891
 GameObject:
   m_ObjectHideFlags: 0

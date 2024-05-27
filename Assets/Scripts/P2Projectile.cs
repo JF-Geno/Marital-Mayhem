@@ -8,10 +8,12 @@ public class P2Projectile : MonoBehaviour
     public int damage = 4;
     public Rigidbody2D rb;
     public float degreesPerSec = 360f;
+    public P2PlayerAttack p2PlayerAttack;
 
     void Start()
     {
         rb.velocity = transform.right * speed;
+        p2PlayerAttack = GameObject.FindObjectOfType<P2PlayerAttack>(); 
     }
 
     void Update()
@@ -27,6 +29,7 @@ public class P2Projectile : MonoBehaviour
         if (p1Health != null)
         {
             p1Health.Damage(damage);
+             p2PlayerAttack.UltimateLogic();
         }
         Debug.Log(hitInfo.name);
         Destroy(gameObject);

@@ -126,6 +126,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5021894714640209208}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1465415075157732079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9192369873964893638}
+  m_Layer: 3
+  m_Name: FlameFirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9192369873964893638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465415075157732079}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.59, y: 0.17, z: 0}
+  m_LocalScale: {x: 0.24860586, y: 0.23963396, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5021894714640209208}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3514151638039302012
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 3514151638039302012}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.013, y: -0.487, z: 0}
+  m_LocalPosition: {x: -0.013, y: -0.464, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.5272117}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -175,6 +206,7 @@ GameObject:
   - component: {fileID: 89850979162817721}
   - component: {fileID: 1059899307094914044}
   - component: {fileID: 1829440003633425188}
+  - component: {fileID: 7022992547090982130}
   m_Layer: 3
   m_Name: Man
   m_TagString: Untagged
@@ -196,9 +228,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5376923120224245226}
-  - {fileID: 1158431228470032061}
   - {fileID: 8402147371662271924}
   - {fileID: 7085284141661638595}
+  - {fileID: 9192369873964893638}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &434665540744606073
@@ -292,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b829e6dd1fce72540a754f44861b6e39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 400
+  m_JumpForce: 600
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -300,7 +332,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 23
   m_GroundCheck: {fileID: 5376923120224245226}
-  m_CeilingCheck: {fileID: 1158431228470032061}
   m_CrouchDisableCollider: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
@@ -363,7 +394,6 @@ MonoBehaviour:
   highStun: 2
   healthBar: {fileID: 0}
   defenseBar: {fileID: 0}
-  ultimateBar: {fileID: 0}
   gameOverScreen: {fileID: 0}
   punchNoise: {fileID: 0}
   projectileNoise: {fileID: 0}
@@ -384,6 +414,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8763727390696608969, guid: 73105f5f885ea334a9e8e4023998b4f6, type: 3}
   targetTime: 0
   throwNoise: {fileID: 0}
+  ultimateAbility: {fileID: 7022992547090982130}
 --- !u!95 &89850979162817721
 Animator:
   serializedVersion: 5
@@ -414,7 +445,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 5931841567474218615}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2bcc0871093c29942b94f0ce5df336dc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -466,34 +497,22 @@ MonoBehaviour:
   KBCounter: 0
   KBTotalTime: 0.2
   KnockFromRight: 0
---- !u!1 &7200520841575680992
-GameObject:
+--- !u!114 &7022992547090982130
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1158431228470032061}
-  m_Layer: 3
-  m_Name: CeilingCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1158431228470032061
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7200520841575680992}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.012, y: 0.39699996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.5272117}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5021894714640209208}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 5931841567474218615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe77c4c75fd2c147a72744ef8a70920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPrefab: {fileID: 1668337835393732646, guid: 7e64d45f99f2ca648a7f98760047e44a, type: 3}
+  fireRate: 10
+  damageAmount: 1
+  isUltimateActive: 0
+  firePoint: {fileID: 9192369873964893638}
+  knockBack: {fileID: 0}
+  flameDuration: 1

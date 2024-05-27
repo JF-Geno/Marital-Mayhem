@@ -8,6 +8,14 @@ public class P2AttackArea : MonoBehaviour
 
     public KnockBack knockBack;
 
+   public P2PlayerAttack p2PlayerAttack;
+
+ void Start()
+    {
+        
+        p2PlayerAttack = GameObject.FindObjectOfType<P2PlayerAttack>(); 
+        
+    }
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.GetComponent<P1Health>() != null)
@@ -16,6 +24,7 @@ public class P2AttackArea : MonoBehaviour
             KB2(collider);
             P1Health health = collider.GetComponent<P1Health>();
             health.Damage(damage);
+            p2PlayerAttack.UltimateLogic();
         }
     }
 

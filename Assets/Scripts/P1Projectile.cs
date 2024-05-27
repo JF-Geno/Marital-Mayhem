@@ -9,9 +9,13 @@ public class P1Projectile : MonoBehaviour
     public Rigidbody2D rb;
     public float degreesPerSec = 360f;
 
+    public P1PlayerAttack p1PlayerAttack;
+
+
     void Start()
     {
         rb.velocity = transform.right * speed;
+        p1PlayerAttack = GameObject.FindObjectOfType<P1PlayerAttack>(); 
     }
 
     void Update()
@@ -28,6 +32,7 @@ public class P1Projectile : MonoBehaviour
         if(p2Health != null)
         {
             p2Health.Damage(damage);
+             p1PlayerAttack.UltimateLogic();
         }
         Debug.Log(hitInfo.name);
         Destroy(gameObject);

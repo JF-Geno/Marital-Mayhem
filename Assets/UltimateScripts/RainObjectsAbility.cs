@@ -8,6 +8,8 @@ public class RainObjectsAbility : UltimateAbility
     public Vector3 spawnArea;
     public float spawnHeight = 10f;
 
+    
+
     private void Update()
     {
         
