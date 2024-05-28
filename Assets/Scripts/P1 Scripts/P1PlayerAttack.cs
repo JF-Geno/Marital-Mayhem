@@ -20,7 +20,6 @@ public class P1PlayerAttack : MonoBehaviour
     public Transform firePoint;
     public GameObject projectilePrefab;
 
-  
     private bool attacking = false;
     private bool shooting = false;
 
@@ -31,13 +30,15 @@ public class P1PlayerAttack : MonoBehaviour
     public GameObject throwNoise;
 
     public UltimateAbility ultimateAbility;
-    
+
+    //for banner
+    public UltimateBannerManager ultimateBannerManger;
 
     // Start is called before the first frame update
     void Start()
     {
         attackArea = transform.GetChild(1).gameObject;
-         _ultimate = 0;
+        _ultimate = 0;
     }
 
     // Update is called once per frame
@@ -56,13 +57,12 @@ public class P1PlayerAttack : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z) && !P1Health.isInputDisabled)
         {
-           
-
-             if (activeUlt == true)
+            if (activeUlt == true)
             {
-                ULT(); 
+                ULT();
             }
-            else{
+            else
+            {
                 Debug.Log("Not yet");
             }
         }
@@ -82,15 +82,14 @@ public class P1PlayerAttack : MonoBehaviour
         if (shooting)
         {
             targetTime -= Time.deltaTime;
-            if(targetTime <= 0.0f)
+            if (targetTime <= 0.0f)
             {
                 shooting = false;
                 targetTime = 0.0f;
             }
         }
-         ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
+        ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
         UltimateTimerLogic();
-        
     }
 
     private void Attack()
@@ -101,7 +100,7 @@ public class P1PlayerAttack : MonoBehaviour
     }
     private void Shoot()
     {
-        if(!shooting)
+        if (!shooting)
         {
             animator.SetBool("IsRangedAttack", true);
             targetTime = 1;
@@ -112,7 +111,7 @@ public class P1PlayerAttack : MonoBehaviour
         }
     }
 
-     public void UltimateLogic()
+    public void UltimateLogic()
     {
         if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
         {
@@ -125,6 +124,7 @@ public class P1PlayerAttack : MonoBehaviour
             if (_ultimate == maxUltimate)
             {
                 activeUlt = true;
+                ultimateBannerManger.UltReady(ultimateAbility.ultReadyVoiceCue);
             }
         }
     }
@@ -146,6 +146,7 @@ public class P1PlayerAttack : MonoBehaviour
                     activeUlt = false;
                     ultimateAbility.isUltimateActive = false;
                     animator.SetBool("UltimateIsActive", false);
+                    ultimateBannerManger.DeactivateUltBanner();
                 }
             }
         }
@@ -158,8 +159,7 @@ public class P1PlayerAttack : MonoBehaviour
             ultimateAbility.isUltimateActive = true;
             animator.SetBool("UltimateIsActive", true);
             animator.SetBool("UltimateStarted", true);
+            ultimateBannerManger.ActivateUltBanner(ultimateAbility.ultName, ultimateAbility.ultActivatedVoiceCue);
         }
     }
-
-    
 }
