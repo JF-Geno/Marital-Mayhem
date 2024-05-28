@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockBack: {fileID: 0}
+  p1PlayerAttack: {fileID: 0}
 --- !u!1 &599689603862199681
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +189,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5021894714640209208}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4985422253593764318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7825247408147310811}
+  m_Layer: 3
+  m_Name: FlameFirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7825247408147310811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4985422253593764318}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.59, y: 0.17, z: 0}
+  m_LocalScale: {x: 0.24860586, y: 0.23963396, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5021894714640209208}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5931841567474218615
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +238,7 @@ GameObject:
   - component: {fileID: 89850979162817721}
   - component: {fileID: 1059899307094914044}
   - component: {fileID: 1829440003633425188}
-  - component: {fileID: 7022992547090982130}
+  - component: {fileID: 3818223725777595578}
   m_Layer: 3
   m_Name: Man
   m_TagString: Untagged
@@ -231,6 +263,7 @@ Transform:
   - {fileID: 8402147371662271924}
   - {fileID: 7085284141661638595}
   - {fileID: 9192369873964893638}
+  - {fileID: 7825247408147310811}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &434665540744606073
@@ -410,11 +443,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 89850979162817721}
+  ultimateBar: {fileID: 0}
   firePoint: {fileID: 7085284141661638595}
   projectilePrefab: {fileID: 8763727390696608969, guid: 73105f5f885ea334a9e8e4023998b4f6, type: 3}
   targetTime: 0
   throwNoise: {fileID: 0}
-  ultimateAbility: {fileID: 7022992547090982130}
+  ultimateAbility: {fileID: 3818223725777595578}
 --- !u!95 &89850979162817721
 Animator:
   serializedVersion: 5
@@ -497,7 +531,7 @@ MonoBehaviour:
   KBCounter: 0
   KBTotalTime: 0.2
   KnockFromRight: 0
---- !u!114 &7022992547090982130
+--- !u!114 &3818223725777595578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -513,6 +547,6 @@ MonoBehaviour:
   fireRate: 10
   damageAmount: 1
   isUltimateActive: 0
-  firePoint: {fileID: 9192369873964893638}
+  firePoint: {fileID: 7825247408147310811}
   knockBack: {fileID: 0}
   flameDuration: 1

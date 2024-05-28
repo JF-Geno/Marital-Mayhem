@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 5290418580658746644}
   - component: {fileID: 1755231358964372035}
   - component: {fileID: 177691872378191454}
-  - component: {fileID: 3434090982918651067}
+  - component: {fileID: 4928027929491545388}
   m_Layer: 3
   m_Name: Woman
   m_TagString: Untagged
@@ -105,6 +105,7 @@ Transform:
   - {fileID: 6893455208886956592}
   - {fileID: 7114527633077938462}
   - {fileID: 7154080497291593656}
+  - {fileID: 4860603171236824299}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &7320681466011979852
@@ -285,10 +286,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5290418580658746644}
+  ultimateBar: {fileID: 0}
   firePoint: {fileID: 7114527633077938462}
   projectilePrefab: {fileID: 8763727390696608969, guid: 4c9a9047c43617e4db01d3ec9890e6ea, type: 3}
   targetTime: 0
-  ultimateAbility: {fileID: 3434090982918651067}
+  ultimateAbility: {fileID: 4928027929491545388}
   throwNoise: {fileID: 0}
 --- !u!95 &5290418580658746644
 Animator:
@@ -372,7 +374,7 @@ MonoBehaviour:
   KBCounter: 0
   KBTotalTime: 0.2
   KnockFromRight: 0
---- !u!114 &3434090982918651067
+--- !u!114 &4928027929491545388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -388,7 +390,7 @@ MonoBehaviour:
   fireRate: 6
   damageAmount: 1
   isUltimateActive: 0
-  firePoint: {fileID: 7154080497291593656}
+  firePoint: {fileID: 4860603171236824299}
   knockBack: {fileID: 0}
   numberOfObjects: 6
   spawnArea: {x: 30, y: 10, z: 0}
@@ -488,6 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockBack: {fileID: 0}
+  p2PlayerAttack: {fileID: 0}
 --- !u!1 &7019815021960325540
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +518,37 @@ Transform:
   m_LocalRotation: {x: -0, y: 1, z: -0, w: -0}
   m_LocalPosition: {x: -0.35, y: 0.07500005, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5272117}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4563316976323706589}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &9057141472036868407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4860603171236824299}
+  m_Layer: 3
+  m_Name: RainFirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &4860603171236824299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9057141472036868407}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.35, y: 2.9, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.2779522}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4563316976323706589}

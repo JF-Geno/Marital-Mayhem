@@ -44,21 +44,16 @@ private bool activeUlt = false;
     void Update()
     {
         animator.SetBool("IsRangedAttack", false);
+        animator.SetBool("UltimateStarted", false);
+
 
         if (Input.GetKeyDown(KeyCode.Slash) && !P2Health.isInputDisabled)
         {
-            
             Attack();
-
-           // UltimateLogic();
-
         }
         if (Input.GetKeyDown(KeyCode.Period)  && !P2Health.isInputDisabled)
         {
             Shoot();
-
-           // UltimateLogic();
-
         }
         if (Input.GetKeyDown(KeyCode.Comma)  && !P2Health.isInputDisabled)
         {
@@ -153,6 +148,7 @@ private bool activeUlt = false;
                     _ultimate = 0;
                     activeUlt = false;
                     ultimateAbility.isUltimateActive = false;
+                    animator.SetBool("UltimateIsActive", false);
                 }
             }
         }
@@ -163,6 +159,8 @@ private bool activeUlt = false;
         if (ultimateAbility != null)
         {
             ultimateAbility.isUltimateActive = true;
+            animator.SetBool("UltimateIsActive", true);
+            animator.SetBool("UltimateStarted", true);
         }
     }
 }

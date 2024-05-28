@@ -44,6 +44,7 @@ public class P1PlayerAttack : MonoBehaviour
     void Update()
     {
         animator.SetBool("IsRangedAttack", false);
+        animator.SetBool("UltimateStarted", false);
 
         if (Input.GetKeyDown(KeyCode.C) && !P1Health.isInputDisabled)
         {
@@ -144,6 +145,7 @@ public class P1PlayerAttack : MonoBehaviour
                     _ultimate = 0;
                     activeUlt = false;
                     ultimateAbility.isUltimateActive = false;
+                    animator.SetBool("UltimateIsActive", false);
                 }
             }
         }
@@ -154,6 +156,8 @@ public class P1PlayerAttack : MonoBehaviour
         if (ultimateAbility != null)
         {
             ultimateAbility.isUltimateActive = true;
+            animator.SetBool("UltimateIsActive", true);
+            animator.SetBool("UltimateStarted", true);
         }
     }
 
