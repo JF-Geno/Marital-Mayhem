@@ -15,12 +15,11 @@ public class P2PlayerAttack : MonoBehaviour
     private const float ultimateRegenInterval = 1.0f;
     private const int maxUltimate = 10;
 
-private bool activeUlt = false;
+    private bool activeUlt = false;
 
     public Transform firePoint;
     public GameObject projectilePrefab;
-    
-    
+
     private bool attacking = false;
     private bool shooting = false;
 
@@ -29,13 +28,14 @@ private bool activeUlt = false;
     private float timer = 0f;
     public UltimateAbility ultimateAbility;
     public GameObject throwNoise;
-    
+
+    //for banner
+    public UltimateBannerManager ultimateBannerManager;
 
     // Start is called before the first frame update
     void Start()
     {
         attackArea = transform.GetChild(1).gameObject;
-        
 
         _ultimate = 0;
     }
@@ -51,21 +51,20 @@ private bool activeUlt = false;
         {
             Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Period)  && !P2Health.isInputDisabled)
+        if (Input.GetKeyDown(KeyCode.Period) && !P2Health.isInputDisabled)
         {
             Shoot();
         }
-        if (Input.GetKeyDown(KeyCode.Comma)  && !P2Health.isInputDisabled)
+        if (Input.GetKeyDown(KeyCode.Comma) && !P2Health.isInputDisabled)
         {
             if (activeUlt == true)
             {
-                ULT(); 
+                ULT();
             }
-            else{
+            else
+            {
                 Debug.Log("Not yet");
             }
-
-           
         }
 
         if (attacking)
@@ -89,7 +88,7 @@ private bool activeUlt = false;
                 targetTime = 0.0f;
             }
         }
-        
+
         ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
         UltimateTimerLogic();
     }
@@ -103,7 +102,6 @@ private bool activeUlt = false;
 
     private void Shoot()
     {
-       
         if (!shooting)
         {
             targetTime = 1;
@@ -125,9 +123,11 @@ private bool activeUlt = false;
                 Debug.Log("Ultimate charge increased");
             }
 
-            if (_ultimate == maxUltimate)
+            if (_ultimate == maxUltimate && !activeUlt)
             {
                 activeUlt = true;
+                //for banner
+                ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
             }
         }
     }
@@ -149,6 +149,8 @@ private bool activeUlt = false;
                     activeUlt = false;
                     ultimateAbility.isUltimateActive = false;
                     animator.SetBool("UltimateIsActive", false);
+                    //for banner
+                    ultimateBannerManager.DeactivateUltBanner();
                 }
             }
         }
@@ -161,6 +163,8 @@ private bool activeUlt = false;
             ultimateAbility.isUltimateActive = true;
             animator.SetBool("UltimateIsActive", true);
             animator.SetBool("UltimateStarted", true);
+            //for banner
+            ultimateBannerManager.ActivateUltBanner(ultimateAbility.ultName, ultimateAbility.ultActivatedVoiceCue);
         }
     }
 }

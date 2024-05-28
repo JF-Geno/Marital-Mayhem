@@ -392,6 +392,9 @@ MonoBehaviour:
   isUltimateActive: 0
   firePoint: {fileID: 4860603171236824299}
   knockBack: {fileID: 0}
+  ultName: Child Support
+  ultActivatedVoiceCue: {fileID: 0}
+  ultReadyVoiceCue: {fileID: 0}
   numberOfObjects: 6
   spawnArea: {x: 30, y: 10, z: 0}
   spawnHeight: 3

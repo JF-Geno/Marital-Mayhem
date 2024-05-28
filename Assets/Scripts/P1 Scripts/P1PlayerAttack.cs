@@ -32,7 +32,7 @@ public class P1PlayerAttack : MonoBehaviour
     public UltimateAbility ultimateAbility;
 
     //for banner
-    public UltimateBannerManager ultimateBannerManger;
+    public UltimateBannerManager ultimateBannerManager;
 
     // Start is called before the first frame update
     void Start()
@@ -121,10 +121,11 @@ public class P1PlayerAttack : MonoBehaviour
                 Debug.Log("Ultimate charge increased");
             }
 
-            if (_ultimate == maxUltimate)
+            if (_ultimate == maxUltimate && !activeUlt)
             {
                 activeUlt = true;
-                ultimateBannerManger.UltReady(ultimateAbility.ultReadyVoiceCue);
+                //for banner
+                ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
             }
         }
     }

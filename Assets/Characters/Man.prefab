@@ -449,6 +449,8 @@ MonoBehaviour:
   targetTime: 0
   throwNoise: {fileID: 0}
   ultimateAbility: {fileID: 3818223725777595578}
+  ultimateAbility: {fileID: 7022992547090982130}
+  ultimateBannerManager: {fileID: 0}
 --- !u!95 &89850979162817721
 Animator:
   serializedVersion: 5
@@ -549,4 +551,7 @@ MonoBehaviour:
   isUltimateActive: 0
   firePoint: {fileID: 7825247408147310811}
   knockBack: {fileID: 0}
+  ultName: Gaslight
+  ultActivatedVoiceCue: {fileID: 0}
+  ultReadyVoiceCue: {fileID: 0}
   flameDuration: 1
