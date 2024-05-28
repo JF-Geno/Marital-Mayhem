@@ -2479,7 +2479,7 @@ MonoBehaviour:
   player1Follow: {fileID: 657614615}
   player2Follow: {fileID: 108676499}
   DialogueFrequency: 30
-  DialogueChance: 25
+  DialogueChance: 75
 --- !u!4 &1006940607
 Transform:
   m_ObjectHideFlags: 0
@@ -4646,10 +4646,6 @@ PrefabInstance:
       propertyPath: m_JumpForce
       value: 600
       objectReference: {fileID: 0}
-    - target: {fileID: 1755231358964372035, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 2bcc0871093c29942b94f0ce5df336dc, type: 2}
     - target: {fileID: 2299746028527762547, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
       propertyPath: throwNoise
       value: 
@@ -4771,10 +4767,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1059899307094914044, guid: b9413967164c41b4884e84749f86a571, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 2bcc0871093c29942b94f0ce5df336dc, type: 2}
     - target: {fileID: 1651190417759255320, guid: b9413967164c41b4884e84749f86a571, type: 3}
       propertyPath: healthBar
       value: 
