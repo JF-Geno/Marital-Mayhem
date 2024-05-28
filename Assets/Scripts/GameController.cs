@@ -24,12 +24,17 @@ public class GameController : MonoBehaviour
         if (playerNumber == 1)
         {
             player1 = characterInstance;
-            characterInstance.AddComponent<P1Controls>();
+            characterInstance.AddComponent<PlayerMovementP1>();
         }
         else if (playerNumber == 2)
         {
             player2 = characterInstance;
-            characterInstance.AddComponent<P2Controls>();
+            characterInstance.AddComponent<PlayerMovementP2>();
+            characterInstance.AddComponent<P2Health>();
+            characterInstance.AddComponent<P2Attack>();
+            characterInstance.AddComponent<>();
+            characterInstance.AddComponent<PlayerMovementP2>();
+
         }
     }
 }
