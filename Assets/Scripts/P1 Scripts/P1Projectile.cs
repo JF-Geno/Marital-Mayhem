@@ -11,11 +11,10 @@ public class P1Projectile : MonoBehaviour
 
     public P1PlayerAttack p1PlayerAttack;
 
-
     void Start()
     {
         rb.velocity = transform.right * speed;
-        p1PlayerAttack = GameObject.FindObjectOfType<P1PlayerAttack>(); 
+        p1PlayerAttack = GameObject.FindObjectOfType<P1PlayerAttack>();
     }
 
     void Update()
@@ -25,14 +24,13 @@ public class P1Projectile : MonoBehaviour
         transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot + rotAmount));
     }
 
-    void OnTriggerEnter2D (Collider2D hitInfo)
+    void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        
         P2Health p2Health = hitInfo.GetComponent<P2Health>();
-        if(p2Health != null)
+        if (p2Health != null)
         {
             p2Health.Damage(damage);
-             p1PlayerAttack.UltimateLogic();
+            p1PlayerAttack.UltimateLogic();
         }
         Debug.Log(hitInfo.name);
         Destroy(gameObject);

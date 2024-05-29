@@ -23,8 +23,6 @@ public class P1Health : MonoBehaviour
 
     public Image defenseBar;
 
-    
-
     public GameOverScreen gameOverScreen;
 
     public GameObject punchNoise;

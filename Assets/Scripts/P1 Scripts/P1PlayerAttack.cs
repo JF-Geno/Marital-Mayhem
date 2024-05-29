@@ -147,7 +147,7 @@ public class P1PlayerAttack : MonoBehaviour
                     activeUlt = false;
                     ultimateAbility.isUltimateActive = false;
                     animator.SetBool("UltimateIsActive", false);
-                    ultimateBannerManger.DeactivateUltBanner();
+                    ultimateBannerManager.DeactivateUltBanner();
                 }
             }
         }
@@ -160,7 +160,7 @@ public class P1PlayerAttack : MonoBehaviour
             ultimateAbility.isUltimateActive = true;
             animator.SetBool("UltimateIsActive", true);
             animator.SetBool("UltimateStarted", true);
-            ultimateBannerManger.ActivateUltBanner(ultimateAbility.ultName, ultimateAbility.ultActivatedVoiceCue);
+            ultimateBannerManager.ActivateUltBanner(ultimateAbility.ultName, ultimateAbility.ultActivatedVoiceCue);
         }
     }
 }

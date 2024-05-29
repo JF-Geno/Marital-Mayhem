@@ -8,13 +8,11 @@ public class P2AttackArea : MonoBehaviour
 
     public KnockBack knockBack;
 
-   public P2PlayerAttack p2PlayerAttack;
+    public P2PlayerAttack p2PlayerAttack;
 
- void Start()
+    void Start()
     {
-        
-        p2PlayerAttack = GameObject.FindObjectOfType<P2PlayerAttack>(); 
-        
+        p2PlayerAttack = GameObject.FindObjectOfType<P2PlayerAttack>();
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -28,7 +26,7 @@ public class P2AttackArea : MonoBehaviour
         }
     }
 
-     public void KB2(Collider2D collider) 
+    public void KB2(Collider2D collider)
     {
         knockBack.KBCounter = knockBack.KBTotalTime;
         if (collider.transform.position.x <= transform.position.x)

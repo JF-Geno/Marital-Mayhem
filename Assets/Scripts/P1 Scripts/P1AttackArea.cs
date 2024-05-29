@@ -8,26 +8,24 @@ public class P1AttackArea : MonoBehaviour
 
     public KnockBack knockBack;
 
-       public P1PlayerAttack p1PlayerAttack;
+    public P1PlayerAttack p1PlayerAttack;
 
- void Start()
+    void Start()
     {
-        
-        p1PlayerAttack = GameObject.FindObjectOfType<P1PlayerAttack>(); 
-        
+        p1PlayerAttack = GameObject.FindObjectOfType<P1PlayerAttack>();
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.GetComponent<P2Health>() != null)
         {
             Debug.Log("man got ");
-             KB1(collider);
+            KB1(collider);
             P2Health health = collider.GetComponent<P2Health>();
             health.Damage(damage);
             p1PlayerAttack.UltimateLogic();
         }
     }
-     public void KB1(Collider2D collider) 
+    public void KB1(Collider2D collider)
     {
         knockBack.KBCounter = knockBack.KBTotalTime;
         if (collider.transform.position.x <= transform.position.x)

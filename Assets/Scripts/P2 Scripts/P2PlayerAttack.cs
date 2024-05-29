@@ -46,7 +46,6 @@ public class P2PlayerAttack : MonoBehaviour
         animator.SetBool("IsRangedAttack", false);
         animator.SetBool("UltimateStarted", false);
 
-
         if (Input.GetKeyDown(KeyCode.Slash) && !P2Health.isInputDisabled)
         {
             Attack();

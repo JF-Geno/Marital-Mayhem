@@ -710,7 +710,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1829440003633425188, guid: b9413967164c41b4884e84749f86a571, type: 3}
   m_PrefabInstance: {fileID: 2322178637872098496}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2322178637872098498}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5727aad8f56c0c34cb842961f044907e, type: 3}
@@ -3857,6 +3857,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!4 &1287813956 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7114527633077938462, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
+  m_PrefabInstance: {fileID: 2271576715436681682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1291983837 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7154080497291593656, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
+  m_PrefabInstance: {fileID: 2271576715436681682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1347668639
 GameObject:
   m_ObjectHideFlags: 0
@@ -5332,6 +5342,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1917664918 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7825247408147310811, guid: b9413967164c41b4884e84749f86a571, type: 3}
+  m_PrefabInstance: {fileID: 2322178637872098496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1979879522
 GameObject:
   m_ObjectHideFlags: 0
@@ -5416,6 +5431,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2299746028527762547, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 7206243691493587205}
+    - target: {fileID: 2299746028527762547, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 1287813956}
+    - target: {fileID: 2299746028527762547, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
       propertyPath: throwNoise
       value: 
       objectReference: {fileID: 399944726}
@@ -5426,7 +5449,11 @@ PrefabInstance:
     - target: {fileID: 2299746028527762547, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
       propertyPath: ultimateAbility
       value: 
-      objectReference: {fileID: 7206243691493587211}
+      objectReference: {fileID: 7206243691493587203}
+    - target: {fileID: 2299746028527762547, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 8763727390696608969, guid: 4c9a9047c43617e4db01d3ec9890e6ea, type: 3}
     - target: {fileID: 2299746028527762547, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
       propertyPath: ultimateBannerManager
       value: 
@@ -5476,9 +5503,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4928027929491545388, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 1291983837}
+    - target: {fileID: 4928027929491545388, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
       propertyPath: knockBack
       value: 
       objectReference: {fileID: 322696316}
+    - target: {fileID: 4928027929491545388, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
+      propertyPath: ultReadyVoiceCue
+      value: 
+      objectReference: {fileID: 443843706}
+    - target: {fileID: 4928027929491545388, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
+      propertyPath: ultActivatedVoiceCue
+      value: 
+      objectReference: {fileID: 1899476990}
     - target: {fileID: 6034744497209346447, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
       propertyPath: m_Name
       value: Woman
@@ -5512,7 +5551,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 869970263}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9057141472036868407, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
@@ -5608,10 +5648,6 @@ PrefabInstance:
       propertyPath: ultimateBar
       value: 
       objectReference: {fileID: 26755254}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
     - target: {fileID: 8531776228430262152, guid: b9413967164c41b4884e84749f86a571, type: 3}
       propertyPath: ultimateAbility
       value: 
@@ -5621,13 +5657,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1502001099}
     m_RemovedComponents:
-    - {fileID: 7022992547090982130, guid: b9413967164c41b4884e84749f86a571, type: 3}
+    - {fileID: 3818223725777595578, guid: b9413967164c41b4884e84749f86a571, type: 3}
     m_RemovedGameObjects:
-    - {fileID: 7200520841575680992, guid: b9413967164c41b4884e84749f86a571, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5021894714640209208, guid: b9413967164c41b4884e84749f86a571, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1166925136}
+    - {fileID: 1465415075157732079, guid: b9413967164c41b4884e84749f86a571, type: 3}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5931841567474218615, guid: b9413967164c41b4884e84749f86a571, type: 3}
       insertIndex: -1
@@ -5654,7 +5687,7 @@ MonoBehaviour:
   fireRate: 10
   damageAmount: 1
   isUltimateActive: 0
-  firePoint: {fileID: 1166925136}
+  firePoint: {fileID: 1917664918}
   knockBack: {fileID: 7206243691493587193}
   ultName: Gaslight
   ultActivatedVoiceCue: {fileID: 1184689112}
@@ -5676,30 +5709,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4563316976323706589, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
   m_PrefabInstance: {fileID: 2271576715436681682}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7206243691493587211
+--- !u!114 &7206243691493587203 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4928027929491545388, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
+  m_PrefabInstance: {fileID: 2271576715436681682}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247019317}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14bda36078bf65b4ea546b524fcc327f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 8881140345850758866, guid: 3d20beff65706004797dd3e25690af58, type: 3}
-  fireRate: 6
-  damageAmount: 1
-  isUltimateActive: 0
-  firePoint: {fileID: 58881063}
-  knockBack: {fileID: 322696316}
-  ultName: Child Support
-  ultActivatedVoiceCue: {fileID: 1899476990}
-  ultReadyVoiceCue: {fileID: 443843706}
-  numberOfObjects: 6
-  spawnArea: {x: 30, y: 10, z: 0}
-  spawnHeight: 3
+--- !u!95 &7206243691493587205 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5290418580658746644, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
+  m_PrefabInstance: {fileID: 2271576715436681682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

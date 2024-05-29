@@ -13,7 +13,7 @@ public class P2Projectile : MonoBehaviour
     void Start()
     {
         rb.velocity = transform.right * speed;
-        p2PlayerAttack = GameObject.FindObjectOfType<P2PlayerAttack>(); 
+        p2PlayerAttack = GameObject.FindObjectOfType<P2PlayerAttack>();
     }
 
     void Update()
@@ -29,7 +29,7 @@ public class P2Projectile : MonoBehaviour
         if (p1Health != null)
         {
             p1Health.Damage(damage);
-             p2PlayerAttack.UltimateLogic();
+            p2PlayerAttack.UltimateLogic();
         }
         Debug.Log(hitInfo.name);
         Destroy(gameObject);

@@ -14,11 +14,8 @@ public class P2Health : MonoBehaviour
     private float defenseTimer = 0.0f;
     private const float defenseRegenInterval = 3.0f;
 
-    
-
     public static bool isInputDisabled = false;
 
-    
     public float lowStun = 1f;
     public float highStun = 2f;
 
@@ -44,21 +41,20 @@ public class P2Health : MonoBehaviour
     }
     public void healthController(int amount)
     {
-        
-
         if (amount <= 3)
         {
             punchNoise.SetActive(false);
             punchNoise.SetActive(true);
             _health -= amount;
             Debug.Log($"H: {amount} ");
-        }else if(amount > 3 && _defense > 0)
+        }
+        else if (amount > 3 && _defense > 0)
         {
             projectileNoise.SetActive(false);
             projectileNoise.SetActive(true);
-            _defense -=2;
+            _defense -= 2;
 
-            int damageTaken = 10 -_defense;
+            int damageTaken = 10 - _defense;
             int dT = amount + damageTaken;
             Debug.Log($"H: {dT} {damageTaken}");
             _health -= dT;
@@ -67,14 +63,14 @@ public class P2Health : MonoBehaviour
         {
             projectileNoise.SetActive(false);
             projectileNoise.SetActive(true);
-            int damageTaken = 10 -_defense;
+            int damageTaken = 10 - _defense;
             int dT = amount + damageTaken;
             Debug.Log($"H: {dT} {damageTaken}");
             _health -= dT;
         }
-      
-        Debug.Log($"Health: {_health/ (float)MAX_HEALTH:P0}");
-        Debug.Log($"Defense: {_defense/(float)10:P0}");
+
+        Debug.Log($"Health: {_health / (float)MAX_HEALTH:P0}");
+        Debug.Log($"Defense: {_defense / (float)10:P0}");
     }
 
     private void Update()
@@ -86,22 +82,20 @@ public class P2Health : MonoBehaviour
             Heal(10);
         }
 
-           if (_defense < 10)
-    {
-        defenseTimer += Time.deltaTime; 
-        if (defenseTimer >= defenseRegenInterval)
+        if (_defense < 10)
         {
-            defenseTimer = 0.0f; 
-            _defense += 2; 
-            if (_defense > 10)
+            defenseTimer += Time.deltaTime;
+            if (defenseTimer >= defenseRegenInterval)
             {
-                _defense = 10; 
+                defenseTimer = 0.0f;
+                _defense += 2;
+                if (_defense > 10)
+                {
+                    _defense = 10;
+                }
+                UpdateUI();
             }
-            UpdateUI(); 
         }
-    }
-
-
     }
 
     public void Damage(int amount)
@@ -168,18 +162,16 @@ public class P2Health : MonoBehaviour
 
     {
         healthBar.fillAmount = _health / (float)MAX_HEALTH;
-        defenseBar.fillAmount = _defense/(float)10;
+        defenseBar.fillAmount = _defense / (float)10;
 
         // ultimateBar.fillAmount =...;
     }
 
-     public void Stun(float stunTime)
+    public void Stun(float stunTime)
     {
- 
-       isInputDisabled = true;
+        isInputDisabled = true;
         StartCoroutine(EnableInputAfterSeconds(stunTime));
- 
-    } 
+    }
     IEnumerator EnableInputAfterSeconds(float duration)
     {
         yield return new WaitForSeconds(duration);
