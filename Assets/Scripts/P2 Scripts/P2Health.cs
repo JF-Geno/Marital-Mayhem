@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class P2Health : MonoBehaviour
 {
-    private const int MAX_HEALTH = 111;
+    public const int MAX_HEALTH = 200;
 
     private int _health;
 
@@ -23,8 +23,6 @@ public class P2Health : MonoBehaviour
 
     public Image defenseBar;
 
-    public Image ultimateBar;
-
     public GameOverScreen gameOverScreen;
 
     public GameObject punchNoise;
@@ -37,21 +35,34 @@ public class P2Health : MonoBehaviour
 
         _defense = 10;
 
-        UpdateUI();
+        UpdateHealthUI();
     }
+
+    public void DamageSound(GameValues.DamageTypes type)
+    {
+        switch (type)
+        {
+            case GameValues.DamageTypes.Melee:
+                punchNoise.SetActive(false);
+                punchNoise.SetActive(true);
+                break;
+
+            case GameValues.DamageTypes.Ranged:
+                projectileNoise.SetActive(false);
+                projectileNoise.SetActive(true);
+                break;
+        }
+    }
+
     public void healthController(int amount)
     {
         if (amount <= 3)
         {
-            punchNoise.SetActive(false);
-            punchNoise.SetActive(true);
             _health -= amount;
             Debug.Log($"H: {amount} ");
         }
         else if (amount > 3 && _defense > 0)
         {
-            projectileNoise.SetActive(false);
-            projectileNoise.SetActive(true);
             _defense -= 2;
 
             int damageTaken = 10 - _defense;
@@ -61,8 +72,6 @@ public class P2Health : MonoBehaviour
         }
         else
         {
-            projectileNoise.SetActive(false);
-            projectileNoise.SetActive(true);
             int damageTaken = 10 - _defense;
             int dT = amount + damageTaken;
             Debug.Log($"H: {dT} {damageTaken}");
@@ -93,12 +102,12 @@ public class P2Health : MonoBehaviour
                 {
                     _defense = 10;
                 }
-                UpdateUI();
+                UpdateHealthUI();
             }
         }
     }
 
-    public void Damage(int amount)
+    public void Damage(int amount, GameValues.DamageTypes damageType)
 
     {
         if (amount <= 0)
@@ -110,6 +119,7 @@ public class P2Health : MonoBehaviour
         }
 
         healthController(amount);
+        DamageSound(damageType);
 
         if (_health <= 0)
 
@@ -119,7 +129,7 @@ public class P2Health : MonoBehaviour
         else
 
         {
-            UpdateUI();
+            UpdateHealthUI();
         }
     }
 
@@ -147,7 +157,7 @@ public class P2Health : MonoBehaviour
             _health += amount;
         }
 
-        UpdateUI();
+        UpdateHealthUI();
     }
 
     public void Die()
@@ -158,7 +168,7 @@ public class P2Health : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void UpdateUI()
+    private void UpdateHealthUI()
 
     {
         healthBar.fillAmount = _health / (float)MAX_HEALTH;

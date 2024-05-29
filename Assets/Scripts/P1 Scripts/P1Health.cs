@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class P1Health : MonoBehaviour
 {
-    private const int MAX_HEALTH = 100;
+    public const int MAX_HEALTH = 200;
 
     private int _health;
 
@@ -38,19 +38,31 @@ public class P1Health : MonoBehaviour
         UpdateHealthUI();
     }
 
+    public void DamageSound(GameValues.DamageTypes type)
+    {
+        switch (type)
+        {
+            case GameValues.DamageTypes.Melee:
+                punchNoise.SetActive(false);
+                punchNoise.SetActive(true);
+                break;
+
+            case GameValues.DamageTypes.Ranged:
+                projectileNoise.SetActive(false);
+                projectileNoise.SetActive(true);
+                break;
+        }
+    }
+
     public void healthController(int amount)
     {
         if (amount <= 3)
         {
-            punchNoise.SetActive(false);
-            punchNoise.SetActive(true);
             _health -= amount;
             Debug.Log($"H: {amount} ");
         }
         else if (amount > 3 && _defense > 0)
         {
-            projectileNoise.SetActive(false);
-            projectileNoise.SetActive(true);
             _defense -= 2;
 
             int damageTaken = 10 - _defense;
@@ -60,8 +72,6 @@ public class P1Health : MonoBehaviour
         }
         else
         {
-            projectileNoise.SetActive(false);
-            projectileNoise.SetActive(true);
             int damageTaken = 10 - _defense;
             int dT = amount + damageTaken;
             Debug.Log($"H: {dT} {damageTaken}");
@@ -97,7 +107,7 @@ public class P1Health : MonoBehaviour
         }
     }
 
-    public void Damage(int amount)
+    public void Damage(int amount, GameValues.DamageTypes damageType)
 
     {
         if (amount <= 0)
@@ -109,6 +119,7 @@ public class P1Health : MonoBehaviour
         }
 
         healthController(amount);
+        DamageSound(damageType);
 
         if (_health <= 0)
 

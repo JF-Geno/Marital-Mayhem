@@ -21,7 +21,7 @@ public class P2AttackArea : MonoBehaviour
             Debug.Log(" woman got");
             KB2(collider);
             P1Health health = collider.GetComponent<P1Health>();
-            health.Damage(damage);
+            health.Damage(damage, GameValues.DamageTypes.Melee);
             p2PlayerAttack.UltimateLogic();
         }
     }

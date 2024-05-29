@@ -29,7 +29,7 @@ public class P1Projectile : MonoBehaviour
         P2Health p2Health = hitInfo.GetComponent<P2Health>();
         if (p2Health != null)
         {
-            p2Health.Damage(damage);
+            p2Health.Damage(damage, GameValues.DamageTypes.Ranged);
             p1PlayerAttack.UltimateLogic();
         }
         Debug.Log(hitInfo.name);

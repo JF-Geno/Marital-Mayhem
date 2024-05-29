@@ -37,7 +37,7 @@ public class UltimateAbility : MonoBehaviour
         {
             KB1(target.GetComponent<Collider2D>());
 
-            WHealth.Damage(damageAmount);
+            WHealth.Damage(damageAmount, GameValues.DamageTypes.Ultimate);
         }
 
         P1Health MHealth = target.GetComponent<P1Health>();
@@ -47,7 +47,7 @@ public class UltimateAbility : MonoBehaviour
         {
             KB1(target.GetComponent<Collider2D>());
 
-            MHealth.Damage(damageAmount);
+            MHealth.Damage(damageAmount, GameValues.DamageTypes.Ultimate);
         }
     }
     public void KB1(Collider2D collider)

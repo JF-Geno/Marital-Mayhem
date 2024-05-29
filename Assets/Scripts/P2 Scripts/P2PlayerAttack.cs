@@ -13,7 +13,8 @@ public class P2PlayerAttack : MonoBehaviour
     public Image ultimateBar;
     private float ultimateTimer = 0.0f;
     private const float ultimateRegenInterval = 1.0f;
-    private const int maxUltimate = 10;
+    private const int maxUltimate = 20;
+    private const int ultimateDecrease = 4;
 
     private bool activeUlt = false;
 
@@ -140,7 +141,7 @@ public class P2PlayerAttack : MonoBehaviour
             if (ultimateTimer >= ultimateRegenInterval)
             {
                 ultimateTimer = 0.0f;
-                _ultimate -= 2;
+                _ultimate -= ultimateDecrease;
 
                 if (_ultimate <= 0)
                 {
