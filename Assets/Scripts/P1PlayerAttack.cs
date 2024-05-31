@@ -87,7 +87,7 @@ public class P1PlayerAttack : MonoBehaviour
                 targetTime = 0.0f;
             }
         }
-         ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
+         //ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
         UltimateTimerLogic();
         
     }
@@ -106,8 +106,8 @@ public class P1PlayerAttack : MonoBehaviour
             targetTime = 1;
             shooting = true;
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-            throwNoise.SetActive(false);
-            throwNoise.SetActive(true);
+            //throwNoise.SetActive(false);
+            //throwNoise.SetActive(true);
         }
     }
 

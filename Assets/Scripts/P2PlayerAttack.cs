@@ -95,7 +95,7 @@ private bool activeUlt = false;
             }
         }
         
-        ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
+        //ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
         UltimateTimerLogic();
     }
 
@@ -114,8 +114,8 @@ private bool activeUlt = false;
             targetTime = 1;
             shooting = true;
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-            throwNoise.SetActive(false);
-            throwNoise.SetActive(true);
+            //throwNoise.SetActive(false);
+            //throwNoise.SetActive(true);
             animator.SetBool("IsRangedAttack", true);
         }
     }
