@@ -5,6 +5,28 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public int playerId;
+     public string playerName;
+    public Image PlayerNameImage;
+    public Image CharacterAbilityM;
+    public Image CharacterAbilityR;
+    public Image CharacterAbilityU;
+    public int nameIScale;
+    public int nameIPositionX = 0;
+    public int nameIPositionY = 0;
+    public Image headShot;
+    public GameObject CharacterPrefab;
+
+    public int playerNumControl = 0;
+     
+    public Image healthBar;
+    public Image defenseBar;
+    public Image ultimateBar;
+
+    public Image healthBar_2;
+    public Image defenseBar_2;
+    public Image ultimateBar_2;
+
     protected const int MAX_HEALTH = 100;
     protected const int MAX_DEFENSE = 10;
     protected const int MAX_ULTIMATE = 10;
@@ -13,230 +35,183 @@ public class Player : MonoBehaviour
     protected int _defense;
     protected int _ultimate;
 
-    protected bool isInputDisabled = false;
-
-    public Image healthBar;
-    public Image defenseBar;
-    public Image ultimateBar;
-    public GameOverScreen gameOverScreen;
-
-    protected float ultimateTimer = 0.0f;
-    protected const float ultimateRegenInterval = 1.0f;
-
-    public int playerController;
-
-    public Movement controller;
     public Animator animator;
-    public GameObject punchNoise;
-    public GameObject projectileNoise;
+    private GameObject attackArea = default;
+    private const float ultimateRegenInterval = 1.0f;
+    private const int maxUltimate = 10;
+    private bool activeUlt = false;
     public Transform firePoint;
     public GameObject projectilePrefab;
-    public GameObject throwNoise;
-    public UltimateAbility ultimateAbility;
-    public KnockBack knockBack;
-    public P1PlayerAttack p1PlayerAttack;
-
-    public float runSpeed = 40f;
-    public float lowStun = 1f;
-    public float highStun = 2f;
-    public float targetTime = 0.0f;
-    public float degreesPerSec = 360f;
-    public float KBForce;
-    public float KBCounter;
-    public float KBTotalTime;
-
-    private float horizontalMove = 0f;
-    private bool jump = false;
-    private bool crouch = false;
     private bool attacking = false;
     private bool shooting = false;
-    private bool activeUlt = false;
-    private float defenseTimer = 0.0f;
-    private const float defenseRegenInterval = 3.0f;
+    public float targetTime = 0.0f;
     private float timeToAttack = 0.25f;
     private float timer = 0f;
-    private Rigidbody2D m_Rigidbody2D;
-    private GameObject attackArea;
+    public GameObject throwNoise;
+    public UltimateAbility ultimateAbility;
+
 
     protected virtual void Start()
     {
+        attackArea = transform.GetChild(1).gameObject;
         _health = MAX_HEALTH;
         _defense = MAX_DEFENSE;
         _ultimate = 0;
-        UpdateHealthUI();
-
-        attackArea = transform.GetChild(1).gameObject;
-        m_Rigidbody2D = GetComponent<Rigidbody2D>();
-        p1PlayerAttack = FindObjectOfType<P1PlayerAttack>();
     }
 
-    protected void UpdateHealthUI()
+    void Update()
     {
-        if (healthBar != null)
-            healthBar.fillAmount = _health / (float)MAX_HEALTH;
-
-        if (defenseBar != null)
-            defenseBar.fillAmount = _defense / (float)MAX_DEFENSE;
-
-        if (ultimateBar != null)
-            ultimateBar.fillAmount = _ultimate / (float)MAX_ULTIMATE;
-    }
-
-    public void Damage(int amount)
-    {
-        if (amount <= 0)
+        if (playerNumControl == 0)
         {
-            Debug.LogWarning("Cannot have negative damage amount");
-            return;
-        }
+            // Add any logic you want for playerNumControl 0
+             if (Input.GetKeyDown(KeyCode.H))
 
-        _health -= amount;
-
-        if (_health <= 0)
-            Die();
-        else
-            UpdateHealthUI();
-    }
-
-    public void Heal(int amount)
-    {
-        if (amount <= 0)
-        {
-            Debug.LogWarning("Cannot have negative healing amount");
-            return;
-        }
-
-        _health = Mathf.Min(_health + amount, MAX_HEALTH);
-        UpdateHealthUI();
-    }
-
-    protected virtual void Die()
-    {
-        Debug.Log("Character is Dead!");
-        // Implement death logic here
-    }
-
-    private void Update()
-    {
-        Rotate();
-        HandleInput();
-        UltimateTimerLogic();
-    }
-
-    private void Rotate()
-    {
-        float rotAmount = degreesPerSec * Time.deltaTime;
-        float curRot = transform.localRotation.eulerAngles.z;
-        transform.localRotation = Quaternion.Euler(new Vector3(0, 0, curRot + rotAmount));
-    }
-
-    private void HandleInput()
-    {
-        if (isInputDisabled) return;
-
-        horizontalMove = Input.GetAxisRaw($"Horizontal P{playerController}") * runSpeed;
-        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
-        if (Input.GetButtonDown($"Jump P{playerController}"))
-        {
-            jump = true;
-            animator.SetBool("IsJumping", true);
-        }
-
-        if (Input.GetButtonDown($"Crouch P{playerController}"))
-        {
-            crouch = true;
-        }
-        else if (Input.GetButtonUp($"Crouch P{playerController}"))
-        {
-            crouch = false;
-        }
-
-        if (playerController == 1)
-        {
-            HandlePlayer1Input();
-        }
-        else if (playerController == 2)
-        {
-            HandlePlayer2Input();
-        }
-    }
-
-    private void HandlePlayer1Input()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
         {
             Heal(10);
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && !isInputDisabled)
-        {
-            Attack();
+     
+
         }
-        if (Input.GetKeyDown(KeyCode.X) && !isInputDisabled)
+        else if (playerNumControl == 1)
         {
-            Shoot();
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                Heal(10);
+            }
+
+            if (Input.GetKeyDown(KeyCode.C) && !isInputDisabled)
+            {
+                Attack();
+            }
+            if (Input.GetKeyDown(KeyCode.X) && !isInputDisabled)
+            {
+                Shoot();
+            }
+            if (Input.GetKeyDown(KeyCode.Z) && !isInputDisabled && activeUlt)
+            {
+                 if (activeUlt == true)
+            {
+                ULT(); 
+            }
+            else{
+                Debug.Log("Not yet");
+            }
+            }
+             if (attacking)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= timeToAttack)
+            {
+                timer = 0;
+                attacking = false;
+                attackArea.SetActive(attacking);
+                animator.SetBool("Attack", false);
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Z) && !isInputDisabled && activeUlt)
+        if (shooting)
         {
-            ULT();
+            targetTime -= Time.deltaTime;
+            if (targetTime <= 0.0f)
+            {
+                shooting = false;
+                targetTime = 0.0f;
+            }
+        }
+        
+        ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
+        UltimateTimerLogic();
+
+
+
+        }
+        else if (playerNumControl == 2)
+        {
+            if (Input.GetKeyDown(KeyCode.Slash) && !isInputDisabled)
+            {
+                Attack();
+            }
+            if (Input.GetKeyDown(KeyCode.Period) && !isInputDisabled)
+            {
+                Shoot();
+            }
+            if (Input.GetKeyDown(KeyCode.Comma) && !isInputDisabled && activeUlt)
+            {
+                    if (activeUlt == true)
+            {
+                ULT(); 
+            }
+            else{
+                Debug.Log("Not yet");
+            }
+            }
+
+             if (attacking)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= timeToAttack)
+            {
+                timer = 0;
+                attacking = false;
+                attackArea.SetActive(attacking);
+                animator.SetBool("Attack", false);
+            }
+        }
+        if (shooting)
+        {
+            targetTime -= Time.deltaTime;
+            if(targetTime <= 0.0f)
+            {
+                shooting = false;
+                targetTime = 0.0f;
+            }
+        }
+         ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
+        UltimateTimerLogic();
+
+
         }
     }
 
-    private void HandlePlayer2Input()
-    {
-        if (Input.GetKeyDown(KeyCode.Slash) && !isInputDisabled)
-        {
-            Attack();
-        }
-        if (Input.GetKeyDown(KeyCode.Period) && !isInputDisabled)
-        {
-            Shoot();
-        }
-        if (Input.GetKeyDown(KeyCode.Comma) && !isInputDisabled && activeUlt)
-        {
-            ULT();
-        }
-    }
 
-    private void FixedUpdate()
-    {
-        HandleMovement();
-        HandleKnockback();
-    }
-
-    private void HandleMovement()
-    {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
-        jump = false;
-    }
-
-    private void HandleKnockback()
-    {
-        if (KBCounter > 0)
-        {
-            m_Rigidbody2D.velocity = knockBack.KnockFromRight ? new Vector2(-KBForce, KBForce / 3) : new Vector2(KBForce, KBForce / 3);
-            KBCounter -= Time.deltaTime;
-        }
-    }
 
     private void Attack()
     {
-        animator.SetBool("Attack", true);
         attacking = true;
         attackArea.SetActive(attacking);
+        animator.SetBool("Attack", true);
     }
 
     private void Shoot()
     {
+       
         if (!shooting)
         {
-            animator.SetBool("IsRangedAttack", true);
             targetTime = 1;
             shooting = true;
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
             throwNoise.SetActive(false);
             throwNoise.SetActive(true);
+            animator.SetBool("IsRangedAttack", true);
+        }
+    }
+
+    public void UltimateLogic()
+    {
+        if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
+        {
+            if (_ultimate < maxUltimate)
+            {
+                _ultimate += 1;
+                Debug.Log("Ultimate charge increased");
+            }
+
+            if (_ultimate == maxUltimate)
+            {
+                activeUlt = true;
+            }
         }
     }
 
@@ -257,8 +232,6 @@ public class Player : MonoBehaviour
                     activeUlt = false;
                     ultimateAbility.isUltimateActive = false;
                 }
-
-                UpdateHealthUI();
             }
         }
     }
@@ -271,30 +244,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.GetComponent<P2Health>() != null)
-        {
-            KB1(collider);
-            P2Health health = collider.GetComponent<P2Health>();
-            health.Damage(10); // Assuming 10 is the damage amount, replace with actual value
-            p1PlayerAttack.UltimateLogic();
-        }
-    }
 
-    public void KB1(Collider2D collider)
-    {
-        knockBack.KBCounter = knockBack.KBTotalTime;
-        knockBack.KnockFromRight = collider.transform.position.x <= transform.position.x;
-    }
-
-    private void OnLanding()
-    {
-        animator.SetBool("IsJumping", false);
-    }
-
-    private void OnCrouching(bool isCrouching)
-    {
-        animator.SetBool("IsCrouching", isCrouching);
-    }
+    
 }
