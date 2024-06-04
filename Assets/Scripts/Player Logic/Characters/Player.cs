@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public int playerId;
-     public string playerName;
+    public string playerName;
     public Image PlayerNameImage;
     public Image CharacterAbilityM;
     public Image CharacterAbilityR;
@@ -49,7 +49,15 @@ public class Player : MonoBehaviour
     private float timer = 0f;
     public GameObject throwNoise;
     public UltimateAbility ultimateAbility;
+    private float ultimateTimer = 0.0f;
+    public Movement controller;
+    
+    public bool isInputDisabled;
+    public float runSpeed = 40f;
 
+    float horizontalMove = 0f;
+    bool jump = false;
+    bool crouch = false;
 
     protected virtual void Start()
     {
@@ -57,6 +65,8 @@ public class Player : MonoBehaviour
         _health = MAX_HEALTH;
         _defense = MAX_DEFENSE;
         _ultimate = 0;
+        
+
     }
 
     void Update()
@@ -67,7 +77,7 @@ public class Player : MonoBehaviour
              if (Input.GetKeyDown(KeyCode.H))
 
         {
-            Heal(10);
+            
         }
 
      
@@ -75,10 +85,7 @@ public class Player : MonoBehaviour
         }
         else if (playerNumControl == 1)
         {
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                Heal(10);
-            }
+            
 
             if (Input.GetKeyDown(KeyCode.C) && !isInputDisabled)
             {
@@ -97,7 +104,7 @@ public class Player : MonoBehaviour
             else{
                 Debug.Log("Not yet");
             }
-            }
+        }
              if (attacking)
         {
             timer += Time.deltaTime;
@@ -123,6 +130,29 @@ public class Player : MonoBehaviour
         ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
         UltimateTimerLogic();
 
+        
+        if (!isInputDisabled)
+        {
+
+            horizontalMove = Input.GetAxisRaw("Horizontal P1") * runSpeed;
+
+            animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
+            if (Input.GetButtonDown("Jump P1"))
+            {
+                jump = true;
+                animator.SetBool("IsJumping", true);
+            }
+
+            if (Input.GetButtonDown("Crouch P1"))
+            {
+                crouch = true;
+            }
+            else if (Input.GetButtonUp("Crouch P1"))
+            {
+                crouch = false;
+            }
+        }
 
 
         }
@@ -147,31 +177,51 @@ public class Player : MonoBehaviour
             }
             }
 
-             if (attacking)
-        {
-            timer += Time.deltaTime;
-
-            if (timer >= timeToAttack)
+                if (attacking)
             {
-                timer = 0;
-                attacking = false;
-                attackArea.SetActive(attacking);
-                animator.SetBool("Attack", false);
+                timer += Time.deltaTime;
+
+                if (timer >= timeToAttack)
+                {
+                    timer = 0;
+                    attacking = false;
+                    attackArea.SetActive(attacking);
+                    animator.SetBool("Attack", false);
+                }
+            }
+            if (shooting)
+            {
+                targetTime -= Time.deltaTime;
+                if(targetTime <= 0.0f)
+                {
+                    shooting = false;
+                    targetTime = 0.0f;
+                }
+            }
+            ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
+            UltimateTimerLogic();
+
+            if (!isInputDisabled)
+        {
+
+            horizontalMove = Input.GetAxisRaw("Horizontal P2") * runSpeed;
+
+            animator.SetFloat("Speed",  Mathf.Abs(horizontalMove));
+
+            if (Input.GetButtonDown("Jump P2"))
+            {
+                jump = true;
+                animator.SetBool("IsJumping",  true);
+            }
+            if (Input.GetButtonDown("Crouch P2"))
+            {
+                crouch = true;
+            }
+            else if (Input.GetButtonUp("Crouch P2"))
+            {
+                crouch = false;
             }
         }
-        if (shooting)
-        {
-            targetTime -= Time.deltaTime;
-            if(targetTime <= 0.0f)
-            {
-                shooting = false;
-                targetTime = 0.0f;
-            }
-        }
-         ultimateBar.fillAmount = _ultimate / (float)maxUltimate;
-        UltimateTimerLogic();
-
-
         }
     }
 
@@ -244,6 +294,19 @@ public class Player : MonoBehaviour
         }
     }
 
-
-    
+    public void OnLanding()
+        {
+            animator.SetBool("IsJumping", false);
+        }
+    public void OnCrouching(bool isCrouching)
+    {
+        animator.SetBool("IsCrouching", isCrouching);
+    }
+    void FixedUpdate()
+        {
+            // Move our character
+            controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+            jump = false;
+        }
+        
 }
