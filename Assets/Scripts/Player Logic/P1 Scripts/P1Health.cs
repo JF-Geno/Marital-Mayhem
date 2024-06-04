@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class P1Health : MonoBehaviour
 {
@@ -164,8 +166,13 @@ public class P1Health : MonoBehaviour
 
     {
         Debug.Log("I am Dead!");
-        gameOverScreen.Setup(GameValues.player2Name);
-        Destroy(gameObject);
+        //gameOverScreen.Setup(GameValues.player2Name);
+
+        GameValues.PlayerWin = "P2";
+        GameValues.player2Wins++;
+        SceneManager.LoadScene(0);
+
+        //Destroy(gameObject);
     }
 
     private void UpdateHealthUI()

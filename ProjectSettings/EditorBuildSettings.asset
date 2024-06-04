@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Marital-Mayhem.unity
     guid: a22a0644c4e9a1f449fb18c96afb6709
+  - enabled: 1
+    path: Assets/Scenes/End Screen.unity
+    guid: de579ce14c33caf4c97ada2565b99b4e
   m_configObjects: {}
