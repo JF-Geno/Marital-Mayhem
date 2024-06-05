@@ -232,7 +232,6 @@ GameObject:
   - component: {fileID: 434665540744606073}
   - component: {fileID: 7999601939269951513}
   - component: {fileID: 4110064594019875609}
-  - component: {fileID: 3450694274039549733}
   - component: {fileID: 1651190417759255320}
   - component: {fileID: 8531776228430262152}
   - component: {fileID: 89850979162817721}
@@ -369,7 +368,7 @@ MonoBehaviour:
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3450694274039549733}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovementP1, Assembly-CSharp
         m_MethodName: OnLanding
         m_Mode: 1
@@ -384,7 +383,7 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3450694274039549733}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovementP1, Assembly-CSharp
         m_MethodName: OnCrouching
         m_Mode: 0
@@ -396,21 +395,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3450694274039549733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5931841567474218615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96365b616d53664eaee68ab49d354f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 4110064594019875609}
-  animator: {fileID: 89850979162817721}
-  runSpeed: 40
 --- !u!114 &1651190417759255320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,7 +433,6 @@ MonoBehaviour:
   targetTime: 0
   throwNoise: {fileID: 0}
   ultimateAbility: {fileID: 3818223725777595578}
-  ultimateAbility: {fileID: 7022992547090982130}
   ultimateBannerManager: {fileID: 0}
 --- !u!95 &89850979162817721
 Animator:

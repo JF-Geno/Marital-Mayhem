@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Bill_Man : Player
 {
-    // Start is called before the first frame update
-    void Start()
+   
+    protected override void Start()
     {
-        
+        Debug.Log("yagbouyfbawouhbfouyhab");
+        base.Start();
+        // Add any custom initialization for Bill_Man here
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
+        Debug.Log("yagbouyfbawouhbfouyhab");
+        base.Update();
+        // Add any custom behavior for Bill_Man here
     }
 }
