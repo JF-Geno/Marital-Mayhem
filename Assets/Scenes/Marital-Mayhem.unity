@@ -2283,6 +2283,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734952021}
   m_CullTransparentMesh: 1
+--- !u!4 &751846042 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7085284141661638595, guid: b9413967164c41b4884e84749f86a571, type: 3}
+  m_PrefabInstance: {fileID: 2322178637872098496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &820704989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,11 +2785,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924048547}
   m_CullTransparentMesh: 1
---- !u!1 &964628030 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 384219484889410452, guid: b9413967164c41b4884e84749f86a571, type: 3}
-  m_PrefabInstance: {fileID: 1847262518}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1006940605
 GameObject:
   m_ObjectHideFlags: 0
@@ -5299,6 +5299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Man (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5931841567474218615, guid: b9413967164c41b4884e84749f86a571, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7022992547090982130, guid: b9413967164c41b4884e84749f86a571, type: 3}
       propertyPath: ultName
       value: Gaslight
@@ -5361,6 +5365,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1879788745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 384219484889410452, guid: b9413967164c41b4884e84749f86a571, type: 3}
+  m_PrefabInstance: {fileID: 2322178637872098496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1899476990
 GameObject:
   m_ObjectHideFlags: 0
@@ -5569,11 +5578,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979879522}
   m_CullTransparentMesh: 1
---- !u!4 &1995158382 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7085284141661638595, guid: b9413967164c41b4884e84749f86a571, type: 3}
-  m_PrefabInstance: {fileID: 1847262518}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2271576715436681682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5798,7 +5802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5931841567474218615, guid: b9413967164c41b4884e84749f86a571, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7022992547090982130, guid: b9413967164c41b4884e84749f86a571, type: 3}
       propertyPath: ultName
@@ -5865,17 +5869,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 89850979162817721, guid: b9413967164c41b4884e84749f86a571, type: 3}
   m_PrefabInstance: {fileID: 2322178637872098496}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2322178637872098505 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4110064594019875609, guid: b9413967164c41b4884e84749f86a571, type: 3}
-  m_PrefabInstance: {fileID: 2322178637872098496}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2322178637872098498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b829e6dd1fce72540a754f44861b6e39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &2322178637872098506 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7999601939269951513, guid: b9413967164c41b4884e84749f86a571, type: 3}
@@ -5903,7 +5896,7 @@ MonoBehaviour:
   nameIPositionX: 0
   nameIPositionY: 0
   headShot: {fileID: 0}
-  CharacterPrefab: {fileID: 848180488}
+  CharacterPrefab: {fileID: 2322178637872098498}
   playerNumControl: 1
   healthBar: {fileID: 1653762174}
   defenseBar: {fileID: 625669786}
@@ -5912,9 +5905,9 @@ MonoBehaviour:
   defenseBar_2: {fileID: 1840596298}
   ultimateBar_2: {fileID: 1832899919}
   animator: {fileID: 2322178637872098501}
-  attackArea: {fileID: 964628030}
+  attackArea: {fileID: 1879788745}
   activeUlt: 0
-  firePoint: {fileID: 1995158382}
+  firePoint: {fileID: 751846042}
   projectilePrefab: {fileID: 8763727390696608969, guid: 73105f5f885ea334a9e8e4023998b4f6, type: 3}
   attacking: 0
   shooting: 0
@@ -5924,7 +5917,7 @@ MonoBehaviour:
   throwNoise: {fileID: 0}
   ultimateAbility: {fileID: 2322178637872098499}
   ultimateTimer: 0
-  controller: {fileID: 2322178637872098505}
+  controller: {fileID: 0}
   isInputDisabled: 0
   runSpeed: 40
   knockBack: {fileID: 0}
