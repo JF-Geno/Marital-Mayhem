@@ -170,7 +170,7 @@ public class P2Health : MonoBehaviour
 
         GameValues.PlayerWin = "P1";
         GameValues.player1Wins++;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(4);
 
         //Destroy(gameObject);
     }
