@@ -8,14 +8,14 @@ public class Player : MonoBehaviour
 {
     public int playerId;
     public string playerName;
-    public Image PlayerNameImage;
+    public Sprite PlayerNameImage;
     public Image CharacterAbilityM;
     public Image CharacterAbilityR;
     public Image CharacterAbilityU;
     public int nameIScale;
     public int nameIPositionX = 0;
     public int nameIPositionY = 0;
-    public Image headShot;
+    public Sprite headShot;
     public GameObject CharacterPrefab;
 
     public int playerNumControl = 0;

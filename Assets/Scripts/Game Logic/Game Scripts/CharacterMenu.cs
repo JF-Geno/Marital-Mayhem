@@ -5,31 +5,31 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class CharacterMenu : MonoBehaviour
 {
-    private Image P1name;
+    private Sprite P1name;
     private Image CharacterAbilityM;
     private Image CharacterAbilityR;
     private Image CharacterAbilityU;
     private GameObject P1CharacterPrefab;
 
-    private Image P2name;
+    private Sprite P2name;
     private Image CharacterAbilityM_2;
     private Image CharacterAbilityR_2;
     private Image CharacterAbilityU_2;
     private GameObject P2CharacterPrefab;
 
-    private Image Character1;
-    private Image Character2;
-    private Image Character3;
-    private Image Character4;
-    private Image Character5;
-    private Image Character6;
+    private Sprite Character1;
+    private Sprite Character2;
+    private Sprite Character3;
+    private Sprite Character4;
+    private Sprite Character5;
+    private Sprite Character6;
 
-    private Image Character1_2;
-    private Image Character2_2;
-    private Image Character3_2;
-    private Image Character4_2;
-    private Image Character5_2;
-    private Image Character6_2;
+    private Sprite Character1_2;
+    private Sprite Character2_2;
+    private Sprite Character3_2;
+    private Sprite Character4_2;
+    private Sprite Character5_2;
+    private Sprite Character6_2;
 
 
     public Bill_Man player1;

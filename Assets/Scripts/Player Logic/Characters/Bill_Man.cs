@@ -82,7 +82,7 @@ public class Bill_Man : Player
 
 
 
-    }
+    //}
 
 
 }

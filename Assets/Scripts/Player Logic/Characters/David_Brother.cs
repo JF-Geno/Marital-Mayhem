@@ -72,34 +72,34 @@ public class David_Brother : Player
             Jessica_Babysitter.UltimateLogic();
         }
 
-        //Kathy_CatLady
-        if (collider.GetComponent<Kathy_CatLady>() != null)
-        {
-            KnockBack(collider);
-            collider.GetComponent<Kathy_CatLady>().Damage(damage, GameValues.DamageTypes.Melee);
-            Kathy_CatLady.UltimateLogic();
-        }
-        if (collider.GetComponent<Kathy_CatLady>() != null)
-        {
-            KnockBack(collider);
-            collider.GetComponent<Kathy_CatLady>().Damage(damage, GameValues.DamageTypes.Ranged);
-            Kathy_CatLady.UltimateLogic();
-        }
-        //Saul_Lawyer
-        if (collider.GetComponent<Saul_Lawyer>() != null)
-        {
-            KnockBack(collider);
-            collider.GetComponent<Saul_Lawyer>().Damage(damage, GameValues.DamageTypes.Melee);
-            Saul_Lawyer.UltimateLogic();
-        }
-        if (collider.GetComponent<Saul_Lawyer>() != null)
-        {
-            KnockBack(collider);
-            collider.GetComponent<Saul_Lawyer>().Damage(damage, GameValues.DamageTypes.Ranged);
-            Saul_Lawyer.UltimateLogic();
-        }
+    //    //Kathy_CatLady
+    //    if (collider.GetComponent<Kathy_CatLady>() != null)
+    //    {
+    //        KnockBack(collider);
+    //        collider.GetComponent<Kathy_CatLady>().Damage(damage, GameValues.DamageTypes.Melee);
+    //        Kathy_CatLady.UltimateLogic();
+    //    }
+    //    if (collider.GetComponent<Kathy_CatLady>() != null)
+    //    {
+    //        KnockBack(collider);
+    //        collider.GetComponent<Kathy_CatLady>().Damage(damage, GameValues.DamageTypes.Ranged);
+    //        Kathy_CatLady.UltimateLogic();
+    //    }
+    //    //Saul_Lawyer
+    //    if (collider.GetComponent<Saul_Lawyer>() != null)
+    //    {
+    //        KnockBack(collider);
+    //        collider.GetComponent<Saul_Lawyer>().Damage(damage, GameValues.DamageTypes.Melee);
+    //        Saul_Lawyer.UltimateLogic();
+    //    }
+    //    if (collider.GetComponent<Saul_Lawyer>() != null)
+    //    {
+    //        KnockBack(collider);
+    //        collider.GetComponent<Saul_Lawyer>().Damage(damage, GameValues.DamageTypes.Ranged);
+    //        Saul_Lawyer.UltimateLogic();
+    //    }
 
 
 
-    }
+    //}
 }
