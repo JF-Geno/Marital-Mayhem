@@ -38,20 +38,20 @@ public class Bill_Man : Player
         {
             KnockBack(collider);
             collider.GetComponent<Sarah_Woman>().Damage(damage, GameValues.DamageTypes.Melee);
-            Sarah_Woman.UltimateLogic();
+            UltimateLogic();
         }
         if (collider.GetComponent<Sarah_Woman>() != null)
         {
             KnockBack(collider);
             collider.GetComponent<Sarah_Woman>().Damage(damage, GameValues.DamageTypes.Ranged);
-            Sarah_Woman.UltimateLogic();
+            UltimateLogic();
         }
         //David_Brother
          if (collider.GetComponent<David_Brother>() != null)
         {
             KnockBack(collider);
             collider.GetComponent<David_Brother>().Damage(damage, GameValues.DamageTypes.Melee);
-            David_Brother.UltimateLogic();
+           UltimateLogic();
         }
        
         //Jessica_Babysitter
@@ -59,7 +59,7 @@ public class Bill_Man : Player
         {
             KnockBack(collider);
             collider.GetComponent<Jessica_Babysitter>().Damage(damage, GameValues.DamageTypes.Melee);
-            Jessica_Babysitter.UltimateLogic();
+            UltimateLogic();
         }
      
 
