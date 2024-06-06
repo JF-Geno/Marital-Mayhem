@@ -17,7 +17,7 @@ public class Saul_Lawyer : Player
         // Add any custom behavior for Bill_Man here
     }
 
-     private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         //Bill_Man
           if (collider.GetComponent<Bill_Man>() != null)
@@ -26,79 +26,48 @@ public class Saul_Lawyer : Player
             collider.GetComponent<Bill_Man>().Damage(damage, GameValues.DamageTypes.Melee);
             Bill_Man.UltimateLogic();
         }
-        if (collider.GetComponent<Bill_Man>() != null)
-        {
-            KnockBack(collider);
-            collider.GetComponent<Bill_Man>().Damage(damage, GameValues.DamageTypes.Ranged);
-            Bill_Man.UltimateLogic();
-        }
+     
         //Sarah_Woman
         if (collider.GetComponent<Sarah_Woman>() != null)
         {
             KnockBack(collider);
             collider.GetComponent<Sarah_Woman>().Damage(damage, GameValues.DamageTypes.Melee);
-            Sarah_Woman.UltimateLogic();
+            UltimateLogic();
         }
-        if (collider.GetComponent<Sarah_Woman>() != null)
-        {
-            KnockBack(collider);
-            collider.GetComponent<Sarah_Woman>().Damage(damage, GameValues.DamageTypes.Ranged);
-            Sarah_Woman.UltimateLogic();
-        }
+      
         //David_Brother
          if (collider.GetComponent<David_Brother>() != null)
         {
             KnockBack(collider);
             collider.GetComponent<David_Brother>().Damage(damage, GameValues.DamageTypes.Melee);
-            David_Brother.UltimateLogic();
+           UltimateLogic();
         }
-        if (collider.GetComponent<David_Brother>() != null)
-        {
-            KnockBack(collider);
-            collider.GetComponent<David_Brother>().Damage(damage, GameValues.DamageTypes.Ranged);
-            David_Brother.UltimateLogic();
-        }
+       
         //Jessica_Babysitter
         if (collider.GetComponent<Jessica_Babysitter>() != null)
         {
             KnockBack(collider);
             collider.GetComponent<Jessica_Babysitter>().Damage(damage, GameValues.DamageTypes.Melee);
-            Jessica_Babysitter.UltimateLogic();
+            UltimateLogic();
         }
-        if (collider.GetComponent<Jessica_Babysitter>() != null)
-        {
-            KnockBack(collider);
-            collider.GetComponent<Jessica_Babysitter>().Damage(damage, GameValues.DamageTypes.Ranged);
-            Jessica_Babysitter.UltimateLogic();
-        }
+     
 
         //Kathy_CatLady
         if (collider.GetComponent<Kathy_CatLady>() != null)
         {
             KnockBack(collider);
             collider.GetComponent<Kathy_CatLady>().Damage(damage, GameValues.DamageTypes.Melee);
-            Kathy_CatLady.UltimateLogic();
+            UltimateLogic();
         }
-        if (collider.GetComponent<Kathy_CatLady>() != null)
-        {
-            KnockBack(collider);
-            collider.GetComponent<Kathy_CatLady>().Damage(damage, GameValues.DamageTypes.Ranged);
-            Kathy_CatLady.UltimateLogic();
-        }
+      
         //Saul_Lawyer
         // if (collider.GetComponent<Saul_Lawyer>() != null)
         // {
         //     KnockBack(collider);
         //     collider.GetComponent<Saul_Lawyer>().Damage(damage, GameValues.DamageTypes.Melee);
-        //     Saul_Lawyer.UltimateLogic();
+        //     UltimateLogic();
         // }
-        // if (collider.GetComponent<Saul_Lawyer>() != null)
-        // {
-        //     KnockBack(collider);
-        //     collider.GetComponent<Saul_Lawyer>().Damage(damage, GameValues.DamageTypes.Ranged);
-        //     Saul_Lawyer.UltimateLogic();
-        // }
-
+    
 
 
     }

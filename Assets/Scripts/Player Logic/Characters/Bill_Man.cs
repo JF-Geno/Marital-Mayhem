@@ -27,12 +27,7 @@ public class Bill_Man : Player
         //     collider.GetComponent<Bill_Man>().Damage(damage, GameValues.DamageTypes.Melee);
         //     Bill_Man.UltimateLogic();
         // }
-        // if (collider.GetComponent<Bill_Man>() != null)
-        // {
-        //     KnockBack(collider);
-        //     collider.GetComponent<Bill_Man>().Damage(damage, GameValues.DamageTypes.Ranged);
-        //     Bill_Man.UltimateLogic();
-        // }
+     
         //Sarah_Woman
         if (collider.GetComponent<Sarah_Woman>() != null)
         {
@@ -40,12 +35,7 @@ public class Bill_Man : Player
             collider.GetComponent<Sarah_Woman>().Damage(damage, GameValues.DamageTypes.Melee);
             UltimateLogic();
         }
-        if (collider.GetComponent<Sarah_Woman>() != null)
-        {
-            KnockBack(collider);
-            collider.GetComponent<Sarah_Woman>().Damage(damage, GameValues.DamageTypes.Ranged);
-            UltimateLogic();
-        }
+      
         //David_Brother
          if (collider.GetComponent<David_Brother>() != null)
         {
@@ -68,7 +58,7 @@ public class Bill_Man : Player
         {
             KnockBack(collider);
             collider.GetComponent<Kathy_CatLady>().Damage(damage, GameValues.DamageTypes.Melee);
-            Kathy_CatLady.UltimateLogic();
+            UltimateLogic();
         }
       
         //Saul_Lawyer
@@ -76,13 +66,12 @@ public class Bill_Man : Player
         {
             KnockBack(collider);
             collider.GetComponent<Saul_Lawyer>().Damage(damage, GameValues.DamageTypes.Melee);
-            Saul_Lawyer.UltimateLogic();
+            UltimateLogic();
         }
-       
+    
 
 
-
-    //}
+    }
 
 
 }
