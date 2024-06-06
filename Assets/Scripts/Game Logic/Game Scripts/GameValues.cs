@@ -7,8 +7,8 @@ public class GameValues
     public static int player1Wins = 15;
     public static int player2Wins = 99;
     public static string PlayerWin = "P2";
-    public static string player1Name = "Player 1";
-    public static string player2Name = "Player 2";
+    public static string player1Name = "Bill";
+    public static string player2Name = "Sarah";
     public enum DamageTypes
     {
         Melee,
