@@ -4373,6 +4373,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 211698568731885763, guid: ff2794d770607ea49a12043427e7a592, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 211698568731885763, guid: ff2794d770607ea49a12043427e7a592, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5931841568111102786}
+    - target: {fileID: 211698568731885763, guid: ff2794d770607ea49a12043427e7a592, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5931841568111102786}
+    - target: {fileID: 211698568731885763, guid: ff2794d770607ea49a12043427e7a592, type: 3}
+      propertyPath: OnLandEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 211698568731885763, guid: ff2794d770607ea49a12043427e7a592, type: 3}
+      propertyPath: OnCrouchEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4232668315989575231, guid: ff2794d770607ea49a12043427e7a592, type: 3}
       propertyPath: knockBack
       value: 
@@ -4453,10 +4473,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Man (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9068660352569781258, guid: ff2794d770607ea49a12043427e7a592, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9068660352569781258, guid: ff2794d770607ea49a12043427e7a592, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5931841568111102786}
   m_SourcePrefab: {fileID: 100100000, guid: ff2794d770607ea49a12043427e7a592, type: 3}
 --- !u!1001 &2271576715436681682
 PrefabInstance:
@@ -4682,7 +4709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5931841567474218615, guid: b9413967164c41b4884e84749f86a571, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7022992547090982130, guid: b9413967164c41b4884e84749f86a571, type: 3}
       propertyPath: ultName
@@ -4715,7 +4742,7 @@ PrefabInstance:
       addedObject: {fileID: 2322178637872098499}
     - targetCorrespondingSourceObject: {fileID: 5931841567474218615, guid: b9413967164c41b4884e84749f86a571, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2322178637872098508}
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: b9413967164c41b4884e84749f86a571, type: 3}
 --- !u!1 &2322178637872098498
 GameObject:
@@ -4735,7 +4762,6 @@ GameObject:
   - component: {fileID: 2322178637872098509}
   - component: {fileID: 322696316}
   - component: {fileID: 2322178637872098499}
-  - component: {fileID: 2322178637872098508}
   m_Layer: 3
   m_Name: Man
   m_TagString: Untagged
@@ -4864,62 +4890,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2322178637872098508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2322178637872098498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc8f14cf11328340871d9c78ad8d41b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerId: 1
-  playerName: Bill
-  PlayerNameImage: {fileID: 0}
-  CharacterAbilityM: {fileID: 0}
-  CharacterAbilityR: {fileID: 0}
-  CharacterAbilityU: {fileID: 0}
-  nameIScale: 0
-  nameIPositionX: 0
-  nameIPositionY: 0
-  headShot: {fileID: 0}
-  CharacterPrefab: {fileID: 5931841568111102785}
-  playerNumControl: 1
-  healthBar: {fileID: 1653762174}
-  defenseBar: {fileID: 625669786}
-  ultimateBar: {fileID: 26755254}
-  healthBar_2: {fileID: 1222431353}
-  defenseBar_2: {fileID: 1840596298}
-  ultimateBar_2: {fileID: 1832899919}
-  animator: {fileID: 2322178637872098501}
-  attackArea: {fileID: 384219483243746978}
-  activeUlt: 0
-  firePoint: {fileID: 7085284142030107381}
-  projectilePrefab: {fileID: 8763727390696608969, guid: 73105f5f885ea334a9e8e4023998b4f6, type: 3}
-  attacking: 0
-  shooting: 0
-  targetTime: 0
-  timeToAttack: 0.25
-  timer: 0
-  throwNoise: {fileID: 0}
-  ultimateAbility: {fileID: 2322178637872098499}
-  ultimateTimer: 0
-  controller: {fileID: 0}
-  isInputDisabled: 0
-  runSpeed: 40
-  knockBack: {fileID: 0}
-  p1PlayerAttack: {fileID: 0}
-  gameOverScreen: {fileID: 0}
-  punchNoise: {fileID: 0}
-  projectileNoise: {fileID: 0}
-  speed: 20
-  damage: 4
-  rb: {fileID: 2322178637872098506}
-  degreesPerSec: 360
-  p2PlayerAttack: {fileID: 0}
 --- !u!61 &2322178637872098509
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5051,6 +5021,105 @@ SpriteRenderer:
 --- !u!1 &5931841568111102785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9068660352569781258, guid: ff2794d770607ea49a12043427e7a592, type: 3}
+  m_PrefabInstance: {fileID: 2180936976701626242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5931841568111102786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931841568111102785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fc8f14cf11328340871d9c78ad8d41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 1
+  playerName: Bill
+  PlayerNameImage: {fileID: 0}
+  CharacterAbilityM: {fileID: 0}
+  CharacterAbilityR: {fileID: 0}
+  CharacterAbilityU: {fileID: 0}
+  nameIScale: 0
+  nameIPositionX: 0
+  nameIPositionY: 0
+  headShot: {fileID: 0}
+  CharacterPrefab: {fileID: 5931841568111102785}
+  playerNumControl: 1
+  healthBar: {fileID: 1653762174}
+  defenseBar: {fileID: 625669786}
+  ultimateBar: {fileID: 26755254}
+  healthBar_2: {fileID: 1222431353}
+  defenseBar_2: {fileID: 1840596298}
+  ultimateBar_2: {fileID: 1832899919}
+  animator: {fileID: 5931841568111102790}
+  attackArea: {fileID: 384219483243746978}
+  activeUlt: 0
+  firePoint: {fileID: 7085284142030107381}
+  projectilePrefab: {fileID: 8763727390696608969, guid: 73105f5f885ea334a9e8e4023998b4f6, type: 3}
+  attacking: 0
+  shooting: 0
+  targetTime: 0
+  timeToAttack: 0.25
+  timer: 0
+  throwNoise: {fileID: 1173411268}
+  ultimateAbility: {fileID: 5931841568111102787}
+  ultimateTimer: 0
+  controller: {fileID: 5931841568111102791}
+  isInputDisabled: 0
+  runSpeed: 40
+  knockBack: {fileID: 5931841568111102788}
+  p1PlayerAttack: {fileID: 0}
+  gameOverScreen: {fileID: 0}
+  punchNoise: {fileID: 1855367636}
+  projectileNoise: {fileID: 869970263}
+  speed: 20
+  damage: 4
+  rb: {fileID: 5931841568111102792}
+  degreesPerSec: 360
+  p2PlayerAttack: {fileID: 0}
+--- !u!114 &5931841568111102787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4232668315989575231, guid: ff2794d770607ea49a12043427e7a592, type: 3}
+  m_PrefabInstance: {fileID: 2180936976701626242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931841568111102785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe77c4c75fd2c147a72744ef8a70920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5931841568111102788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9020504983754601885, guid: ff2794d770607ea49a12043427e7a592, type: 3}
+  m_PrefabInstance: {fileID: 2180936976701626242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931841568111102785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5727aad8f56c0c34cb842961f044907e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &5931841568111102790 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 277970003413183390, guid: ff2794d770607ea49a12043427e7a592, type: 3}
+  m_PrefabInstance: {fileID: 2180936976701626242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5931841568111102791 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 211698568731885763, guid: ff2794d770607ea49a12043427e7a592, type: 3}
+  m_PrefabInstance: {fileID: 2180936976701626242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931841568111102785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b829e6dd1fce72540a754f44861b6e39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &5931841568111102792 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2707717350399373832, guid: ff2794d770607ea49a12043427e7a592, type: 3}
   m_PrefabInstance: {fileID: 2180936976701626242}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &7085284142030107381 stripped

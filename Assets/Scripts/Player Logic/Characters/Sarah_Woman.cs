@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Sarah_Woman : Player
 {
-    // Start is called before the first frame update
-    void Start()
+     protected override void Start()
     {
-        
+        base.Start();
+        playerNumControl = 2;  // Set the control number for Sarah_Woman
+        Debug.Log("Sarah_Woman initialized");
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
+        base.Update();
+        // Add any custom behavior for Sarah_Woman here
     }
 }

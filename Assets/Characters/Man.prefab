@@ -186,11 +186,9 @@ GameObject:
   - component: {fileID: 7988615939625370994}
   - component: {fileID: 2707717350399373832}
   - component: {fileID: 211698568731885763}
-  - component: {fileID: 4352291260304487265}
   - component: {fileID: 277970003413183390}
   - component: {fileID: 4669972732413904758}
   - component: {fileID: 9020504983754601885}
-  - component: {fileID: 5420526600078678815}
   - component: {fileID: 4232668315989575231}
   m_Layer: 3
   m_Name: Man
@@ -348,25 +346,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4352291260304487265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9068660352569781258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72a6d83eb2ab6cc4389ea9ec660a9702, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lowStun: 1
-  highStun: 2
-  healthBar: {fileID: 0}
-  defenseBar: {fileID: 0}
-  gameOverScreen: {fileID: 0}
-  punchNoise: {fileID: 0}
-  projectileNoise: {fileID: 0}
 --- !u!95 &277970003413183390
 Animator:
   serializedVersion: 5
@@ -449,28 +428,6 @@ MonoBehaviour:
   KBCounter: 0
   KBTotalTime: 0.2
   KnockFromRight: 0
---- !u!114 &5420526600078678815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9068660352569781258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fe77c4c75fd2c147a72744ef8a70920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityPrefab: {fileID: 1668337835393732646, guid: 7e64d45f99f2ca648a7f98760047e44a, type: 3}
-  fireRate: 10
-  damageAmount: 1
-  isUltimateActive: 0
-  firePoint: {fileID: 4100941822883011015}
-  knockBack: {fileID: 0}
-  ultName: Gaslight
-  ultActivatedVoiceCue: {fileID: 0}
-  ultReadyVoiceCue: {fileID: 0}
-  flameDuration: 1
 --- !u!114 &4232668315989575231
 MonoBehaviour:
   m_ObjectHideFlags: 0
