@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
     public float runSpeed = 40f;
     public KnockBack knockBack;
 
-    public P1PlayerAttack p1PlayerAttack;
+    
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
@@ -75,8 +75,10 @@ public class Player : MonoBehaviour
     public int damage = 4;
     public Rigidbody2D rb;
     public float degreesPerSec = 360f;
-
-    public P2PlayerAttack p2PlayerAttack;
+    private const int maxUltimate = 20;
+    
+    //for banner
+    public UltimateBannerManager ultimateBannerManager;
 
     protected virtual void Start()
     {
@@ -87,8 +89,7 @@ public class Player : MonoBehaviour
         _defense_2 = MAX_DEFENSE;
         _ultimate_2 = 0;
         attackArea = transform.GetChild(1).gameObject;
-       // p1PlayerAttack = GameObject.FindObjectOfType<P1PlayerAttack>();
-        //p2PlayerAttack = GameObject.FindObjectOfType<P2PlayerAttack>();
+      
 
         animator = animator ?? GetComponent<Animator>();
         rb = rb ?? GetComponent<Rigidbody2D>();

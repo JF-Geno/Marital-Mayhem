@@ -25,7 +25,7 @@ public class Bill_Man : Player
         // {
         //     KnockBack(collider);
         //     collider.GetComponent<Bill_Man>().Damage(damage, GameValues.DamageTypes.Melee);
-        //     Bill_Man.UltimateLogic();
+        //     UltimateLogic();
         // }
      
         //Sarah_Woman
