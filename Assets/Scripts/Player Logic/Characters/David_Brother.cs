@@ -46,18 +46,18 @@ public class David_Brother : Player
             Sarah_Woman.UltimateLogic();
         }
         //David_Brother
-         if (collider.GetComponent<David_Brother>() != null)
-        {
-            KnockBack(collider);
-            collider.GetComponent<David_Brother>().Damage(damage, GameValues.DamageTypes.Melee);
-            David_Brother.UltimateLogic();
-        }
-        if (collider.GetComponent<David_Brother>() != null)
-        {
-            KnockBack(collider);
-            collider.GetComponent<David_Brother>().Damage(damage, GameValues.DamageTypes.Ranged);
-            David_Brother.UltimateLogic();
-        }
+        //  if (collider.GetComponent<David_Brother>() != null)
+        // {
+        //     KnockBack(collider);
+        //     collider.GetComponent<David_Brother>().Damage(damage, GameValues.DamageTypes.Melee);
+        //     David_Brother.UltimateLogic();
+        // }
+        // if (collider.GetComponent<David_Brother>() != null)
+        // {
+        //     KnockBack(collider);
+        //     collider.GetComponent<David_Brother>().Damage(damage, GameValues.DamageTypes.Ranged);
+        //     David_Brother.UltimateLogic();
+        // }
         //Jessica_Babysitter
         if (collider.GetComponent<Jessica_Babysitter>() != null)
         {

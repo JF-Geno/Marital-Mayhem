@@ -291,13 +291,61 @@ public class Player : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ULT()
-    {
-        Debug.Log("Ultimate Ability used");
-        //ultimateAbility.UltimateSkill();
-        activeUlt = false;
-    }
+   
 
+     private void ULT()
+    {
+        if (ultimateAbility != null)
+        {
+            ultimateAbility.isUltimateActive = true;
+            animator.SetBool("UltimateIsActive", true);
+            animator.SetBool("UltimateStarted", true);
+            ultimateBannerManager.ActivateUltBanner(ultimateAbility.ultName, ultimateAbility.ultActivatedVoiceCue);
+            activeUlt = false;
+        }
+    }
+ public void UltimateLogic()
+    {
+
+        if(playerNumControl == 1)
+        {
+                if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
+        {
+            if (_ultimate < maxUltimate)
+            {
+                _ultimate += 1;
+                Debug.Log("Ultimate charge increased");
+            }
+
+            if (_ultimate == maxUltimate && !activeUlt)
+            {
+                activeUlt = true;
+                //for banner
+                ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
+            }
+        }
+        }
+         if(playerNumControl == 2)
+        {
+                if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
+        {
+            if (_ultimate_2 < maxUltimate)
+            {
+                _ultimate_2 += 1;
+                Debug.Log("Ultimate charge increased");
+            }
+
+            if (_ultimate == maxUltimate && !activeUlt)
+            {
+                activeUlt = true;
+                //for banner
+                ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
+            }
+        }
+        }
+
+        
+    }
     public void UltimateTimerLogic()
     {
         ultimateTimer += Time.deltaTime;
