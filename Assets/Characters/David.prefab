@@ -448,7 +448,7 @@ MonoBehaviour:
   nameIPositionX: 0
   nameIPositionY: 0
   headShot: {fileID: 21300000, guid: 9b66f97914a14b94dbbdb77ed5cd07f3, type: 3}
-  CharacterPrefab: {fileID: 0}
+  CharacterPrefab: {fileID: 2270691905259454419}
   playerNumControl: 0
   healthBar: {fileID: 0}
   defenseBar: {fileID: 0}
