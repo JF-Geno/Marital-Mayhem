@@ -60,7 +60,6 @@ public class Player : MonoBehaviour
     public float runSpeed = 40f;
     public KnockBack knockBack;
 
-    
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
@@ -76,7 +75,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public float degreesPerSec = 360f;
     private const int maxUltimate = 20;
-    
+
     //for banner
     public UltimateBannerManager ultimateBannerManager;
 
@@ -89,7 +88,6 @@ public class Player : MonoBehaviour
         _defense_2 = MAX_DEFENSE;
         _ultimate_2 = 0;
         attackArea = transform.GetChild(1).gameObject;
-      
 
         animator = animator ?? GetComponent<Animator>();
         rb = rb ?? GetComponent<Rigidbody2D>();
@@ -97,6 +95,8 @@ public class Player : MonoBehaviour
 
     protected virtual void Update()
     {
+        animator.SetBool("IsRangedAttack", false);
+        animator.SetBool("UltimateStarted", false);
         if (playerNumControl == 1)
         {
             HandleInputForPlayer1();
@@ -191,8 +191,6 @@ public class Player : MonoBehaviour
         }
     }
 
-   
-
     public void KnockBack(Collider2D collider)
     {
         knockBack.KBCounter = knockBack.KBTotalTime;
@@ -207,6 +205,7 @@ public class Player : MonoBehaviour
                 punchNoise.SetActive(false);
                 punchNoise.SetActive(true);
                 break;
+
             case GameValues.DamageTypes.Ranged:
                 projectileNoise.SetActive(false);
                 projectileNoise.SetActive(true);
@@ -288,13 +287,11 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-       // gameOverScreen.Setup();
+        // gameOverScreen.Setup();
         gameObject.SetActive(false);
     }
 
-   
-
-     private void ULT()
+    private void ULT()
     {
         if (ultimateAbility != null)
         {
@@ -305,47 +302,44 @@ public class Player : MonoBehaviour
             activeUlt = false;
         }
     }
- public void UltimateLogic()
+    public void UltimateLogic()
     {
+        if (playerNumControl == 1)
+        {
+            if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
+            {
+                if (_ultimate < maxUltimate)
+                {
+                    _ultimate += 1;
+                    Debug.Log("Ultimate charge increased");
+                }
 
-        if(playerNumControl == 1)
-        {
-                if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
-        {
-            if (_ultimate < maxUltimate)
-            {
-                _ultimate += 1;
-                Debug.Log("Ultimate charge increased");
-            }
-
-            if (_ultimate == maxUltimate && !activeUlt)
-            {
-                activeUlt = true;
-                //for banner
-                ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
-            }
-        }
-        }
-         if(playerNumControl == 2)
-        {
-                if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
-        {
-            if (_ultimate_2 < maxUltimate)
-            {
-                _ultimate_2 += 1;
-                Debug.Log("Ultimate charge increased");
-            }
-
-            if (_ultimate == maxUltimate && !activeUlt)
-            {
-                activeUlt = true;
-                //for banner
-                ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
+                if (_ultimate == maxUltimate && !activeUlt)
+                {
+                    activeUlt = true;
+                    //for banner
+                    ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
+                }
             }
         }
-        }
+        if (playerNumControl == 2)
+        {
+            if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
+            {
+                if (_ultimate_2 < maxUltimate)
+                {
+                    _ultimate_2 += 1;
+                    Debug.Log("Ultimate charge increased");
+                }
 
-        
+                if (_ultimate == maxUltimate && !activeUlt)
+                {
+                    activeUlt = true;
+                    //for banner
+                    ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
+                }
+            }
+        }
     }
     public void UltimateTimerLogic()
     {
@@ -376,7 +370,7 @@ public class Player : MonoBehaviour
             attackArea.SetActive(attacking);
             punchNoise.SetActive(false);
             punchNoise.SetActive(true);
-            animator.SetTrigger("Attack");
+            animator.SetBool("Attack", true);
         }
     }
 
@@ -388,6 +382,7 @@ public class Player : MonoBehaviour
         {
             attacking = false;
             attackArea.SetActive(attacking);
+            animator.SetBool("Attack", false);
         }
     }
 
@@ -397,8 +392,7 @@ public class Player : MonoBehaviour
         {
             shooting = true;
             targetTime = Time.time + 1.0f;
-
-            animator.SetTrigger("Shoot");
+            animator.SetBool("IsRangedAttack", true);
             projectileNoise.SetActive(false);
             projectileNoise.SetActive(true);
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
@@ -423,7 +417,7 @@ public class Player : MonoBehaviour
         defenseBar_2.fillAmount = _defense_2 / (float)MAX_DEFENSE;
         ultimateBar_2.fillAmount = _ultimate_2 / (float)MAX_ULTIMATE;
     }
-     public void OnLanding()
+    public void OnLanding()
     {
         animator.SetBool("IsJumping", false);
     }
@@ -439,4 +433,3 @@ public class Player : MonoBehaviour
         jump = false;
     }
 }
-
