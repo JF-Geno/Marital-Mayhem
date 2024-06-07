@@ -3899,7 +3899,7 @@ PrefabInstance:
     - target: {fileID: 2299746028527762547, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 8763727390696608969, guid: 4c9a9047c43617e4db01d3ec9890e6ea, type: 3}
+      objectReference: {fileID: 1738683754663656069, guid: 404f84e3f3912ed489841b0747142ac4, type: 3}
     - target: {fileID: 2299746028527762547, guid: 863223f16df7b834aaf1df75baad892a, type: 3}
       propertyPath: ultimateBannerManager
       value: 

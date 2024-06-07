@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
     public float targetTime = 0.0f;
     public float timeToAttack = 0.25f;
     public float timer = 0f;
-    public GameObject throwNoise;
+
     public UltimateAbility ultimateAbility;
     public float ultimateTimer = 0.0f;
     public Movement controller;
@@ -60,7 +60,6 @@ public class Player : MonoBehaviour
     public float runSpeed = 40f;
     public KnockBack knockBack;
 
-    
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
@@ -68,7 +67,11 @@ public class Player : MonoBehaviour
     private const float defenseRegenInterval = 3.0f;
 
     public GameOverScreen gameOverScreen;
+    //this is the melee sound
     public GameObject punchNoise;
+    //this is the sound when you throw the projectile
+    public GameObject throwNoise;
+    //this is the sound on projectile contact
     public GameObject projectileNoise;
 
     public float speed = 20f;
@@ -76,7 +79,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public float degreesPerSec = 360f;
     private const int maxUltimate = 20;
-    
+
     //for banner
     public UltimateBannerManager ultimateBannerManager;
 
@@ -89,7 +92,6 @@ public class Player : MonoBehaviour
         _defense_2 = MAX_DEFENSE;
         _ultimate_2 = 0;
         attackArea = transform.GetChild(1).gameObject;
-      
 
         animator = animator ?? GetComponent<Animator>();
         rb = rb ?? GetComponent<Rigidbody2D>();
@@ -191,27 +193,10 @@ public class Player : MonoBehaviour
         }
     }
 
-   
-
     public void KnockBack(Collider2D collider)
     {
         knockBack.KBCounter = knockBack.KBTotalTime;
         knockBack.KnockFromRight = collider.transform.position.x <= transform.position.x;
-    }
-
-    public void DamageSound(GameValues.DamageTypes type)
-    {
-        switch (type)
-        {
-            case GameValues.DamageTypes.Melee:
-                punchNoise.SetActive(false);
-                punchNoise.SetActive(true);
-                break;
-            case GameValues.DamageTypes.Ranged:
-                projectileNoise.SetActive(false);
-                projectileNoise.SetActive(true);
-                break;
-        }
     }
 
     public void healthController(int amount)
@@ -288,13 +273,11 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-       // gameOverScreen.Setup();
+        // gameOverScreen.Setup();
         gameObject.SetActive(false);
     }
 
-   
-
-     private void ULT()
+    private void ULT()
     {
         if (ultimateAbility != null)
         {
@@ -305,47 +288,44 @@ public class Player : MonoBehaviour
             activeUlt = false;
         }
     }
- public void UltimateLogic()
+    public void UltimateLogic()
     {
+        if (playerNumControl == 1)
+        {
+            if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
+            {
+                if (_ultimate < maxUltimate)
+                {
+                    _ultimate += 1;
+                    Debug.Log("Ultimate charge increased");
+                }
 
-        if(playerNumControl == 1)
-        {
-                if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
-        {
-            if (_ultimate < maxUltimate)
-            {
-                _ultimate += 1;
-                Debug.Log("Ultimate charge increased");
-            }
-
-            if (_ultimate == maxUltimate && !activeUlt)
-            {
-                activeUlt = true;
-                //for banner
-                ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
-            }
-        }
-        }
-         if(playerNumControl == 2)
-        {
-                if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
-        {
-            if (_ultimate_2 < maxUltimate)
-            {
-                _ultimate_2 += 1;
-                Debug.Log("Ultimate charge increased");
-            }
-
-            if (_ultimate == maxUltimate && !activeUlt)
-            {
-                activeUlt = true;
-                //for banner
-                ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
+                if (_ultimate == maxUltimate && !activeUlt)
+                {
+                    activeUlt = true;
+                    //for banner
+                    ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
+                }
             }
         }
-        }
+        if (playerNumControl == 2)
+        {
+            if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
+            {
+                if (_ultimate_2 < maxUltimate)
+                {
+                    _ultimate_2 += 1;
+                    Debug.Log("Ultimate charge increased");
+                }
 
-        
+                if (_ultimate == maxUltimate && !activeUlt)
+                {
+                    activeUlt = true;
+                    //for banner
+                    ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
+                }
+            }
+        }
     }
     public void UltimateTimerLogic()
     {
@@ -374,8 +354,8 @@ public class Player : MonoBehaviour
             timer = 0f;
             attacking = true;
             attackArea.SetActive(attacking);
-            punchNoise.SetActive(false);
-            punchNoise.SetActive(true);
+
+            DamageSound(GameValues.DamageTypes.Melee);
             animator.SetTrigger("Attack");
         }
     }
@@ -399,8 +379,8 @@ public class Player : MonoBehaviour
             targetTime = Time.time + 1.0f;
 
             animator.SetTrigger("Shoot");
-            projectileNoise.SetActive(false);
-            projectileNoise.SetActive(true);
+
+            DamageSound(GameValues.DamageTypes.Ranged);
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         }
     }
@@ -423,7 +403,7 @@ public class Player : MonoBehaviour
         defenseBar_2.fillAmount = _defense_2 / (float)MAX_DEFENSE;
         ultimateBar_2.fillAmount = _ultimate_2 / (float)MAX_ULTIMATE;
     }
-     public void OnLanding()
+    public void OnLanding()
     {
         animator.SetBool("IsJumping", false);
     }
@@ -438,5 +418,20 @@ public class Player : MonoBehaviour
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
     }
-}
 
+    public void DamageSound(GameValues.DamageTypes type)
+    {
+        switch (type)
+        {
+            case GameValues.DamageTypes.Melee:
+                punchNoise.SetActive(false);
+                punchNoise.SetActive(true);
+                break;
+
+            case GameValues.DamageTypes.Ranged:
+                projectileNoise.SetActive(false);
+                projectileNoise.SetActive(true);
+                break;
+        }
+    }
+}
