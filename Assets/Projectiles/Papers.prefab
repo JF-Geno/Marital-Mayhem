@@ -103,6 +103,7 @@ MonoBehaviour:
   damage: 4
   rb: {fileID: 2460014126537986551}
   degreesPerSec: 360
+  gameObject: {fileID: 1738683754663656069}
 --- !u!50 &2460014126537986551
 Rigidbody2D:
   serializedVersion: 4

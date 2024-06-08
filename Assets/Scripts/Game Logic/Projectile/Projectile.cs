@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     public int damage = 4;
     public Rigidbody2D rb;
     public float degreesPerSec = 360f;
+    public GameObject gameObject;
 
     void Start()
     {
