@@ -29,23 +29,45 @@ public class UltimateAbility : MonoBehaviour
 
     public void DealDamage(GameObject target)
     {
-        P2Health WHealth = target.GetComponent<P2Health>();
-
-        if (WHealth != null)
-
+        Bill_Man Bill = target.GetComponent<Bill_Man>();
+        if (Bill != null)
         {
-
-            WHealth.Damage(damageAmount, GameValues.DamageTypes.Ultimate);
+            Bill.Damage(damageAmount, GameValues.DamageTypes.Ultimate);
         }
 
-        P1Health MHealth = target.GetComponent<P1Health>();
-
-        if (MHealth != null)
-
+         Sarah_Woman Sarah = target.GetComponent<Sarah_Woman>();
+        if (Sarah != null)
         {
-           
-            MHealth.Damage(damageAmount, GameValues.DamageTypes.Ultimate);
+            Sarah.Damage(damageAmount, GameValues.DamageTypes.Ultimate);
         }
+
+         David_Brother David = target.GetComponent<David_Brother>();
+        if (David != null)
+        {
+            David.Damage(damageAmount, GameValues.DamageTypes.Ultimate);
+        }
+
+         Jessica_Babysitter Jessica = target.GetComponent<Jessica_Babysitter>();
+        if (Jessica != null)
+        {
+            Jessica.Damage(damageAmount, GameValues.DamageTypes.Ultimate);
+        }
+
+         Kathy_CatLady Kathy = target.GetComponent<Kathy_CatLady>();
+        if (Kathy != null)
+        {
+            Kathy.Damage(damageAmount, GameValues.DamageTypes.Ultimate);
+        }
+        
+         Saul_Lawyer Saul = target.GetComponent<Saul_Lawyer>();
+        if (Saul != null)
+        {
+            Saul.Damage(damageAmount, GameValues.DamageTypes.Ultimate);
+        }
+
+       
     }
+ 
+    
   
 }
