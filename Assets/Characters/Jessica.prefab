@@ -659,8 +659,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KBForce: 6
   KBCounter: 0
-  KBTotalTime: 0.2
   KnockFromRight: 0
+  KBTotalTime: 0.2
 --- !u!114 &3523083407549945852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
-  playerName: 
+  playerName: Jessica
   PlayerNameImage: {fileID: 21300000, guid: ac8f5aada3bbabd4bacf247b45f55602, type: 3}
   CharacterAbilityM: {fileID: 0}
   CharacterAbilityR: {fileID: 0}
@@ -683,16 +683,13 @@ MonoBehaviour:
   nameIPositionX: 0
   nameIPositionY: 0
   headShot: {fileID: 21300000, guid: 5a7515d940e304d45b3a7db5298fe5ff, type: 3}
-  CharacterPrefab: {fileID: 3783995324378328114}
+  CharacterPrefab: {fileID: 3523083407549945852}
   playerNumControl: 0
-  healthBar: {fileID: 0}
-  defenseBar: {fileID: 0}
-  ultimateBar: {fileID: 0}
-  healthBar_2: {fileID: 0}
-  defenseBar_2: {fileID: 0}
-  ultimateBar_2: {fileID: 0}
+  controller: {fileID: 0}
   animator: {fileID: 8217747897206612413}
-  attackArea: {fileID: 8680029657277665469}
+  runSpeed: 40
+  isInputDisabled: 0
+  ultimateTimer: 0
   activeUlt: 0
   firePoint: {fileID: 8911519521014689464}
   projectilePrefab: {fileID: 7872040411823127002, guid: 327ecea9d902dbe499a1de0b9b452db1, type: 3}
@@ -701,21 +698,12 @@ MonoBehaviour:
   targetTime: 0
   timeToAttack: 0.25
   timer: 0
-  throwNoise: {fileID: 7543680227232399812}
   ultimateAbility: {fileID: 0}
-  ultimateTimer: 0
-  controller: {fileID: 0}
-  isInputDisabled: 0
-  runSpeed: 40
-  knockBack: {fileID: 4973177501707713730}
-  gameOverScreen: {fileID: 0}
+  throwNoise: {fileID: 7543680227232399812}
   punchNoise: {fileID: 3025552550506608141}
   projectileNoise: {fileID: 508143160234192675}
-  speed: 20
-  damage: 4
-  rb: {fileID: 4245151424694244388}
-  degreesPerSec: 360
   ultimateBannerManager: {fileID: 0}
+  HUD: {fileID: 0}
 --- !u!1 &4558335239478017324
 GameObject:
   m_ObjectHideFlags: 0

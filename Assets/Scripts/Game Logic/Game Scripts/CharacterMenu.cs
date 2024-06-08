@@ -48,8 +48,6 @@ public class CharacterMenu : MonoBehaviour
 
     public void MapMenu()
     {
-        GameValues.Player1 = P1Character;
-        GameValues.Player2 = P2Character;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -87,7 +85,7 @@ public class CharacterMenu : MonoBehaviour
     public void P1(Player p1)
     {
         PlayerOneName.GetComponent<SpriteRenderer>().sprite = p1.PlayerNameImage;
-        P1Character = p1;
+        GameValues.player1Name = $"{p1.playerName}";
 
         // Instantiate the new prefab
         Player newObject = Instantiate(p1, PlayerOneCharacter.transform.position, PlayerOneCharacter.transform.rotation);
@@ -109,7 +107,7 @@ public class CharacterMenu : MonoBehaviour
     public void P2(Player p2)
     {
         PlayerTwoName.GetComponent<SpriteRenderer>().sprite = p2.PlayerNameImage;
-        P2Character = p2;
+        GameValues.player2Name = $"{p2.playerName}";
 
         Player newObject = Instantiate(p2, PlayerTwoCharacter.transform.position, PlayerTwoCharacter.transform.rotation);
 

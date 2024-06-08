@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
-  playerName: 
+  playerName: Bill
   PlayerNameImage: {fileID: 21300000, guid: 83a81590a2284c64a9a4605f4ea4a46f, type: 3}
   CharacterAbilityM: {fileID: 0}
   CharacterAbilityR: {fileID: 0}
@@ -410,7 +410,7 @@ MonoBehaviour:
   nameIPositionX: 0
   nameIPositionY: 0
   headShot: {fileID: 21300000, guid: d75ec409546eeef4eae0dcfb4ca20188, type: 3}
-  CharacterPrefab: {fileID: 650070194568663801}
+  CharacterPrefab: {fileID: 3940314073064663277}
   playerNumControl: 0
   controller: {fileID: 4909761420257107557}
   animator: {fileID: 7628338005495944614}

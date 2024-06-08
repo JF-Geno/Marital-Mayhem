@@ -815,8 +815,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KBForce: 6
   KBCounter: 0
-  KBTotalTime: 0.2
   KnockFromRight: 0
+  KBTotalTime: 0.2
 --- !u!114 &3360427947420971997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
-  playerName: 
+  playerName: Kathy
   PlayerNameImage: {fileID: 21300000, guid: d43388ba7aaed2d48b155e59c37dc2dc, type: 3}
   CharacterAbilityM: {fileID: 0}
   CharacterAbilityR: {fileID: 0}
@@ -839,16 +839,13 @@ MonoBehaviour:
   nameIPositionX: 0
   nameIPositionY: 0
   headShot: {fileID: 21300000, guid: 9abe112ed041f1645a073b091751201c, type: 3}
-  CharacterPrefab: {fileID: 7088748216573092245}
+  CharacterPrefab: {fileID: 3360427947420971997}
   playerNumControl: 0
-  healthBar: {fileID: 0}
-  defenseBar: {fileID: 0}
-  ultimateBar: {fileID: 0}
-  healthBar_2: {fileID: 0}
-  defenseBar_2: {fileID: 0}
-  ultimateBar_2: {fileID: 0}
+  controller: {fileID: 0}
   animator: {fileID: 3510509664440691579}
-  attackArea: {fileID: 1575899297229946928}
+  runSpeed: 40
+  isInputDisabled: 0
+  ultimateTimer: 0
   activeUlt: 0
   firePoint: {fileID: 3171108547692797483}
   projectilePrefab: {fileID: 7078994179645990655, guid: b7e709e724bc11444b98b6674a374427, type: 3}
@@ -857,21 +854,12 @@ MonoBehaviour:
   targetTime: 0
   timeToAttack: 0.25
   timer: 0
-  throwNoise: {fileID: 1170164381098397538}
   ultimateAbility: {fileID: 0}
-  ultimateTimer: 0
-  controller: {fileID: 0}
-  isInputDisabled: 0
-  runSpeed: 40
-  knockBack: {fileID: 1945387503658486903}
-  gameOverScreen: {fileID: 0}
+  throwNoise: {fileID: 1170164381098397538}
   punchNoise: {fileID: 2997209141607048582}
   projectileNoise: {fileID: 8200863617770369424}
-  speed: 20
-  damage: 4
-  rb: {fileID: 1689846829176069723}
-  degreesPerSec: 360
   ultimateBannerManager: {fileID: 0}
+  HUD: {fileID: 0}
 --- !u!1 &8200863617770369424
 GameObject:
   m_ObjectHideFlags: 0

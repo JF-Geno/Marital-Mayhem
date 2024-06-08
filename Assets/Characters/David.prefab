@@ -618,8 +618,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KBForce: 6
   KBCounter: 0
-  KBTotalTime: 0.2
   KnockFromRight: 0
+  KBTotalTime: 0.2
 --- !u!114 &5601255409047210634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 2
-  playerName: 
+  playerName: David
   PlayerNameImage: {fileID: 21300000, guid: 6e34eb76ce4686d4a887d39d961e68af, type: 3}
   CharacterAbilityM: {fileID: 0}
   CharacterAbilityR: {fileID: 0}
@@ -642,16 +642,13 @@ MonoBehaviour:
   nameIPositionX: 0
   nameIPositionY: 0
   headShot: {fileID: 21300000, guid: 9b66f97914a14b94dbbdb77ed5cd07f3, type: 3}
-  CharacterPrefab: {fileID: 4746603327699832692}
+  CharacterPrefab: {fileID: 5601255409047210634}
   playerNumControl: 0
-  healthBar: {fileID: 0}
-  defenseBar: {fileID: 0}
-  ultimateBar: {fileID: 0}
-  healthBar_2: {fileID: 0}
-  defenseBar_2: {fileID: 0}
-  ultimateBar_2: {fileID: 0}
+  controller: {fileID: 0}
   animator: {fileID: 856848347707965349}
-  attackArea: {fileID: 3102895242371027426}
+  runSpeed: 40
+  isInputDisabled: 0
+  ultimateTimer: 0
   activeUlt: 0
   firePoint: {fileID: 4048972225041933618}
   projectilePrefab: {fileID: 7760857457619231697, guid: b99aaafb5d03f6d4dbe3ada7b038ad06, type: 3}
@@ -660,21 +657,12 @@ MonoBehaviour:
   targetTime: 0
   timeToAttack: 0.25
   timer: 0
-  throwNoise: {fileID: 5282356357071559466}
   ultimateAbility: {fileID: 0}
-  ultimateTimer: 0
-  controller: {fileID: 0}
-  isInputDisabled: 0
-  runSpeed: 40
-  knockBack: {fileID: 2390080705116862571}
-  gameOverScreen: {fileID: 0}
+  throwNoise: {fileID: 5282356357071559466}
   punchNoise: {fileID: 3101532719510250459}
   projectileNoise: {fileID: 334852294458541514}
-  speed: 20
-  damage: 4
-  rb: {fileID: 8611797603129362095}
-  degreesPerSec: 360
   ultimateBannerManager: {fileID: 0}
+  HUD: {fileID: 0}
 --- !u!1 &5282356357071559466
 GameObject:
   m_ObjectHideFlags: 0

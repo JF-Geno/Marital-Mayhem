@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public int nameIPositionX = 0;
     public int nameIPositionY = 0;
     public Sprite headShot;
-    public GameObject CharacterPrefab;
+    public Player CharacterPrefab;
     public int playerNumControl = 0;
 
     // Movement

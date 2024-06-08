@@ -9,8 +9,7 @@ public class GameValues
     public static string PlayerWin = "P2";
     public static string player1Name = "Bill";
     public static string player2Name = "Sarah";
-    public static Player Player1;
-    public static Player Player2;
+    public static Sprite Map;
     public enum DamageTypes
     {
         Melee,

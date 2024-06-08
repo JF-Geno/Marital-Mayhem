@@ -16,8 +16,18 @@ public class MapMenu : MonoBehaviour
         
     }
 
+   public void SetMap(Sprite map)
+    {
+        Debug.Log("Selected");
+        GameValues.Map = map;
+    }
+
      public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if(GameValues.Map  == null)
+        {
+            return;
+        }
+        SceneManager.LoadScene(3);
     }
 }

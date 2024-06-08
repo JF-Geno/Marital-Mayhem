@@ -542,8 +542,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KBForce: 6
   KBCounter: 0
-  KBTotalTime: 0.2
   KnockFromRight: 0
+  KBTotalTime: 0.2
 --- !u!114 &5584642076348819486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
-  playerName: 
+  playerName: Saul
   PlayerNameImage: {fileID: 21300000, guid: aa471b0a02e5cb44897119ba2e7d529e, type: 3}
   CharacterAbilityM: {fileID: 0}
   CharacterAbilityR: {fileID: 0}
@@ -566,16 +566,13 @@ MonoBehaviour:
   nameIPositionX: 0
   nameIPositionY: 0
   headShot: {fileID: 21300000, guid: d3dda4d6278a7a746b79e8c20b7b0290, type: 3}
-  CharacterPrefab: {fileID: 3608497882541460745}
+  CharacterPrefab: {fileID: 5584642076348819486}
   playerNumControl: 0
-  healthBar: {fileID: 0}
-  defenseBar: {fileID: 0}
-  ultimateBar: {fileID: 0}
-  healthBar_2: {fileID: 0}
-  defenseBar_2: {fileID: 0}
-  ultimateBar_2: {fileID: 0}
+  controller: {fileID: 0}
   animator: {fileID: 2319155218588255305}
-  attackArea: {fileID: 6764454437045708042}
+  runSpeed: 40
+  isInputDisabled: 0
+  ultimateTimer: 0
   activeUlt: 0
   firePoint: {fileID: 8277739794651026333}
   projectilePrefab: {fileID: 1738683754663656069, guid: 404f84e3f3912ed489841b0747142ac4, type: 3}
@@ -584,21 +581,12 @@ MonoBehaviour:
   targetTime: 0
   timeToAttack: 0.25
   timer: 0
-  throwNoise: {fileID: 785145129359039970}
   ultimateAbility: {fileID: 0}
-  ultimateTimer: 0
-  controller: {fileID: 0}
-  isInputDisabled: 0
-  runSpeed: 40
-  knockBack: {fileID: 1039167605072400614}
-  gameOverScreen: {fileID: 0}
+  throwNoise: {fileID: 785145129359039970}
   punchNoise: {fileID: 8383955905127776202}
   projectileNoise: {fileID: 3182934678045753535}
-  speed: 20
-  damage: 4
-  rb: {fileID: 5627380734986502302}
-  degreesPerSec: 360
   ultimateBannerManager: {fileID: 0}
+  HUD: {fileID: 0}
 --- !u!1 &4344366701185166190
 GameObject:
   m_ObjectHideFlags: 0

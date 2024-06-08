@@ -8,8 +8,7 @@ public class Bill_Man : Player
    protected override void Start()
     {
         base.Start();
-       // playerNumControl = 2;  // Set the control number for Bill_Man
-        Debug.Log("Bill_Man initialized");
+        //Debug.Log("Bill_Man initialized");
     }
 
     protected override void Update()
