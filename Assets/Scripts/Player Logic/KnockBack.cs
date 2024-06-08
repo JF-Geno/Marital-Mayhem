@@ -5,17 +5,19 @@ using UnityEngine;
 public class KnockBack : MonoBehaviour
 {
 
-    public float KBForce;
-    public float KBCounter;
-    public float KBTotalTime;
-    private Rigidbody2D m_Rigidbody2D;
-    public bool KnockFromRight;
+public float KBForce;
+public float KBCounter;
+private Rigidbody2D m_Rigidbody2D;
+public bool KnockFromRight;
+
+public float KBTotalTime;
+
    
- private void Awake()
-    {
+private void Awake()
+{
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
-    }
+}
 
 void FixedUpdate()
 {  
@@ -32,20 +34,6 @@ void FixedUpdate()
 
         KBCounter -= Time.deltaTime;
     }
-     
-   
 }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

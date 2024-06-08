@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+     // Player stats
     public int playerId;
     public string playerName;
     public Sprite PlayerNameImage;
@@ -17,32 +18,25 @@ public class Player : MonoBehaviour
     public int nameIPositionY = 0;
     public Sprite headShot;
     public GameObject CharacterPrefab;
-
     public int playerNumControl = 0;
 
-    public Image healthBar;
-    public Image defenseBar;
-    public Image ultimateBar;
-
-    public Image healthBar_2;
-    public Image defenseBar_2;
-    public Image ultimateBar_2;
-
-    protected const int MAX_HEALTH = 200;
-    protected const int MAX_DEFENSE = 10;
-    protected const int MAX_ULTIMATE = 10;
-
-    protected int _health;
-    protected int _defense;
-    protected int _ultimate;
-
-    protected int _health_2;
-    protected int _defense_2;
-    protected int _ultimate_2;
-
+    // Movement
+    public Movement controller;
     public Animator animator;
-    public GameObject attackArea = default;
-    public const float ultimateRegenInterval = 1.0f;
+    public float runSpeed = 40f;
+    float horizontalMove = 0f;
+    bool jump = false;
+    bool crouch = false;
+
+    // Health
+    public bool isInputDisabled = false;
+    private float defenseTimer = 0.0f;
+
+    // Attack
+    public float ultimateTimer = 0.0f;
+    private GameObject attackArea = default;
+    private const int maxUltimate = 20;
+    private const int ultimateDecrease = 4;
     public bool activeUlt = false;
     public Transform firePoint;
     public GameObject projectilePrefab;
@@ -51,48 +45,25 @@ public class Player : MonoBehaviour
     public float targetTime = 0.0f;
     public float timeToAttack = 0.25f;
     public float timer = 0f;
-    public GameObject throwNoise;
     public UltimateAbility ultimateAbility;
-    public float ultimateTimer = 0.0f;
-    public Movement controller;
-
-    public bool isInputDisabled;
-    public float runSpeed = 40f;
-    public KnockBack knockBack;
-
-    
-    float horizontalMove = 0f;
-    bool jump = false;
-    bool crouch = false;
-    private float defenseTimer = 0.0f;
     private const float defenseRegenInterval = 3.0f;
+    public const float ultimateRegenInterval = 1.0f;
 
-    public GameOverScreen gameOverScreen;
+    // Sound Board
+    public GameObject throwNoise;
     public GameObject punchNoise;
     public GameObject projectileNoise;
 
-    public float speed = 20f;
-    public int damage = 4;
-    public Rigidbody2D rb;
-    public float degreesPerSec = 360f;
-    private const int maxUltimate = 20;
-    
-    //for banner
+    // Banner
     public UltimateBannerManager ultimateBannerManager;
+
+    // HUD
+    public HUDControl HUD;
 
     protected virtual void Start()
     {
-        _health = MAX_HEALTH;
-        _defense = MAX_DEFENSE;
-        _ultimate = 0;
-        _health_2 = MAX_HEALTH;
-        _defense_2 = MAX_DEFENSE;
-        _ultimate_2 = 0;
         attackArea = transform.GetChild(1).gameObject;
-      
-
         animator = animator ?? GetComponent<Animator>();
-        rb = rb ?? GetComponent<Rigidbody2D>();
     }
 
     protected virtual void Update()
@@ -105,17 +76,9 @@ public class Player : MonoBehaviour
         {
             HandleInputForPlayer2();
         }
-
-        UltimateTimerLogic();
-
         if (attacking)
         {
             HandleAttacking();
-        }
-
-        if (shooting)
-        {
-            HandleShooting();
         }
     }
 
@@ -143,14 +106,17 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
+            UltimateTimerLogic();
             Attack();
         }
         if (Input.GetKeyDown(KeyCode.X))
-        {
+        { 
+            
             Shoot();
         }
         if (Input.GetKeyDown(KeyCode.Z) && activeUlt)
         {
+            
             ULT();
         }
     }
@@ -191,14 +157,6 @@ public class Player : MonoBehaviour
         }
     }
 
-   
-
-    public void KnockBack(Collider2D collider)
-    {
-        knockBack.KBCounter = knockBack.KBTotalTime;
-        knockBack.KnockFromRight = collider.transform.position.x <= transform.position.x;
-    }
-
     public void DamageSound(GameValues.DamageTypes type)
     {
         switch (type)
@@ -218,41 +176,48 @@ public class Player : MonoBehaviour
     {
         if (playerNumControl == 1)
         {
-            _health = UpdateHealth(amount, _defense, _health);
-            Debug.Log($"Player 1 Health: {_health / (float)MAX_HEALTH:P0}");
-            Debug.Log($"Player 1 Defense: {_defense / (float)MAX_DEFENSE:P0}");
-            UpdateHealthUI();
+            if (amount <= 3)
+            {
+                HUD.UpdatePlayer1HUD(HUD._health - amount, HUD._defense, HUD._ultimate);
+                Debug.Log($"H: {amount}");
+            }
+            else if (amount > 3 && HUD._defense > 0)
+            {
+                HUD.UpdatePlayer1HUD(HUD._health - amount, HUD._defense - 2, HUD._ultimate);
+                int damageTaken = 10 - HUD._defense;
+                int dT = amount + damageTaken;
+                Debug.Log($"H: {dT} {damageTaken}");
+            }
+            else
+            {
+                int damageTaken = 10 - HUD._defense;
+                int dT = amount + damageTaken;
+                Debug.Log($"H: {dT} {damageTaken}");
+                HUD.UpdatePlayer1HUD(HUD._health - dT, HUD._defense, HUD._ultimate);
+            }
         }
         else if (playerNumControl == 2)
         {
-            _health_2 = UpdateHealth(amount, _defense_2, _health_2);
-            Debug.Log($"Player 2 Health: {_health_2 / (float)MAX_HEALTH:P0}");
-            Debug.Log($"Player 2 Defense: {_defense_2 / (float)MAX_DEFENSE:P0}");
-            UpdateHealthUI();
+            if (amount <= 3)
+            {
+                HUD.UpdatePlayer2HUD(HUD._health_2 - amount, HUD._defense_2, HUD._ultimate_2);
+                Debug.Log($"H: {amount}");
+            }
+            else if (amount > 3 && HUD._defense_2 > 0)
+            {
+                HUD.UpdatePlayer2HUD(HUD._health_2 - amount, HUD._defense_2 - 2, HUD._ultimate_2);
+                int damageTaken = 10 - HUD._defense_2;
+                int dT = amount + damageTaken;
+                Debug.Log($"H: {dT} {damageTaken}");
+            }
+            else
+            {
+                int damageTaken = 10 - HUD._defense_2;
+                int dT = amount + damageTaken;
+                Debug.Log($"H: {dT} {damageTaken}");
+                HUD.UpdatePlayer2HUD(HUD._health_2 - dT, HUD._defense_2, HUD._ultimate_2);
+            }
         }
-    }
-
-    private int UpdateHealth(int amount, int defense, int health)
-    {
-        if (amount <= 3)
-        {
-            health -= amount;
-        }
-        else if (amount > 3 && defense > 0)
-        {
-            defense -= 2;
-            int damageTaken = 10 - defense;
-            int dT = amount + damageTaken;
-            health -= dT;
-        }
-        else
-        {
-            int damageTaken = 10 - defense;
-            int dT = amount + damageTaken;
-            health -= dT;
-        }
-
-        return health;
     }
 
     public void Damage(int amount, GameValues.DamageTypes damageType)
@@ -266,35 +231,41 @@ public class Player : MonoBehaviour
         healthController(amount);
         DamageSound(damageType);
 
-        if (playerNumControl == 1 && _health <= 0 || playerNumControl == 2 && _health_2 <= 0)
+        if (playerNumControl == 1 && HUD._health <= 0 || playerNumControl == 2 && HUD._health_2 <= 0)
         {
             Die();
         }
     }
 
-    public void Heal(int amount)
+    public void Die()
     {
         if (playerNumControl == 1)
         {
-            _health = Mathf.Min(MAX_HEALTH, _health + amount);
+            GameValues.PlayerWin = "P1";
+            GameValues.player1Wins++;
+            SceneManager.LoadScene(4);
         }
         else if (playerNumControl == 2)
         {
-            _health_2 = Mathf.Min(MAX_HEALTH, _health_2 + amount);
+            GameValues.PlayerWin = "P2";
+            GameValues.player2Wins++;
+            SceneManager.LoadScene(4);
         }
-
-        UpdateHealthUI();
     }
 
-    public void Die()
+    public void Stun(float stunTime)
     {
-       // gameOverScreen.Setup();
-        gameObject.SetActive(false);
+        isInputDisabled = true;
+        StartCoroutine(EnableInputAfterSeconds(stunTime));
     }
 
-   
+    IEnumerator EnableInputAfterSeconds(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        isInputDisabled = false;
+    }
 
-     private void ULT()
+    private void ULT()
     {
         if (ultimateAbility != null)
         {
@@ -302,51 +273,47 @@ public class Player : MonoBehaviour
             animator.SetBool("UltimateIsActive", true);
             animator.SetBool("UltimateStarted", true);
             ultimateBannerManager.ActivateUltBanner(ultimateAbility.ultName, ultimateAbility.ultActivatedVoiceCue);
-            activeUlt = false;
         }
     }
- public void UltimateLogic()
+
+    public void UltimateLogic()
     {
+        if (playerNumControl == 1)
+        {
+            if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
+            {
+                if (HUD._ultimate < HUDControl.MAX_ULTIMATE)
+                {
+                    HUD.UpdatePlayer1HUD(HUD._health, HUD._defense, HUD._ultimate + 1);
+                    Debug.Log("Ultimate charge increased");
+                }
 
-        if(playerNumControl == 1)
-        {
-                if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
-        {
-            if (_ultimate < maxUltimate)
-            {
-                _ultimate += 1;
-                Debug.Log("Ultimate charge increased");
-            }
-
-            if (_ultimate == maxUltimate && !activeUlt)
-            {
-                activeUlt = true;
-                //for banner
-                ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
-            }
-        }
-        }
-         if(playerNumControl == 2)
-        {
-                if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
-        {
-            if (_ultimate_2 < maxUltimate)
-            {
-                _ultimate_2 += 1;
-                Debug.Log("Ultimate charge increased");
-            }
-
-            if (_ultimate == maxUltimate && !activeUlt)
-            {
-                activeUlt = true;
-                //for banner
-                ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
+                if (HUD._ultimate == HUDControl.MAX_ULTIMATE && !activeUlt)
+                {
+                    activeUlt = true;
+                    ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
+                }
             }
         }
-        }
+        else if (playerNumControl == 2)
+        {
+            if (ultimateAbility != null && !ultimateAbility.isUltimateActive)
+            {
+                if (HUD._ultimate_2 < HUDControl.MAX_ULTIMATE)
+                {
+                    HUD.UpdatePlayer2HUD(HUD._health_2, HUD._defense_2, HUD._ultimate_2 + 1);
+                    Debug.Log("Ultimate charge increased");
+                }
 
-        
+                if (HUD._ultimate_2 == HUDControl.MAX_ULTIMATE && !activeUlt)
+                {
+                    activeUlt = true;
+                    ultimateBannerManager.UltReady(ultimateAbility.ultReadyVoiceCue);
+                }
+            }
+        }
     }
+
     public void UltimateTimerLogic()
     {
         ultimateTimer += Time.deltaTime;
@@ -354,30 +321,21 @@ public class Player : MonoBehaviour
         if (ultimateTimer >= ultimateRegenInterval)
         {
             ultimateTimer = 0.0f;
-            _ultimate = Mathf.Min(MAX_ULTIMATE, _ultimate + 1);
-            _ultimate_2 = Mathf.Min(MAX_ULTIMATE, _ultimate_2 + 1);
+            HUD.UpdatePlayer1HUD(HUD._health, HUD._defense, Mathf.Min(HUDControl.MAX_ULTIMATE, HUD._ultimate + 1));
+            HUD.UpdatePlayer2HUD(HUD._health_2, HUD._defense_2, Mathf.Min(HUDControl.MAX_ULTIMATE, HUD._ultimate_2 + 1));
 
-            if (_ultimate == MAX_ULTIMATE || _ultimate_2 == MAX_ULTIMATE)
+            if (HUD._ultimate == HUDControl.MAX_ULTIMATE || HUD._ultimate_2 == HUDControl.MAX_ULTIMATE)
             {
                 activeUlt = true;
             }
-
-            ultimateBar.fillAmount = _ultimate / (float)MAX_ULTIMATE;
-            ultimateBar_2.fillAmount = _ultimate_2 / (float)MAX_ULTIMATE;
         }
     }
 
     public void Attack()
     {
-        if (!attacking)
-        {
-            timer = 0f;
-            attacking = true;
-            attackArea.SetActive(attacking);
-            punchNoise.SetActive(false);
-            punchNoise.SetActive(true);
-            animator.SetTrigger("Attack");
-        }
+        animator.SetBool("Attack", true);
+        attacking = true;
+        attackArea.SetActive(attacking);
     }
 
     public void HandleAttacking()
@@ -395,38 +353,18 @@ public class Player : MonoBehaviour
     {
         if (!shooting)
         {
+            animator.SetBool("IsRangedAttack", true);
+            targetTime = 1;
             shooting = true;
-            targetTime = Time.time + 1.0f;
-
-            animator.SetTrigger("Shoot");
-            projectileNoise.SetActive(false);
-            projectileNoise.SetActive(true);
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         }
     }
 
-    public void HandleShooting()
-    {
-        if (shooting && Time.time >= targetTime)
-        {
-            shooting = false;
-        }
-    }
-
-    private void UpdateHealthUI()
-    {
-        healthBar.fillAmount = _health / (float)MAX_HEALTH;
-        defenseBar.fillAmount = _defense / (float)MAX_DEFENSE;
-        ultimateBar.fillAmount = _ultimate / (float)MAX_ULTIMATE;
-
-        healthBar_2.fillAmount = _health_2 / (float)MAX_HEALTH;
-        defenseBar_2.fillAmount = _defense_2 / (float)MAX_DEFENSE;
-        ultimateBar_2.fillAmount = _ultimate_2 / (float)MAX_ULTIMATE;
-    }
-     public void OnLanding()
+    public void OnLanding()
     {
         animator.SetBool("IsJumping", false);
     }
+
     public void OnCrouching(bool isCrouching)
     {
         animator.SetBool("IsCrouching", isCrouching);
@@ -434,7 +372,6 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Move our character
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
     }

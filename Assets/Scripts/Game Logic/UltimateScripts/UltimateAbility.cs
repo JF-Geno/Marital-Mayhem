@@ -28,14 +28,12 @@ public class UltimateAbility : MonoBehaviour
     public virtual void ActivateAbility() { }
 
     public void DealDamage(GameObject target)
-
     {
         P2Health WHealth = target.GetComponent<P2Health>();
 
         if (WHealth != null)
 
         {
-            KB1(target.GetComponent<Collider2D>());
 
             WHealth.Damage(damageAmount, GameValues.DamageTypes.Ultimate);
         }
@@ -45,21 +43,9 @@ public class UltimateAbility : MonoBehaviour
         if (MHealth != null)
 
         {
-            KB1(target.GetComponent<Collider2D>());
-
+           
             MHealth.Damage(damageAmount, GameValues.DamageTypes.Ultimate);
         }
     }
-    public void KB1(Collider2D collider)
-    {
-        knockBack.KBCounter = knockBack.KBTotalTime;
-        if (collider.transform.position.x <= transform.position.x)
-        {
-            knockBack.KnockFromRight = true;
-        }
-        if (collider.transform.position.x > transform.position.x)
-        {
-            knockBack.KnockFromRight = false;
-        }
-    }
+  
 }
