@@ -69,6 +69,7 @@ public class Player : MonoBehaviour
 
     protected virtual void Update()
     {
+        UltimateTimerLogic();
         animator.SetBool("IsRangedAttack", false);
         animator.SetBool("UltimateStarted", false);
         if (playerNumControl == 1)
@@ -87,6 +88,54 @@ public class Player : MonoBehaviour
         {
             HandleShooting();
         }
+        if(playerNumControl == 1)
+        {
+            try
+            {
+                if (HUD._defense < HUDControl.MAX_DEFENSE)
+                {
+                    defenseTimer += Time.deltaTime;
+                    if (defenseTimer >= defenseRegenInterval)
+                    {
+                        defenseTimer = 0.0f;
+                        HUD._defense += 2;
+                        if (HUD._defense > HUDControl.MAX_DEFENSE)
+                        {
+                            HUD._defense = HUDControl.MAX_DEFENSE;
+                        }
+                        HUD.UpdatePlayer1HUD(HUD._health, HUD._defense, HUD._ultimate);
+                    }
+                }
+            } catch
+            {
+
+            }
+        }
+        else if (playerNumControl == 2)
+        {
+            try
+            {
+                if (HUD._defense_2 < HUDControl.MAX_DEFENSE)
+                {
+                    defenseTimer += Time.deltaTime;
+                    if (defenseTimer >= defenseRegenInterval)
+                    {
+                        defenseTimer = 0.0f;
+                        HUD._defense_2 += 2;
+                        if (HUD._defense_2 > HUDControl.MAX_DEFENSE)
+                        {
+                            HUD._defense_2 = HUDControl.MAX_DEFENSE;
+                        }
+                        HUD.UpdatePlayer2HUD(HUD._health_2, HUD._defense_2, HUD._ultimate_2);
+                    }
+                }
+
+            } catch
+            {
+
+            }
+        }
+
     }
 
     void HandleInputForPlayer1()
@@ -113,7 +162,6 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            UltimateTimerLogic();
             Attack();
         }
         if (Input.GetKeyDown(KeyCode.X))
@@ -245,13 +293,13 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        if (playerNumControl == 1)
+        if (playerNumControl == 2)
         {
             GameValues.PlayerWin = "P1";
             GameValues.player1Wins++;
             SceneManager.LoadScene(4);
         }
-        else if (playerNumControl == 2)
+        else if (playerNumControl == 1)
         {
             GameValues.PlayerWin = "P2";
             GameValues.player2Wins++;
@@ -322,17 +370,46 @@ public class Player : MonoBehaviour
 
     public void UltimateTimerLogic()
     {
-        ultimateTimer += Time.deltaTime;
-
-        if (ultimateTimer >= ultimateRegenInterval)
+        if (playerNumControl == 1)
         {
-            ultimateTimer = 0.0f;
-            HUD.UpdatePlayer1HUD(HUD._health, HUD._defense, Mathf.Min(HUDControl.MAX_ULTIMATE, HUD._ultimate + 1));
-            HUD.UpdatePlayer2HUD(HUD._health_2, HUD._defense_2, Mathf.Min(HUDControl.MAX_ULTIMATE, HUD._ultimate_2 + 1));
-
-            if (HUD._ultimate == HUDControl.MAX_ULTIMATE || HUD._ultimate_2 == HUDControl.MAX_ULTIMATE)
+            if (ultimateAbility != null && ultimateAbility.isUltimateActive)
             {
-                activeUlt = true;
+                ultimateTimer += Time.deltaTime;
+
+                if (ultimateTimer >= ultimateRegenInterval)
+                {
+
+                    ultimateTimer = 0.0f;
+                    HUD._ultimate -= 2;
+                    if (HUD._ultimate <= 0)
+                    {
+                        HUD._ultimate = 0;
+                        activeUlt = false;
+                        ultimateAbility.isUltimateActive = false;
+                        animator.SetBool("UltimateIsActive", false);
+                    }
+                }
+            }
+
+        }else if (playerNumControl == 2)
+        {
+            if (ultimateAbility != null && ultimateAbility.isUltimateActive)
+            {
+                ultimateTimer += Time.deltaTime;
+
+                if (ultimateTimer >= ultimateRegenInterval)
+                {
+
+                    ultimateTimer = 0.0f;
+                    HUD._ultimate_2 -= 2;
+                    if (HUD._ultimate_2 <= 0)
+                    {
+                        HUD._ultimate_2 = 0;
+                        activeUlt = false;
+                        ultimateAbility.isUltimateActive = false;
+                        animator.SetBool("UltimateIsActive", false);
+                    }
+                }
             }
         }
     }

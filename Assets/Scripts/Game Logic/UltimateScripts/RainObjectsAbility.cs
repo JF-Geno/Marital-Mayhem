@@ -41,7 +41,7 @@ public class RainObjectsAbility : UltimateAbility
                 rainObjectScript.SetDamage(damageAmount);
             }
         }
-        
+
         //isUltimateActive = false;
     }
 }

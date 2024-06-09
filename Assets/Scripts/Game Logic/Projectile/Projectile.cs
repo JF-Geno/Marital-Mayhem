@@ -29,37 +29,37 @@ public class Projectile : MonoBehaviour
         {
             // KnockBack(collider);
             collider.gameObject.GetComponent<Bill_Man>().Damage(damage, GameValues.DamageTypes.Ranged);
-            //Bill_Man.UltimateLogic();
+            collider.gameObject.GetComponent<Bill_Man>().UltimateLogic();
         }
         else if (collider.gameObject.GetComponent<Sarah_Woman>() != null)
         {
             // KnockBack(collider);
             collider.gameObject.GetComponent<Sarah_Woman>().Damage(damage, GameValues.DamageTypes.Ranged);
-            // Sarah_Woman.UltimateLogic();
+            collider.gameObject.GetComponent<Sarah_Woman>().UltimateLogic();
         }
         else if (collider.gameObject.GetComponent<David_Brother>() != null)
         {
             // KnockBack(collider);
             collider.gameObject.GetComponent<David_Brother>().Damage(damage, GameValues.DamageTypes.Ranged);
-            // David_Brother.UltimateLogic();
+            collider.gameObject.GetComponent<David_Brother>().UltimateLogic();
         }
         else if (collider.gameObject.GetComponent<Jessica_Babysitter>() != null)
         {
             // KnockBack(collider);
             collider.gameObject.GetComponent<Jessica_Babysitter>().Damage(damage, GameValues.DamageTypes.Ranged);
-            //Jessica_Babysitter.UltimateLogic();
+            collider.gameObject.GetComponent<Jessica_Babysitter>().UltimateLogic();
         }
         else if (collider.gameObject.GetComponent<Kathy_CatLady>() != null)
         {
             // KnockBack(collider);
             collider.gameObject.GetComponent<Kathy_CatLady>().Damage(damage, GameValues.DamageTypes.Ranged);
-            // Kathy_CatLady.UltimateLogic();
+            collider.gameObject.GetComponent<Kathy_CatLady>().UltimateLogic();
         }
         else if (collider.gameObject.GetComponent<Saul_Lawyer>() != null)
         {
             //KnockBack(collider);
             collider.gameObject.GetComponent<Saul_Lawyer>().Damage(damage, GameValues.DamageTypes.Ranged);
-            // Saul_Lawyer.UltimateLogic();
+            collider.gameObject.GetComponent<Saul_Lawyer>().UltimateLogic();
         }
         UnityEngine.Debug.Log(collider);
 
