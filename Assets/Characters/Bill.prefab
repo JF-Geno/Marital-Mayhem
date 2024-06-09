@@ -316,7 +316,7 @@ Animator:
   m_GameObject: {fileID: 650070194568663801}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 34f5275bef932d74c82a1e63b70fcb27, type: 2}
+  m_Controller: {fileID: 9100000, guid: c40258d744c714547a88612e5d1941e3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -411,7 +411,7 @@ MonoBehaviour:
   nameIPositionY: 0
   headShot: {fileID: 21300000, guid: d75ec409546eeef4eae0dcfb4ca20188, type: 3}
   CharacterPrefab: {fileID: 3940314073064663277}
-  playerNumControl: 0
+  playerNumControl: 1
   controller: {fileID: 4909761420257107557}
   animator: {fileID: 7628338005495944614}
   runSpeed: 40

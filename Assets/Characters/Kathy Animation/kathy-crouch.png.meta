@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 18a986cc88f29ba4295d1b25fb59ab0c
+guid: cd0c2456e560a4b47991711991570c06
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kathy-crouch-exit_0
+      name: kathy-crouch_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,92 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38ed391018d9d3b46871c415d25c1006
-      internalID: 41037029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kathy-crouch-exit_1
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 0
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 186db796aefb08344849eef915daaeb8
-      internalID: 650442338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kathy-crouch-exit_2
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b8361ef03327eb49893606e2adbd4f1
-      internalID: 1306408282
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kathy-crouch-exit_3
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 0
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bc66764ba434cb408054f9fea88f15e
-      internalID: 1386736453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: kathy-crouch-exit_4
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 0
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34bba5abfe1d5ca4ca33be5ed86f83ad
-      internalID: -910084743
+      spriteID: e1eebab1dbd7ade45ba6f6a6a5549be5
+      internalID: 1351654936
       vertices: []
       indices: 
       edges: []
@@ -225,11 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      kathy-crouch-exit_0: 41037029
-      kathy-crouch-exit_1: 650442338
-      kathy-crouch-exit_2: 1306408282
-      kathy-crouch-exit_3: 1386736453
-      kathy-crouch-exit_4: -910084743
+      kathy-crouch_0: 1351654936
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1196,7 +1196,7 @@ MonoBehaviour:
   nameIPositionY: 0
   headShot: {fileID: 21300000, guid: 5eca0aab326339d40bff561c04b972d0, type: 3}
   CharacterPrefab: {fileID: 6465757127067414238}
-  playerNumControl: 0
+  playerNumControl: 2
   controller: {fileID: 6405026860094605548}
   animator: {fileID: 6264055795865386500}
   runSpeed: 40

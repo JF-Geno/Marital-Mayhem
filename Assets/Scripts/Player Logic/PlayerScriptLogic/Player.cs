@@ -334,9 +334,9 @@ public class Player : MonoBehaviour
 
     public void Attack()
     {
-        animator.SetBool("Attack", true);
         attacking = true;
         attackArea.SetActive(attacking);
+        animator.SetBool("Attack", true);
     }
 
     public void HandleAttacking()
@@ -347,7 +347,7 @@ public class Player : MonoBehaviour
         {
             attacking = false;
             attackArea.SetActive(attacking);
-            animator.SetBool("Attck", false);
+            animator.SetBool("Attack", false);
         }
     }
 

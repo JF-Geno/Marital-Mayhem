@@ -708,7 +708,7 @@ MonoBehaviour:
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3360427947420971997}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: OnLanding
         m_Mode: 1
@@ -723,10 +723,10 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3360427947420971997}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: OnCrouching
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -745,7 +745,7 @@ Animator:
   m_GameObject: {fileID: 7088748216573092245}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0758fb1957688cc4bbfc0399cedd1bc4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -837,11 +837,11 @@ MonoBehaviour:
   CharacterAbilityU: {fileID: 0}
   nameIScale: 0
   nameIPositionX: 0
-  nameIPositionY: 0
+  nameIPositionY: 1
   headShot: {fileID: 21300000, guid: 9abe112ed041f1645a073b091751201c, type: 3}
   CharacterPrefab: {fileID: 3360427947420971997}
   playerNumControl: 0
-  controller: {fileID: 0}
+  controller: {fileID: 5220052015746027093}
   animator: {fileID: 3510509664440691579}
   runSpeed: 40
   isInputDisabled: 0
