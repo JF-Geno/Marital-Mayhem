@@ -47,7 +47,7 @@ public class CharacterMenu : MonoBehaviour
 
     public void MapMenu()
     {
-        if (GameValues.player1Name == "" || GameValues.player1Name == "")
+        if (GameValues.player1Name == "" || GameValues.player2Name == "")
         {
             return;
         }

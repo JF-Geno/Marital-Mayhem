@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collider)
     {
+        Destroy(gameObject);
         if (collider.gameObject.GetComponent<Bill_Man>() != null)
         {
             // KnockBack(collider);
@@ -61,7 +62,6 @@ public class Projectile : MonoBehaviour
             // Saul_Lawyer.UltimateLogic();
         }
         UnityEngine.Debug.Log(collider);
-        Destroy(gameObject);
 
     }
 }
