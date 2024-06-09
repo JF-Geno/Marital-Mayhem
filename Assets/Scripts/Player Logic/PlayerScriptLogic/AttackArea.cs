@@ -7,15 +7,11 @@ public class AttackArea : MonoBehaviour
     private int damage = 3;
     public GameObject punchNoise;
 
-    //public KnockBack KnockBack;
-
-    void Start()
-    {
-    }
+    public KnockBack KnockBack;
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        //Bill_Man
-        if (collider.GetComponent<Bill_Man>() != null)
+      var player = collider.GetComponent<Player>();
+        if (player != null)
         {
             //KnockBack(collider);
             collider.GetComponent<Bill_Man>().Damage(damage, GameValues.DamageTypes.Melee);
@@ -23,8 +19,13 @@ public class AttackArea : MonoBehaviour
             punchNoise.SetActive(false);
             punchNoise.SetActive(true);
         }
-        //Sarah_Woman
-        if (collider.GetComponent<Sarah_Woman>() != null)
+    }
+
+  
+    private void KnockBackFunction(Collider2D collider)
+    {
+        KnockBack knockBack = collider.GetComponent<KnockBack>();
+        if (knockBack != null)
         {
             //KnockBack(collider);
             collider.GetComponent<Sarah_Woman>().Damage(damage, GameValues.DamageTypes.Melee);

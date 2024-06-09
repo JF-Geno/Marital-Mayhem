@@ -24,43 +24,21 @@ public class RainObject : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+       var player = collider.GetComponent<Player>();
+        if (player != null)
+        {
+            //KnockBackFunction(collider);
+            player.Damage(damage, GameValues.DamageTypes.Ultimate);          
+        }
+    }
 
-        if (collider.GetComponent<Bill_Man>() != null)
+    private void KnockBackFunction(Collider2D collider)
+    {
+        KnockBack knockBack = collider.GetComponent<KnockBack>();
+        if (knockBack != null)
         {
-           // KnockBack(collider);
-            collider.GetComponent<Bill_Man>().Damage(damage, GameValues.DamageTypes.Ultimate);
-            //Bill_Man.UltimateLogic();
+            bool knockFromRight = collider.transform.position.x <= transform.position.x;
+            knockBack.ApplyKnockBack(knockFromRight);
         }
-        else if (collider.GetComponent<Sarah_Woman>() != null)
-        {
-           // KnockBack(collider);
-            collider.GetComponent<Sarah_Woman>().Damage(damage, GameValues.DamageTypes.Ultimate);
-            // Sarah_Woman.UltimateLogic();
-        }
-        else if (collider.GetComponent<David_Brother>() != null)
-        {
-           // KnockBack(collider);
-            collider.GetComponent<David_Brother>().Damage(damage, GameValues.DamageTypes.Ultimate);
-            // David_Brother.UltimateLogic();
-        }
-        else if (collider.GetComponent<Jessica_Babysitter>() != null)
-        {
-           // KnockBack(collider);
-            collider.GetComponent<Jessica_Babysitter>().Damage(damage, GameValues.DamageTypes.Ultimate);
-            //Jessica_Babysitter.UltimateLogic();
-        }
-        else if (collider.GetComponent<Kathy_CatLady>() != null)
-        {
-           // KnockBack(collider);
-            collider.GetComponent<Kathy_CatLady>().Damage(damage, GameValues.DamageTypes.Ultimate);
-            // Kathy_CatLady.UltimateLogic();
-        }
-        else if (collider.GetComponent<Saul_Lawyer>() != null)
-        {
-            //KnockBack(collider);
-            collider.GetComponent<Saul_Lawyer>().Damage(damage, GameValues.DamageTypes.Ultimate);
-            // Saul_Lawyer.UltimateLogic();
-        }  
-
     }
 }
