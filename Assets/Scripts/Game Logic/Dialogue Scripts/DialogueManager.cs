@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     Dialogue? LastDialogue = null;
     public int DialogueFrequency = 30;
-    public int DialogueChance = 25;
+    public int DialogueChance = 75;
 
     List<Dialogue> dialogues = new List<Dialogue>
         {
@@ -246,7 +246,7 @@ public class DialogueManager : MonoBehaviour
                     new DialogueLine { name = "Bill", text = "I'm going to be a little bit late on the laywer payments. I pay too much child support, you see." },
                     new DialogueLine { name = "Saul", text = "You're already two weeks late. I've charged you $5000 in interest." },
                     new DialogueLine { name = "Bill", text = "$5000?? I can't pay that." },
-                    new DialogueLine { name = "Saul", text = "Then instead of you or Sarah getting the house, it might be mine then. Pleasure doing buisness with you." },
+                    new DialogueLine { name = "Saul", text = "Then instead of you or Sarah getting the house, it might be mine instead." },
                 }
             },
             new Dialogue
@@ -275,7 +275,8 @@ public class DialogueManager : MonoBehaviour
                 {
                     new DialogueLine { name = "Saul", text = "I'm not sure that you're going to end up getting the truck." },
                     new DialogueLine { name = "Bill", text = "That's my truck!!! She hates trucks!!!" },
-                    new DialogueLine { name = "Saul", text = "She hates you more than she hates the truck. How tragic. It'll cost you more if you want me to guarantee you get the truck..." },
+                    new DialogueLine { name = "Saul", text = "She hates you more than she hates the truck. How tragic." },
+                    new DialogueLine { name = "Saul", text = "It'll cost you more if you want me to guarantee you get the truck..." },
                 }
             },
             new Dialogue
@@ -304,8 +305,9 @@ public class DialogueManager : MonoBehaviour
                 sentences = new List<DialogueLine>
                 {
                     new DialogueLine { name = "Kathy", text = "Oh, hello there! Want to come inside and meet my new kittens? I just got four more!" },
-                    new DialogueLine { name = "Bill", text = "Uh, no thanks. My wife already thinks we’re having an affair. I don’t need to give her more ammunition." },
-                    new DialogueLine { name = "Kathy", text = "An affair? With me? Oh, honey, you’re not nearly as interesting as my cats. Besides, I thought you were more into the babysitter." },
+                    new DialogueLine { name = "Bill", text = "Uh, no thanks. My wife already thinks we’re having an affair." },
+                    new DialogueLine { name = "Kathy", text = "An affair? With me? Oh, honey, you’re not nearly as interesting as my cats." },
+                    new DialogueLine { name = "Kathy", text = "Besides, I thought you were more into the babysitter." },
                 }
             },
             new Dialogue
@@ -318,8 +320,9 @@ public class DialogueManager : MonoBehaviour
                 sentences = new List<DialogueLine>
                 {
                     new DialogueLine { name = "Kathy", text = "Oh, hello there! Want to come inside and meet my new kittens? I just got four more!" },
-                    new DialogueLine { name = "Bill", text = "Uh, no thanks. My wife already thinks we’re having an affair. I don’t need to give her more ammunition." },
-                    new DialogueLine { name = "Kathy", text = "An affair? With me? Oh, honey, you’re not nearly as interesting as my cats. Besides, I thought you were more into the babysitter." },
+                    new DialogueLine { name = "Bill", text = "Uh, no thanks. My wife already thinks we’re having an affair." },
+                    new DialogueLine { name = "Kathy", text = "An affair? With me? Oh, honey, you’re not nearly as interesting as my cats." },
+                    new DialogueLine { name = "Kathy", text = "Besides, I thought you were more into the babysitter." },
                 }
             },
             new Dialogue
@@ -331,7 +334,7 @@ public class DialogueManager : MonoBehaviour
                 },
                 sentences = new List<DialogueLine>
                 {
-                    new DialogueLine { name = "Kathy", text = "I hear you're getting divorced. Maybe she’d take you back if you brought her a kitten. Everyone loves kittens!" },
+                    new DialogueLine { name = "Kathy", text = "I hear you're getting divorced. Maybe she’d take you back if you brought her a kitten." },
                     new DialogueLine { name = "Bill", text = "Somehow, I think a kitten isn’t going to fix this mess." },
                     new DialogueLine { name = "Kathy", text = "Suit yourself. But just so you know, Mr. Snuggles gives great relationship advice." },
                 }
@@ -420,7 +423,8 @@ public class DialogueManager : MonoBehaviour
                 {
                     new DialogueLine { name = "Sarah", text = "I can't believe Bill would cheat on me with that crazy cat lady Kathy!" },
                     new DialogueLine { name = "Jessica", text = "Yeah, that's just... awful." },
-                    new DialogueLine { name = "Sarah", text = "You know, I thought you might have noticed something. You're around our house all the time." },
+                    new DialogueLine { name = "Sarah", text = "You know, I thought you might have noticed something." },
+                    new DialogueLine { name = "Sarah", text = "I mean, you're around our house all the time." },
                     new DialogueLine { name = "Jessica", text = "Oh, me? No, I didn't notice anything unusual. Just... cats. Lots of cats." },
                 }
             },
@@ -609,7 +613,8 @@ public class DialogueManager : MonoBehaviour
                 {
                     new DialogueLine { name = "David", text = "Your sunglasses reign is ending, Sarah" },
                     new DialogueLine { name = "Sarah", text = "NO! Mine will always be superior." },
-                    new DialogueLine { name = "David", text = "I heard that you might lose them in the divorce. Besides, who is gonna pay for the newest raybans?" },
+                    new DialogueLine { name = "David", text = "I heard that you might lose them in the divorce." },
+                    new DialogueLine { name = "David", text = "Besides, who is gonna pay for the newest raybans?" },
                     new DialogueLine { name = "Sarah", text = "Why you little-" },
                 }
             },
@@ -825,8 +830,8 @@ public class DialogueManager : MonoBehaviour
                 sentences = new List<DialogueLine>
                 {
                     new DialogueLine { name = "Saul", text = "David, your interference is making this process more difficult." },
-                    new DialogueLine { name = "David", text = "My interference? You’re the one who's been avoiding Sarah's calls! And where are those sunglasses she’s been asking for, huh?" },
-                    new DialogueLine { name = "Saul", text = "I have a strategy, David. It doesn’t involve being at her beck and call. And both of you need to let go of the whole sunglasses thing." },
+                    new DialogueLine { name = "David", text = "My interference? You’re the one who's been avoiding Sarah's calls! She needs her sunglasses!" },
+                    new DialogueLine { name = "Saul", text = "David, you and your sister are not okay. Please let go of the whole sunglasses thing." },
                 }
             },
             new Dialogue
@@ -897,7 +902,7 @@ public class DialogueManager : MonoBehaviour
         ClearText();
         if (availableDialogues.Count != 0)
         {
-            InvokeRepeating("RandomDialogueStarter", 20, DialogueFrequency);
+            InvokeRepeating("RandomDialogueStarter", 15, DialogueFrequency);
         }
     }
 

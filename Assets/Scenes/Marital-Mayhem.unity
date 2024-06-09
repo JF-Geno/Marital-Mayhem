@@ -236,8 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a21f037f3b83f241a03ca83b2758203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
   verticalOffset: 3
+  playerNumToFollow: 0
 --- !u!224 &108676501
 RectTransform:
   m_ObjectHideFlags: 0
@@ -919,7 +919,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 640403839}
   m_maskType: 0
 --- !u!23 &640403839
@@ -993,8 +993,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a21f037f3b83f241a03ca83b2758203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
   verticalOffset: 3
+  playerNumToFollow: 1
 --- !u!224 &657614617
 RectTransform:
   m_ObjectHideFlags: 0
