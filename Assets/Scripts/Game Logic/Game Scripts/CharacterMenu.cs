@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using static System.Net.Mime.MediaTypeNames;
+using System.Security.Cryptography.X509Certificates;
 [System.Serializable]
 public class CharacterMenu : MonoBehaviour
 {
@@ -88,10 +89,12 @@ public class CharacterMenu : MonoBehaviour
         GameValues.player1Name = $"{p1.playerName}";
 
         // Instantiate the new prefab
-        Player newObject = Instantiate(p1, PlayerOneCharacter.transform.position, PlayerOneCharacter.transform.rotation);
+        Player newObject = Instantiate(p1, PlayerOneCharacter.transform.position, Quaternion.Euler(0f, 0f, 0f));
 
         // Optionally, copy some properties from the old to the new one
         newObject.transform.parent = PlayerOneCharacter.transform.parent;
+
+        newObject.playerNumControl = 1;
 
         // Destroy the old prefab instance
         Destroy(PlayerOneCharacter);
@@ -109,16 +112,18 @@ public class CharacterMenu : MonoBehaviour
         PlayerTwoName.GetComponent<SpriteRenderer>().sprite = p2.PlayerNameImage;
         GameValues.player2Name = $"{p2.playerName}";
 
-        Player newObject = Instantiate(p2, PlayerTwoCharacter.transform.position, PlayerTwoCharacter.transform.rotation);
-
+        Player newObject = Instantiate(p2, PlayerTwoCharacter.transform.position, Quaternion.Euler(0f, 0f, 0f));
         // Optionally, copy some properties from the old to the new one
         newObject.transform.parent = PlayerTwoCharacter.transform.parent;
+
+        newObject.playerNumControl = 2;
 
         // Destroy the old prefab instance
         Destroy(PlayerTwoCharacter);
 
         // Update the currentPrefab reference
-        PlayerTwoCharacter = transform.GetChild(1).GetChild(9).gameObject; ;
+        PlayerTwoCharacter = transform.GetChild(1).GetChild(9).gameObject; 
+
     }
 
     //public void P1_2(Bill_Man p1)

@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
 
     protected virtual void Start()
     {
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         attackArea = transform.GetChild(1).gameObject;
         animator = animator ?? GetComponent<Animator>();
     }
