@@ -334,7 +334,7 @@ public class Player : MonoBehaviour
             {
                 if (HUD._ultimate < HUDControl.MAX_ULTIMATE)
                 {
-                    HUD.UpdatePlayer1HUD(HUD._health, HUD._defense, HUD._ultimate + 1);
+                    HUD.UpdatePlayer1HUD(HUD._health, HUD._defense, HUD._ultimate + 2);
                     Debug.Log("Ultimate charge increased");
                 }
 
@@ -351,7 +351,7 @@ public class Player : MonoBehaviour
             {
                 if (HUD._ultimate_2 < HUDControl.MAX_ULTIMATE)
                 {
-                    HUD.UpdatePlayer2HUD(HUD._health_2, HUD._defense_2, HUD._ultimate_2 + 1);
+                    HUD.UpdatePlayer2HUD(HUD._health_2, HUD._defense_2, HUD._ultimate_2 + 2);
                     Debug.Log("Ultimate charge increased");
                 }
 

@@ -24,7 +24,7 @@ public class Flame : MonoBehaviour
         var player = collider.GetComponent<Player>();
         if (player != null)
         {
-            //KnockBackFunction(collider);
+            KnockBackFunction(collider);
             player.Damage(damage, GameValues.DamageTypes.Ultimate);
             Debug.Log(collider.name);
             Destroy(gameObject);
