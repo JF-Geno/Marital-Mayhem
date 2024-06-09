@@ -1064,7 +1064,7 @@ MonoBehaviour:
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6465757127067414238}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: OnLanding
         m_Mode: 1
@@ -1079,10 +1079,10 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 6465757127067414238}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: OnCrouching
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

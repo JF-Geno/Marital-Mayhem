@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-     // Player stats
+    // Player stats
     public int playerId;
     public string playerName;
     public Sprite PlayerNameImage;
@@ -68,6 +68,8 @@ public class Player : MonoBehaviour
 
     protected virtual void Update()
     {
+        animator.SetBool("IsRangedAttack", false);
+        animator.SetBool("UltimateStarted", false);
         if (playerNumControl == 1)
         {
             HandleInputForPlayer1();
@@ -110,13 +112,11 @@ public class Player : MonoBehaviour
             Attack();
         }
         if (Input.GetKeyDown(KeyCode.X))
-        { 
-            
+        {
             Shoot();
         }
         if (Input.GetKeyDown(KeyCode.Z) && activeUlt)
         {
-            
             ULT();
         }
     }
@@ -165,6 +165,7 @@ public class Player : MonoBehaviour
                 punchNoise.SetActive(false);
                 punchNoise.SetActive(true);
                 break;
+
             case GameValues.DamageTypes.Ranged:
                 projectileNoise.SetActive(false);
                 projectileNoise.SetActive(true);
@@ -346,6 +347,7 @@ public class Player : MonoBehaviour
         {
             attacking = false;
             attackArea.SetActive(attacking);
+            animator.SetBool("Attck", false);
         }
     }
 
@@ -376,4 +378,3 @@ public class Player : MonoBehaviour
         jump = false;
     }
 }
-
