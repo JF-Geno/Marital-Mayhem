@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
         {
             HandleShooting();
         }
-        if(playerNumControl == 1)
+        if (playerNumControl == 1)
         {
             try
             {
@@ -105,9 +105,9 @@ public class Player : MonoBehaviour
                         HUD.UpdatePlayer1HUD(HUD._health, HUD._defense, HUD._ultimate);
                     }
                 }
-            } catch
+            }
+            catch
             {
-
             }
         }
         else if (playerNumControl == 2)
@@ -128,13 +128,11 @@ public class Player : MonoBehaviour
                         HUD.UpdatePlayer2HUD(HUD._health_2, HUD._defense_2, HUD._ultimate_2);
                     }
                 }
-
-            } catch
+            }
+            catch
             {
-
             }
         }
-
     }
 
     void HandleInputForPlayer1()
@@ -374,7 +372,6 @@ public class Player : MonoBehaviour
 
                 if (ultimateTimer >= ultimateRegenInterval)
                 {
-
                     ultimateTimer = 0.0f;
                     HUD._ultimate -= 2;
                     if (HUD._ultimate <= 0)
@@ -386,8 +383,8 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-
-        }else if (playerNumControl == 2)
+        }
+        else if (playerNumControl == 2)
         {
             if (ultimateAbility != null && ultimateAbility.isUltimateActive)
             {
@@ -395,7 +392,6 @@ public class Player : MonoBehaviour
 
                 if (ultimateTimer >= ultimateRegenInterval)
                 {
-
                     ultimateTimer = 0.0f;
                     HUD._ultimate_2 -= 2;
                     if (HUD._ultimate_2 <= 0)

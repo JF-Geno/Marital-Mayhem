@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+
 using UnityEngine;
 
 public class RainObject : MonoBehaviour
@@ -15,20 +15,21 @@ public class RainObject : MonoBehaviour
 
     public void Update()
     {
-        if (transform.position.y<thresholdY)
+        if (transform.position.y < thresholdY)
         {
             Destroy(gameObject);
-
         }
     }
-
     void OnTriggerEnter2D(Collider2D collider)
     {
-       var player = collider.GetComponent<Player>();
+        var player = collider.GetComponent<Player>();
         if (player != null)
         {
-            //KnockBackFunction(collider);
-            player.Damage(damage, GameValues.DamageTypes.Ultimate);          
+            if (player.playerName != "Sarah")
+            {
+                KnockBackFunction(collider);
+                collider.GetComponent<Player>().Damage(damage, GameValues.DamageTypes.Ultimate);
+            }
         }
     }
 
@@ -41,4 +42,5 @@ public class RainObject : MonoBehaviour
             knockBack.ApplyKnockBack(knockFromRight);
         }
     }
+
 }
