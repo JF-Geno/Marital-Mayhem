@@ -83,6 +83,10 @@ public class Player : MonoBehaviour
         {
             HandleAttacking();
         }
+        if (shooting)
+        {
+            HandleShooting();
+        }
     }
 
     void HandleInputForPlayer1()
@@ -346,6 +350,7 @@ public class Player : MonoBehaviour
 
         if (timer >= timeToAttack)
         {
+            timer = 0;
             attacking = false;
             attackArea.SetActive(attacking);
             animator.SetBool("Attack", false);
@@ -360,6 +365,15 @@ public class Player : MonoBehaviour
             targetTime = 1;
             shooting = true;
             Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        }
+    }
+    public void HandleShooting()
+    {
+        targetTime -= Time.deltaTime;
+        if (targetTime <= 0.0f)
+        {
+            shooting = false;
+            targetTime = 0.0f;
         }
     }
 
