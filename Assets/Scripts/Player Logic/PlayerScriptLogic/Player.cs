@@ -51,7 +51,6 @@ public class Player : MonoBehaviour
 
     // Sound Board
     public GameObject throwNoise;
-    public GameObject punchNoise;
     public GameObject projectileNoise;
 
     // Banner
@@ -214,11 +213,6 @@ public class Player : MonoBehaviour
     {
         switch (type)
         {
-            case GameValues.DamageTypes.Melee:
-                punchNoise.SetActive(false);
-                punchNoise.SetActive(true);
-                break;
-
             case GameValues.DamageTypes.Ranged:
                 projectileNoise.SetActive(false);
                 projectileNoise.SetActive(true);
@@ -283,7 +277,9 @@ public class Player : MonoBehaviour
         }
 
         healthController(amount);
-        DamageSound(damageType);
+
+        DamageSound(GameValues.DamageTypes.Ranged);
+      
 
         if (playerNumControl == 1 && HUD._health <= 0 || playerNumControl == 2 && HUD._health_2 <= 0)
         {
@@ -438,6 +434,8 @@ public class Player : MonoBehaviour
     {
         if (!shooting)
         {
+            throwNoise.SetActive(false);
+            throwNoise.SetActive(true);
             animator.SetBool("IsRangedAttack", true);
             targetTime = 1;
             shooting = true;

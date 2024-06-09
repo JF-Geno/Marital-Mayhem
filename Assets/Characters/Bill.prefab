@@ -427,7 +427,6 @@ MonoBehaviour:
   timer: 0
   ultimateAbility: {fileID: 9061211730211360950}
   throwNoise: {fileID: 1416887049783760269}
-  punchNoise: {fileID: 9046870549863412427}
   projectileNoise: {fileID: 1964068028131031917}
   ultimateBannerManager: {fileID: 0}
   HUD: {fileID: 0}
@@ -675,6 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32df10503dfbd8440ac224bb3803ffdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  punchNoise: {fileID: 9046870549863412427}
 --- !u!1 &1964068028131031917
 GameObject:
   m_ObjectHideFlags: 0
