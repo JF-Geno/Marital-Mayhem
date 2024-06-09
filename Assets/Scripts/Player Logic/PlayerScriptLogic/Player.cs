@@ -233,14 +233,14 @@ public class Player : MonoBehaviour
             if (amount <= 3)
             {
                 HUD.UpdatePlayer1HUD(HUD._health - amount, HUD._defense, HUD._ultimate);
-                Debug.Log($"H: {amount}");
+                //Debug.Log($"H: {amount}");
             }
             else if (amount > 3 && HUD._defense > 0)
             {
                 HUD.UpdatePlayer1HUD(HUD._health - amount, HUD._defense - 2, HUD._ultimate);
                 int damageTaken = 10 - HUD._defense;
                 int dT = amount + damageTaken;
-                Debug.Log($"H: {dT} {damageTaken}");
+                //Debug.Log($"H: {dT} {damageTaken}");
             }
             else
             {
