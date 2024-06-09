@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GameValues 
 {
-    public static int player1Wins = 15;
-    public static int player2Wins = 99;
+    public static int player1Wins = 0;
+    public static int player2Wins = 0;
     public static string PlayerWin = "P2";
-    public static string player1Name = "Bill";
-    public static string player2Name = "Sarah";
+    public static string player1Name = "";
+    public static string player2Name = "";
     public static Sprite Map;
     public enum DamageTypes
     {

@@ -40,8 +40,6 @@ public class CharacterMenu : MonoBehaviour
 
     //public List<Player> playerList;
 
-    private Player P1Character;
-    private Player P2Character;
     public GameObject PlayerOneName;
     public GameObject PlayerTwoName;
     public GameObject PlayerOneCharacter;
@@ -49,6 +47,10 @@ public class CharacterMenu : MonoBehaviour
 
     public void MapMenu()
     {
+        if (GameValues.player1Name == "" || GameValues.player1Name == "")
+        {
+            return;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
