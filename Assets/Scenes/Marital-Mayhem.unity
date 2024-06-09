@@ -1702,6 +1702,7 @@ MonoBehaviour:
   - {fileID: 6465757127067414238, guid: 7be815c2d8c4fd24ead75071d97bdf0f, type: 3}
   - {fileID: 5584642076348819486, guid: e50c6f56c1172154c90fb32a9a731dd0, type: 3}
   HUD: {fileID: 8098595717334318282}
+  ultBannerManager: {fileID: 1502001099}
 --- !u!1 &1502001094
 GameObject:
   m_ObjectHideFlags: 0

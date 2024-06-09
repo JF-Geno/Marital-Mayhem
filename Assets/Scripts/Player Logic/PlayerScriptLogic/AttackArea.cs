@@ -14,8 +14,8 @@ public class AttackArea : MonoBehaviour
         if (player != null)
         {
             KnockBackFunction(collider);
-            collider.GetComponent<Bill_Man>().Damage(damage, GameValues.DamageTypes.Melee);
-            collider.gameObject.GetComponent<Bill_Man>().UltimateLogic();
+            player.Damage(damage, GameValues.DamageTypes.Melee);
+            player.UltimateLogic();
             punchNoise.SetActive(false);
             punchNoise.SetActive(true);
         }

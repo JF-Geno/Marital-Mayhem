@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public List<Player> players;
 
     public HUDControl HUD;
+    public UltimateBannerManager ultBannerManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,5 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

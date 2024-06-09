@@ -40,6 +40,4 @@ public class Flame : MonoBehaviour
             knockBack.ApplyKnockBack(knockFromRight);
         }
     }
-
-    
 }

@@ -320,6 +320,7 @@ public class Player : MonoBehaviour
             ultimateAbility.isUltimateActive = true;
             animator.SetBool("UltimateIsActive", true);
             animator.SetBool("UltimateStarted", true);
+            Debug.Log(ultimateBannerManager == null);
             ultimateBannerManager.ActivateUltBanner(ultimateAbility.ultName, ultimateAbility.ultActivatedVoiceCue);
         }
     }
