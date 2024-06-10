@@ -27,7 +27,7 @@ public class RainObject : MonoBehaviour
         {
             if (player.playerName != "Sarah")
             {
-                KnockBackFunction(collider);
+                //KnockBackFunction(collider);
                 collider.GetComponent<Player>().Damage(damage, GameValues.DamageTypes.Ultimate);
             }
         }

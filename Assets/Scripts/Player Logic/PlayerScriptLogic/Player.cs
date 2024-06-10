@@ -380,6 +380,7 @@ public class Player : MonoBehaviour
                         activeUlt = false;
                         ultimateAbility.isUltimateActive = false;
                         animator.SetBool("UltimateIsActive", false);
+                        ultimateBannerManager.DeactivateUltBanner();
                     }
                 }
             }
@@ -400,6 +401,7 @@ public class Player : MonoBehaviour
                         activeUlt = false;
                         ultimateAbility.isUltimateActive = false;
                         animator.SetBool("UltimateIsActive", false);
+                        ultimateBannerManager.DeactivateUltBanner();
                     }
                 }
             }

@@ -627,6 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punchNoise: {fileID: 6655342026747585510}
+  KnockBack: {fileID: 0}
 --- !u!1 &7653527484337021934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,8 +1172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KBForce: 6
-  KBCounter: 0
-  KnockFromRight: 0
   KBTotalTime: 0.2
 --- !u!114 &6465757127067414238
 MonoBehaviour:
@@ -1238,7 +1237,7 @@ MonoBehaviour:
   ultActivatedVoiceCue: {fileID: 8331323967113682173}
   ultReadyVoiceCue: {fileID: 2668703469705593222}
   numberOfObjects: 15
-  spawnArea: {x: 30, y: 2, z: 0}
+  spawnArea: {x: 60, y: 2, z: 0}
   spawnHeight: 5
 --- !u!1 &8957803122525978771
 GameObject:
