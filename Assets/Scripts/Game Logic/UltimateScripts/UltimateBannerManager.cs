@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UltimateBannerManager : MonoBehaviour
 {
-    public TextMeshProUGUI UltBanner;
+    public GameObject UltBanner;
 
-    public void ActivateUltBanner(string ultName, GameObject? ultActivatedVoiceCue)
+    public void ActivateUltBanner(Sprite ultName, GameObject? ultActivatedVoiceCue)
     {
         Debug.Log("Activate Banner");
-        UltBanner.text = ultName;
+        UltBanner.GetComponent<Image>().sprite = ultName;
         if (ultActivatedVoiceCue != null)
         {
             ultActivatedVoiceCue.SetActive(false);

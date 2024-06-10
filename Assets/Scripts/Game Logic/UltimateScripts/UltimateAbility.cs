@@ -19,7 +19,7 @@ public class UltimateAbility : MonoBehaviour
     public KnockBack knockBack;
 
     //for banner and naming stuffs
-    public string ultName;
+    public Sprite ultName;
 
     public GameObject ultActivatedVoiceCue;
 

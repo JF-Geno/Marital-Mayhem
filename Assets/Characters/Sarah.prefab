@@ -1233,7 +1233,7 @@ MonoBehaviour:
   isUltimateActive: 0
   firePoint: {fileID: 375287580968226487}
   knockBack: {fileID: 8576532704389734327}
-  ultName: Child Support
+  ultName: {fileID: 21300000, guid: 453188a85a597ee468761006cbc1db9c, type: 3}
   ultActivatedVoiceCue: {fileID: 8331323967113682173}
   ultReadyVoiceCue: {fileID: 2668703469705593222}
   numberOfObjects: 15

@@ -385,8 +385,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KBForce: 6
-  KBCounter: 0
-  KnockFromRight: 0
   KBTotalTime: 0.2
 --- !u!114 &3940314073064663277
 MonoBehaviour:
@@ -448,7 +446,7 @@ MonoBehaviour:
   isUltimateActive: 0
   firePoint: {fileID: 8655338176926424157}
   knockBack: {fileID: 0}
-  ultName: Gaslight
+  ultName: {fileID: 21300000, guid: 2f265c7b91f8a19459aa8a089212fae2, type: 3}
   ultActivatedVoiceCue: {fileID: 3688759532497451650}
   ultReadyVoiceCue: {fileID: 424152003512554629}
   flameDuration: 1
@@ -675,6 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punchNoise: {fileID: 9046870549863412427}
+  KnockBack: {fileID: 0}
 --- !u!1 &1964068028131031917
 GameObject:
   m_ObjectHideFlags: 0
