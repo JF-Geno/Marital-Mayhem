@@ -87,6 +87,10 @@ public class CharacterMenu : MonoBehaviour
     //public GameObject newPrefab; // This will be the prefab you want to switch to
     public void P1(Player p1)
     {
+        if(p1.playerName == GameValues.player2Name && GameValues.player2Name != "")
+        {
+            return;
+        }
         PlayerOneName.GetComponent<SpriteRenderer>().sprite = p1.PlayerNameImage;
         GameValues.player1Name = $"{p1.playerName}";
 
@@ -111,6 +115,10 @@ public class CharacterMenu : MonoBehaviour
 
     public void P2(Player p2)
     {
+        if (p2.playerName == GameValues.player1Name && GameValues.player1Name != "")
+        {
+            return;
+        }
         PlayerTwoName.GetComponent<SpriteRenderer>().sprite = p2.PlayerNameImage;
         GameValues.player2Name = $"{p2.playerName}";
 
