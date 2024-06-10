@@ -266,7 +266,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7394587804495522932}
   - component: {fileID: 4984153427348575524}
-  - component: {fileID: 2302926027107609347}
   - component: {fileID: 3629190793942637526}
   m_Layer: 3
   m_Name: AttackArea
@@ -339,19 +338,6 @@ PolygonCollider2D:
       - {x: 0.12232441, y: -0.4833888}
       - {x: 0.60479397, y: -0.4666898}
   m_UseDelaunayMesh: 0
---- !u!114 &2302926027107609347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3102895242371027426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32df10503dfbd8440ac224bb3803ffdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  punchNoise: {fileID: 0}
 --- !u!114 &3629190793942637526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,6 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punchNoise: {fileID: 3101532719510250459}
+  KnockBack: {fileID: 0}
 --- !u!1 &4746603327699832692
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +368,7 @@ GameObject:
   - component: {fileID: 2891878418494639016}
   - component: {fileID: 2390080705116862571}
   - component: {fileID: 5601255409047210634}
+  - component: {fileID: -1680372957428931348}
   m_Layer: 3
   m_Name: David
   m_TagString: Untagged
@@ -619,8 +607,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KBForce: 6
-  KBCounter: 0
-  KnockFromRight: 0
   KBTotalTime: 0.2
 --- !u!114 &5601255409047210634
 MonoBehaviour:
@@ -659,11 +645,33 @@ MonoBehaviour:
   targetTime: 0
   timeToAttack: 0.25
   timer: 0
-  ultimateAbility: {fileID: 0}
+  ultimateAbility: {fileID: -1680372957428931348}
   throwNoise: {fileID: 5282356357071559466}
   projectileNoise: {fileID: 334852294458541514}
   ultimateBannerManager: {fileID: 0}
   HUD: {fileID: 0}
+--- !u!114 &-1680372957428931348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4746603327699832692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0949897eb815a2488e64015bcd70b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPrefab: {fileID: 8881140345850758866, guid: 129500080b71d0c4091b479ced2ac9be, type: 3}
+  fireRate: 6
+  damageAmount: 1
+  isUltimateActive: 0
+  firePoint: {fileID: 8943419466433357722}
+  knockBack: {fileID: 0}
+  ultName: GlassMirage
+  ultActivatedVoiceCue: {fileID: 0}
+  ultReadyVoiceCue: {fileID: 0}
+  Duration: 1
 --- !u!1 &5282356357071559466
 GameObject:
   m_ObjectHideFlags: 0

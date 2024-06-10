@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punchNoise: {fileID: 2997209141607048582}
+  KnockBack: {fileID: 0}
 --- !u!1 &2997209141607048582
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +578,7 @@ GameObject:
   - component: {fileID: 8894303078336510104}
   - component: {fileID: 1945387503658486903}
   - component: {fileID: 3360427947420971997}
+  - component: {fileID: 1366002600528846425}
   m_Layer: 3
   m_Name: Kathy
   m_TagString: Untagged
@@ -815,8 +817,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KBForce: 6
-  KBCounter: 0
-  KnockFromRight: 0
   KBTotalTime: 0.2
 --- !u!114 &3360427947420971997
 MonoBehaviour:
@@ -855,11 +855,35 @@ MonoBehaviour:
   targetTime: 0
   timeToAttack: 0.25
   timer: 0
-  ultimateAbility: {fileID: 0}
+  ultimateAbility: {fileID: 1366002600528846425}
   throwNoise: {fileID: 1170164381098397538}
   projectileNoise: {fileID: 8200863617770369424}
   ultimateBannerManager: {fileID: 0}
   HUD: {fileID: 0}
+--- !u!114 &1366002600528846425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7088748216573092245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a3992914fea7143afd419163f8caa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPrefab: {fileID: 8881140345850758866, guid: 90b8375aebf8aac49af3e4a099be55ac, type: 3}
+  fireRate: 6
+  damageAmount: 1
+  isUltimateActive: 0
+  firePoint: {fileID: 7236325184373474186}
+  knockBack: {fileID: 0}
+  ultName: RainingCatsAndCats
+  ultActivatedVoiceCue: {fileID: 0}
+  ultReadyVoiceCue: {fileID: 0}
+  numberOfObjects: 15
+  spawnArea: {x: 30, y: 2, z: 0}
+  spawnHeight: 30
 --- !u!1 &8200863617770369424
 GameObject:
   m_ObjectHideFlags: 0

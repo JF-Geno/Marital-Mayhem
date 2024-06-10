@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 1418802158706747615}
   - component: {fileID: 1039167605072400614}
   - component: {fileID: 5584642076348819486}
+  - component: {fileID: 1535169995385522216}
   m_Layer: 3
   m_Name: Saul
   m_TagString: Untagged
@@ -541,8 +542,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KBForce: 6
-  KBCounter: 0
-  KnockFromRight: 0
   KBTotalTime: 0.2
 --- !u!114 &5584642076348819486
 MonoBehaviour:
@@ -581,11 +580,33 @@ MonoBehaviour:
   targetTime: 0
   timeToAttack: 0.25
   timer: 0
-  ultimateAbility: {fileID: 0}
+  ultimateAbility: {fileID: 1535169995385522216}
   throwNoise: {fileID: 785145129359039970}
   projectileNoise: {fileID: 3182934678045753535}
   ultimateBannerManager: {fileID: 0}
   HUD: {fileID: 0}
+--- !u!114 &1535169995385522216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3608497882541460745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f6f6d47a70f364da8ab9abc56f163e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPrefab: {fileID: 8881140345850758866, guid: c634a23e9bd2a9c4483d23fd6bcfa59c, type: 3}
+  fireRate: 6
+  damageAmount: 1
+  isUltimateActive: 0
+  firePoint: {fileID: 6448079388760672323}
+  knockBack: {fileID: 0}
+  ultName: LawyerFees
+  ultActivatedVoiceCue: {fileID: 0}
+  ultReadyVoiceCue: {fileID: 0}
+  Duration: 1
 --- !u!1 &4344366701185166190
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punchNoise: {fileID: 8383955905127776202}
+  KnockBack: {fileID: 0}
 --- !u!1 &7361277707572893457
 GameObject:
   m_ObjectHideFlags: 0

@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 8489281174120042286}
   - component: {fileID: 4973177501707713730}
   - component: {fileID: 3523083407549945852}
+  - component: {fileID: 4759336924866772352}
   m_Layer: 3
   m_Name: Jessica
   m_TagString: Untagged
@@ -658,8 +659,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KBForce: 6
-  KBCounter: 0
-  KnockFromRight: 0
   KBTotalTime: 0.2
 --- !u!114 &3523083407549945852
 MonoBehaviour:
@@ -698,11 +697,35 @@ MonoBehaviour:
   targetTime: 0
   timeToAttack: 0.25
   timer: 0
-  ultimateAbility: {fileID: 0}
+  ultimateAbility: {fileID: 4759336924866772352}
   throwNoise: {fileID: 7543680227232399812}
   projectileNoise: {fileID: 508143160234192675}
   ultimateBannerManager: {fileID: 0}
   HUD: {fileID: 0}
+--- !u!114 &4759336924866772352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3783995324378328114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba296b672717dbf468e27fe98e0f7c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityPrefab: {fileID: 8881140345850758866, guid: 81bfce07f17b45040b147ecf86110777, type: 3}
+  fireRate: 6
+  damageAmount: 1
+  isUltimateActive: 0
+  firePoint: {fileID: 6310129263768997510}
+  knockBack: {fileID: 0}
+  ultName: LactoseLullaby
+  ultActivatedVoiceCue: {fileID: 0}
+  ultReadyVoiceCue: {fileID: 0}
+  numberOfObjects: 15
+  spawnArea: {x: 30, y: 2, z: 0}
+  spawnHeight: 30
 --- !u!1 &4558335239478017324
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,3 +1011,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punchNoise: {fileID: 7543680227232399812}
+  KnockBack: {fileID: 0}
