@@ -276,8 +276,7 @@ public class Player : MonoBehaviour
 
         healthController(amount);
 
-        DamageSound(GameValues.DamageTypes.Ranged);
-      
+        DamageSound(damageType);
 
         if (playerNumControl == 1 && HUD._health <= 0 || playerNumControl == 2 && HUD._health_2 <= 0)
         {

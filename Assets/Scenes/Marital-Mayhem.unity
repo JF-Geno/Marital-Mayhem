@@ -538,8 +538,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.6864, y: 223}
-  m_SizeDelta: {x: 381.6823, y: 56.8087}
+  m_AnchoredPosition: {x: -0.000013918, y: 211.35}
+  m_SizeDelta: {x: 368.2215, y: 56.8087}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &516364908
 MonoBehaviour:
@@ -613,7 +613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -140, y: 195}
+  m_AnchoredPosition: {x: -140, y: 180}
   m_SizeDelta: {x: 135.69, y: 109.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &530335071
@@ -1793,14 +1793,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502001094}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 516364907}
   - {fileID: 530335070}
-  m_Father: {fileID: 8098595717334318283}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2254,10 +2254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2673976961704230911, guid: 6a09fabe4c1bdee4abfa7a443bb30ee2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1502001098}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a09fabe4c1bdee4abfa7a443bb30ee2, type: 3}
 --- !u!114 &8098595717334318282 stripped
@@ -2271,11 +2268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3dab7a83292924499db7ba4e7b40b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &8098595717334318283 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2673976961704230911, guid: 6a09fabe4c1bdee4abfa7a443bb30ee2, type: 3}
-  m_PrefabInstance: {fileID: 8098595717334318281}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2283,6 +2275,7 @@ SceneRoots:
   - {fileID: 134550782}
   - {fileID: 1540577243}
   - {fileID: 1388187837}
+  - {fileID: 1502001098}
   - {fileID: 8098595717334318281}
   - {fileID: 1736804021}
   - {fileID: 837520778}
